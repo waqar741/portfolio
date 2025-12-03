@@ -435,7 +435,7 @@ const Portfolio = () => {
                                             {project.stack.map(tech => (
                                                 <span
                                                     key={tech}
-                                                    className="px-3 py-1 text-xs border border-gray-300 dark:border-gray-700 rounded-full"
+                                                    className="px-4 py-2 text-xs border border-gray-300 dark:border-gray-700 rounded-full mb-4"
                                                 >
                                                     {tech}
                                                 </span>
@@ -446,7 +446,7 @@ const Portfolio = () => {
                                     <div className="flex md:flex-col gap-2">
                                         <a
                                             href={project.github}
-                                            className="px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors flex items-center gap-2"
+                                            className="px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors flex items-center gap-2 mb-24"
                                         >
                                             <Github size={16} />
                                             Code
