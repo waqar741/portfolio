@@ -300,7 +300,7 @@ const Portfolio = () => {
             year: "2024",
             desc: "Full-stack finance app with TypeScript & Supabase. Real-time expense tracking and secure authentication.",
             stack: ["TypeScript", "Supabase", "React"],
-            github: "https://github.com/waqar741",
+            github: "https://github.com/waqar741/fintrac",
             live: "https://fintrac-money.vercel.app/",
             status: "Completed",
             category: "Web Dev"
@@ -310,7 +310,7 @@ const Portfolio = () => {
             year: "2024",
             desc: "Automated concession generation system with secure login, digital verification, and centralized database.",
             stack: ["React", "Node", "Firebase"],
-            github: "https://github.com/waqar741",
+            github: "https://github.com/rahul4287452/rcm",
             live: "https://trcp-e37b7.web.app/",
             status: "Completed",
             category: "Web Dev"
@@ -321,7 +321,7 @@ const Portfolio = () => {
             desc: "FERN stack website for renting tech gadgets. Includes inventory tracking and rental period management.",
             stack: ["Firebase", "Express", "React"],
             github: "https://github.com/waqar741",
-            live: "#",
+            live: "https://gadget-rental-4314b.web.app/",
             status: "Completed",
             category: "Web Dev"
         },
@@ -330,7 +330,7 @@ const Portfolio = () => {
             year: "2023",
             desc: "Python scraper using BeautifulSoup to gather comprehensive data on Indian cuisine recipes.",
             stack: ["Python", "BS4", "Data"],
-            github: "https://github.com/waqar741",
+            github: "https://github.com/waqar741/recipe",
             live: "#",
             status: "Completed",
             category: "AI/ML"
