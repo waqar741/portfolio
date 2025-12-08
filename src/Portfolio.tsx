@@ -24,10 +24,10 @@ import {
 } from 'lucide-react';
 
 // Toast Notification Component
-const Toast = ({ message, type, onClose }: { 
-    message: string; 
-    type: 'success' | 'error'; 
-    onClose: () => void 
+const Toast = ({ message, type, onClose }: {
+    message: string;
+    type: 'success' | 'error';
+    onClose: () => void
 }) => {
     useEffect(() => {
         const timer = setTimeout(onClose, 4000);
@@ -35,18 +35,17 @@ const Toast = ({ message, type, onClose }: {
     }, [onClose]);
 
     return (
-        <div className={`fixed top-6 right-6 z-[1000] flex items-center gap-3 px-4 py-3 rounded-lg shadow-xl transform transition-all duration-300 animate-slide-in-right ${
-            type === 'success' 
-                ? 'bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800' 
+        <div className={`fixed top-6 right-6 z-[1000] flex items-center gap-3 px-4 py-3 rounded-lg shadow-xl transform transition-all duration-300 animate-slide-in-right ${type === 'success'
+                ? 'bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800'
                 : 'bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800'
-        }`}>
+            }`}>
             {type === 'success' ? (
                 <CheckCircle className="text-green-600 dark:text-green-400" size={20} />
             ) : (
                 <XCircle className="text-red-600 dark:text-red-400" size={20} />
             )}
             <span className="text-sm font-medium">{message}</span>
-            <button 
+            <button
                 onClick={onClose}
                 className="ml-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
             >
@@ -60,7 +59,7 @@ const Portfolio = () => {
     // State for the Loading/Spotlight effect
     const [isLoading, setIsLoading] = useState(true);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-    
+
     // UI States
     const [darkMode, setDarkMode] = useState(true);
     const [coffeeCount, setCoffeeCount] = useState(0);
@@ -251,7 +250,7 @@ const Portfolio = () => {
             });
 
             const result = await response.json();
-            
+
             if (result.success) {
                 setToast({ message: "Message sent successfully!", type: 'success' });
                 setFormData({ name: "", email: "", message: "" });
@@ -273,7 +272,7 @@ const Portfolio = () => {
         const y = e.clientY - rect.top;
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        const rotateY = ((x - centerX) / centerX) * 2; 
+        const rotateY = ((x - centerX) / centerX) * 2;
         const rotateX = ((centerY - y) / centerY) * 2;
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
     };
@@ -360,7 +359,7 @@ const Portfolio = () => {
             date: "Aug 2025 – Present",
             details: "Researching distributed LLM architectures for inference optimization. Testing model sharding across decentralized systems.",
             tech: ["LLMs", "Distributed Systems", "Python", "AI Research"],
-            logo: "https://ui-avatars.com/api/?name=HFP&background=000&color=fff&size=128" 
+            logo: "https://ui-avatars.com/api/?name=HFP&background=000&color=fff&size=128"
         }
     ];
 
@@ -394,16 +393,16 @@ const Portfolio = () => {
             location: "Navi Mumbai",
             // grade: "75%",
             keyCourses: [],
-             logo: "https://ui-avatars.com/api/?name=SV&background=fff&color=000&size=128"
+            logo: "https://ui-avatars.com/api/?name=SV&background=fff&color=000&size=128"
         },
         {
             institution: "Shiravane Vidyalaya",
             degree: "SSC",
             duration: "2019 - 2020",
             location: "Navi Mumbai",
-            grade: "73%",
+            // grade: "85%",
             keyCourses: [],
-             logo: "https://ui-avatars.com/api/?name=SV&background=fff&color=000&size=128"
+            logo: "https://ui-avatars.com/api/?name=SV&background=fff&color=000&size=128"
         }
     ];
 
@@ -413,11 +412,6 @@ const Portfolio = () => {
             year: "2025",
             provider: "Online Course"
         },
-        {
-            title: "Python for Data Science & ML",
-            year: "2024",
-            provider: "Specialization"
-        }
     ];
 
     const scrollToSection = (sectionId: string) => {
@@ -431,7 +425,7 @@ const Portfolio = () => {
         <>
             {/* Spotlight Overlay */}
             {isLoading && (
-                <div 
+                <div
                     className="fixed inset-0 z-[100] cursor-none flex items-end justify-center pb-20 touch-none"
                     onClick={() => setIsLoading(false)}
                     style={{
@@ -448,10 +442,10 @@ const Portfolio = () => {
             )}
 
             {toast && (
-                <Toast 
-                    message={toast.message} 
-                    type={toast.type} 
-                    onClose={() => setToast(null)} 
+                <Toast
+                    message={toast.message}
+                    type={toast.type}
+                    onClose={() => setToast(null)}
                 />
             )}
 
@@ -537,8 +531,8 @@ const Portfolio = () => {
                         <div className="h-16 sm:h-20 overflow-hidden">
                             {terminalLines.slice(0, currentLine + 1).map((line, idx) => (
                                 <div key={idx} className="text-gray-300">
-                                    {!hasStartedTyping && idx === 0 
-                                        ? <span className="animate-pulse">_</span> 
+                                    {!hasStartedTyping && idx === 0
+                                        ? <span className="animate-pulse">_</span>
                                         : (idx === currentLine ? typingText + '▋' : line)
                                     }
                                 </div>
@@ -569,9 +563,8 @@ const Portfolio = () => {
                                     {skills.map((skill, idx) => (
                                         <div
                                             key={idx}
-                                            className={`flex flex-row items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-500 ${
-                                                isLoading ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
-                                            }`}
+                                            className={`flex flex-row items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-500 ${isLoading ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+                                                }`}
                                             style={{ transitionDelay: `${idx * 50}ms` }}
                                         >
                                             <div className="text-black dark:text-white flex-shrink-0">
@@ -596,7 +589,7 @@ const Portfolio = () => {
                                     <div className="space-y-2 sm:space-y-3 text-sm">
                                         <div className="flex justify-between">
                                             <span className="text-gray-600 dark:text-gray-400">Current Role</span>
-                                            <span className="font-mono text-[10px] bg-black text-white dark:bg-white dark:text-black px-1.5 py-0.5 rounded">AI Intern</span>
+                                            <span className="font-mono">AI Intern</span>
                                         </div>
                                         <div className="flex justify-between">
                                             <span className="text-gray-600 dark:text-gray-400">Focus</span>
@@ -630,9 +623,8 @@ const Portfolio = () => {
                             {techStack.map((tech, idx) => (
                                 <span
                                     key={idx}
-                                    className={`scroll-reveal px-2.5 py-1 sm:px-3 sm:py-1.5 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg text-xs sm:text-sm font-medium hover:border-black dark:hover:border-white transition-all duration-500 cursor-default ${
-                                        isLoading ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
-                                    }`}
+                                    className={`scroll-reveal px-2.5 py-1 sm:px-3 sm:py-1.5 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg text-xs sm:text-sm font-medium hover:border-black dark:hover:border-white transition-all duration-500 cursor-default ${isLoading ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+                                        }`}
                                     style={{ transitionDelay: `${idx * 20}ms` }}
                                 >
                                     {tech}
@@ -676,9 +668,9 @@ const Portfolio = () => {
                                     <div>
                                         <div className="flex items-start justify-between mb-2">
                                             <h3 className="text-base font-bold group-hover:underline line-clamp-1">{project.title}</h3>
-                                            
+
                                             <div className="flex gap-2">
-                                                 <a
+                                                <a
                                                     href={project.github}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
@@ -688,7 +680,7 @@ const Portfolio = () => {
                                                     <Github size={16} />
                                                 </a>
                                                 {project.live !== '#' && (
-                                                     <a
+                                                    <a
                                                         href={project.live}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
@@ -700,7 +692,7 @@ const Portfolio = () => {
                                                 )}
                                             </div>
                                         </div>
-                                        
+
                                         <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-2 leading-relaxed">
                                             {project.desc}
                                         </p>
@@ -718,12 +710,11 @@ const Portfolio = () => {
                                     </div>
 
                                     <div className="flex items-center justify-between mt-auto pt-3 border-t border-gray-100 dark:border-gray-800 text-[10px] sm:text-xs text-gray-500">
-                                         <span>{project.year}</span>
-                                         <span className={`px-2 py-0.5 rounded-full ${
-                                            project.status === 'Completed' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400'
-                                         }`}>
+                                        <span>{project.year}</span>
+                                        <span className={`px-2 py-0.5 rounded-full ${project.status === 'Completed' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400'
+                                            }`}>
                                             {project.status}
-                                         </span>
+                                        </span>
                                     </div>
                                 </div>
                             ))}
@@ -732,15 +723,15 @@ const Portfolio = () => {
 
                     {/* Unified Experience, Education & Certs Layout */}
                     <div ref={experienceRef} id="experience" className="mb-12 sm:mb-16">
-                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
                             {/* Left Column: Experience */}
                             <div className="space-y-6">
                                 <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 scroll-reveal">
                                     <Briefcase size={20} />
                                     Experience
                                 </h2>
-                                
+
                                 <div className="relative space-y-8">
                                     {/* Vertical Connecting Line - Centered relative to 56px logo (Left-27px) */}
                                     <div className="absolute top-0 bottom-0 left-[27px] w-[2px] bg-gray-200 dark:bg-gray-800" />
@@ -748,9 +739,9 @@ const Portfolio = () => {
                                     {experience.map((job, idx) => (
                                         <div key={idx} className="scroll-reveal flex gap-4 items-start relative z-10">
                                             <div className="w-14 h-14 flex-shrink-0 rounded-full border-4 border-white dark:border-black bg-white overflow-hidden shadow-sm">
-                                                <img 
-                                                    src={job.logo} 
-                                                    alt={job.company} 
+                                                <img
+                                                    src={job.logo}
+                                                    alt={job.company}
                                                     className="w-full h-full object-contain"
                                                 />
                                             </div>
@@ -759,11 +750,11 @@ const Portfolio = () => {
                                                 <h3 className="font-bold text-base">{job.role}</h3>
                                                 <div className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">{job.company}</div>
                                                 <div className="text-xs text-gray-500 mb-2 uppercase tracking-wide">{job.date}</div>
-                                                
+
                                                 <p className="text-sm text-gray-700 dark:text-gray-300 mb-3 leading-relaxed">
                                                     {job.details}
                                                 </p>
-                                                
+
                                                 <div className="flex flex-wrap gap-1.5">
                                                     {job.tech.map(t => (
                                                         <span key={t} className="px-1.5 py-0.5 text-[10px] bg-gray-100 dark:bg-gray-900 rounded border border-gray-200 dark:border-gray-800">
@@ -784,7 +775,7 @@ const Portfolio = () => {
                                         <GraduationCap size={20} />
                                         Education
                                     </h2>
-                                    
+
                                     <div className="relative space-y-8">
                                         {/* Vertical Connecting Line */}
                                         <div className="absolute top-0 bottom-0 left-[27px] w-[2px] bg-gray-200 dark:bg-gray-800" />
@@ -792,20 +783,20 @@ const Portfolio = () => {
                                         {education.map((edu, idx) => (
                                             <div key={idx} className="scroll-reveal flex gap-4 items-start relative z-10">
                                                 <div className="w-14 h-14 flex-shrink-0 rounded-full border-4 border-white dark:border-black bg-white overflow-hidden shadow-sm">
-                                                    <img 
-                                                        src={edu.logo} 
-                                                        alt={edu.institution} 
+                                                    <img
+                                                        src={edu.logo}
+                                                        alt={edu.institution}
                                                         className="w-full h-full object-contain"
                                                     />
                                                 </div>
 
                                                 <div className="flex-1 pt-1">
-                                                     <h3 className="font-bold text-sm">{edu.institution}</h3>
-                                                     <p className="text-xs text-gray-600 dark:text-gray-400">{edu.degree}</p>
-                                                     <div className="flex justify-between items-center mt-1">
-                                                         <span className="text-xs text-gray-500">{edu.duration}</span>
-                                                         <span className="text-xs font-medium text-green-600 dark:text-green-400">{edu.grade}</span>
-                                                     </div>
+                                                    <h3 className="font-bold text-sm">{edu.institution}</h3>
+                                                    <p className="text-xs text-gray-600 dark:text-gray-400">{edu.degree}</p>
+                                                    <div className="flex justify-between items-center mt-1">
+                                                        <span className="text-xs text-gray-500">{edu.duration}</span>
+                                                        {/* <span className="text-xs font-medium text-green-600 dark:text-green-400">{edu.grade}</span> */}
+                                                    </div>
                                                 </div>
                                             </div>
                                         ))}
@@ -830,7 +821,7 @@ const Portfolio = () => {
                                     </div>
                                 </div>
                             </div>
-                         </div>
+                        </div>
                     </div>
 
                     {/* Contact Form */}
@@ -839,7 +830,7 @@ const Portfolio = () => {
                             <div className="flex-1 text-left space-y-4 sm:space-y-6">
                                 <h3 className="text-2xl sm:text-3xl font-bold scroll-reveal">Let's make something cool</h3>
                                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed scroll-reveal text-sm sm:text-base">
-                                    Driven IT engineer skilled in software development. Always aiming to create effective solutions. 
+                                    Driven IT engineer skilled in software development. Always aiming to create effective solutions.
                                     Have a project in mind or just want to say hi? I'm always open to discussing new ideas.
                                 </p>
 
@@ -952,30 +943,30 @@ const Portfolio = () => {
                         >
                             <Home size={16} />
                         </button>
-                        
+
                         <button
                             onClick={() => scrollToSection('skills')}
                             className={`p-1.5 sm:p-2 rounded-full transition-colors ${activeSection === 'skills' ? 'bg-black dark:bg-white text-white dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-gray-800'}`}
                         >
                             <Code2 size={16} />
                         </button>
-                        
+
                         <button
                             onClick={() => scrollToSection('projects')}
                             className={`p-1.5 sm:p-2 rounded-full transition-colors ${activeSection === 'projects' ? 'bg-black dark:bg-white text-white dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-gray-800'}`}
                         >
                             <Briefcase size={16} />
                         </button>
-                        
+
                         <button
                             onClick={() => scrollToSection('experience')}
                             className={`p-1.5 sm:p-2 rounded-full transition-colors ${activeSection === 'experience' ? 'bg-black dark:bg-white text-white dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-gray-800'}`}
                         >
                             <GraduationCap size={16} />
                         </button>
-                        
+
                         <div className="w-px h-4 bg-gray-200 dark:bg-gray-800 mx-1"></div>
-                        
+
                         <a
                             href="https://github.com/waqar741"
                             target="_blank"
@@ -984,7 +975,7 @@ const Portfolio = () => {
                         >
                             <Github size={16} />
                         </a>
-                        
+
                         <a
                             href="https://www.linkedin.com/in/shaikh-waquar"
                             target="_blank"
@@ -993,9 +984,9 @@ const Portfolio = () => {
                         >
                             <Linkedin size={16} />
                         </a>
-                        
+
                         <div className="w-px h-4 bg-gray-200 dark:bg-gray-800 mx-1"></div>
-                        
+
                         <button
                             onClick={() => setDarkMode(!darkMode)}
                             className="p-1.5 sm:p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
