@@ -325,16 +325,16 @@ const Portfolio = () => {
             status: "Completed",
             category: "Web Dev"
         },
-        {
-            title: "Cuisine Web Scraper",
-            year: "2023",
-            desc: "Python scraper using BeautifulSoup to gather comprehensive data on Indian cuisine recipes.",
-            stack: ["Python", "BS4", "Data"],
-            github: "https://github.com/waqar741/recipe",
-            live: "#",
-            status: "Completed",
-            category: "AI/ML"
-        },
+        // {
+        //     title: "Cuisine Web Scraper",
+        //     year: "2023",
+        //     desc: "Python scraper using BeautifulSoup to gather comprehensive data on Indian cuisine recipes.",
+        //     stack: ["Python", "BS4", "Data"],
+        //     github: "https://github.com/waqar741/recipe",
+        //     live: "#",
+        //     status: "Completed",
+        //     category: "AI/ML"
+        // },
         {
             title: "Face Rec. Attendance",
             year: "2022",
@@ -344,6 +344,16 @@ const Portfolio = () => {
             live: "#",
             status: "Completed",
             category: "AI/ML"
+        },
+                {
+            title: "Tic-Tac-Toe Game",
+            year: "2022",
+            desc: "A lightweight, interactive game featuring a 'Win If You Can' challenge and instant replay functionality, deployed via GitHub Pages.",
+            stack: ["HTML", "CSS", "JavaScript"],
+            github: "https://github.com/waqar741/tictactoe",
+            live: "https://waqar741.github.io/tictactoe/",
+            status: "Completed",
+            category: "Web Dev"
         }
     ];
 
@@ -359,7 +369,7 @@ const Portfolio = () => {
             date: "Aug 2025 – Present",
             details: "Researching distributed LLM architectures for inference optimization. Testing model sharding across decentralized systems.",
             tech: ["LLMs", "Distributed Systems", "Python", "AI Research"],
-            logo: "https://ui-avatars.com/api/?name=HFP&background=000&color=fff&size=128"
+            logo: "./images/hfp.png"
         }
     ];
 
@@ -370,11 +380,18 @@ const Portfolio = () => {
         { icon: <Coffee size={20} />, label: "Problem Solving", desc: "DSA & Logic" }
     ];
 
-    const techStack = [
-        "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Express.js",
+    // const techStack = [
+    //     "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Express.js",
+    //     "Python", "Java", "Vite", "TailwindCSS", "MongoDB", "PostgreSQL",
+    //     "Firebase", "AWS", "Docker", "Git", "GitHub", "Linux"
+    // ];
+
+        const techStack = [
+        "JavaScript", "TypeScript", "React", "Node.js", "Express.js",
         "Python", "Java", "Vite", "TailwindCSS", "MongoDB", "PostgreSQL",
-        "Firebase", "AWS", "Docker", "Git", "GitHub", "Linux"
+        "Firebase", "AWS", "Git", "GitHub", "Linux"
     ];
+
 
     const education = [
         {
@@ -384,33 +401,33 @@ const Portfolio = () => {
             location: "Navi Mumbai",
             // grade: "CGPA: 7.5+",
             keyCourses: ["DSA", "DBMS", "AI", "CN"],
-            logo: "https://ui-avatars.com/api/?name=TEC&background=fff&color=000&size=128"
+            logo: "./images/terna.png"
         },
         {
             institution: "Shiravane Vidyalaya",
             degree: "HSC (Science)",
             duration: "2020 - 2022",
             location: "Navi Mumbai",
-            // grade: "75%",
+            // grade: "76.5%",
             keyCourses: [],
-            logo: "https://ui-avatars.com/api/?name=SV&background=fff&color=000&size=128"
+            logo: "./images/svs_logo.png"
         },
         {
             institution: "Shiravane Vidyalaya",
             degree: "SSC",
             duration: "2019 - 2020",
             location: "Navi Mumbai",
-            // grade: "85%",
+            // grade: "73%",
             keyCourses: [],
-            logo: "https://ui-avatars.com/api/?name=SV&background=fff&color=000&size=128"
+            logo: "./images/svs_logo.png"
         }
     ];
 
     const certifications = [
         {
             title: "React JS: Beginner to Expert",
-            year: "2025",
-            provider: "Online Course"
+            year: "2023",
+            provider: "Online Course",
         },
     ];
 
