@@ -340,7 +340,7 @@ const Portfolio = () => {
             year: "2022",
             desc: "Automated attendance tracking using Python, OpenCV for face recognition and SQL for data storage.",
             stack: ["Python", "OpenCV", "SQL"],
-            github: "https://github.com/waqar741",
+            github: "https://github.com/waqar741/Attendance-Management-System",
             live: "#",
             status: "Completed",
             category: "AI/ML"
@@ -387,9 +387,9 @@ const Portfolio = () => {
     // ];
 
         const techStack = [
-        "JavaScript", "TypeScript", "React", "Node.js", "Express.js",
+        "JavaScript", "TypeScript", "React", "Node.js", "Express.js", "Html", "CSS", "Linux", "Netify",
         "Python", "Java", "Vite", "TailwindCSS", "MongoDB", "PostgreSQL",
-        "Firebase", "AWS", "Git", "GitHub", "Linux"
+        "Firebase", "AWS", "Git", "GitHub", "Linux" , "Sql", "ML", "AI" ,"Vercel" 
     ];
 
 
