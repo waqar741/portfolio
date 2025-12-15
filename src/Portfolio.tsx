@@ -387,7 +387,7 @@ const Portfolio = () => {
     // ];
 
         const techStack = [
-        "JavaScript", "TypeScript", "React", "Node.js", "Express.js", "Html", "CSS", "Linux", "Netify",
+        "JavaScript", "TypeScript", "React", "Node.js", "Express.js", "Html", "CSS", "Netify",
         "Python", "Java", "Vite", "TailwindCSS", "MongoDB", "PostgreSQL",
         "Firebase", "AWS", "Git", "GitHub", "Linux" , "Sql", "ML", "AI" ,"Vercel" 
     ];
