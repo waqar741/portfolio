@@ -506,7 +506,7 @@ const Portfolio = () => {
 
                         <div className={`flex items-center gap-2 sm:gap-3 transition-all duration-1000 delay-200 transform ${isLoading ? 'opacity-0 -translate-y-10' : 'opacity-100 translate-y-0'}`}>
                             <a
-                                href="/MyResume.pdf"
+                                href="/Waquar-Resume.pdf"
                                 download
                                 className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-lg font-medium hover:opacity-90 transition-opacity text-sm"
                             >
