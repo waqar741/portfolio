@@ -36,8 +36,8 @@ const Toast = ({ message, type, onClose }: {
 
     return (
         <div className={`fixed top-6 right-6 z-[1000] flex items-center gap-3 px-4 py-3 rounded-lg shadow-xl transform transition-all duration-300 animate-slide-in-right ${type === 'success'
-                ? 'bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800'
-                : 'bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800'
+            ? 'bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800'
+            : 'bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800'
             }`}>
             {type === 'success' ? (
                 <CheckCircle className="text-green-600 dark:text-green-400" size={20} />
@@ -296,12 +296,12 @@ const Portfolio = () => {
             category: "AI/ML"
         },
         {
-            title: "Fintrac Finance",
+            title: "Traxos Finance",
             year: "2024",
             desc: "Full-stack finance app with TypeScript & Supabase. Real-time expense tracking and secure authentication.",
             stack: ["TypeScript", "Supabase", "React"],
-            github: "https://github.com/waqar741/fintrac",
-            live: "https://fintrac-money.vercel.app/",
+            github: "https://github.com/waqar741/traxos",
+            live: "https://traxos.vercel.app/",
             status: "Completed",
             category: "Web Dev"
         },
@@ -345,7 +345,7 @@ const Portfolio = () => {
             status: "Completed",
             category: "AI/ML"
         },
-                {
+        {
             title: "Tic-Tac-Toe Game",
             year: "2022",
             desc: "A lightweight, interactive game featuring a 'Win If You Can' challenge and instant replay functionality, deployed via GitHub Pages.",
@@ -386,10 +386,10 @@ const Portfolio = () => {
     //     "Firebase", "AWS", "Docker", "Git", "GitHub", "Linux"
     // ];
 
-        const techStack = [
+    const techStack = [
         "JavaScript", "TypeScript", "React", "Node.js", "Express.js", "Html", "CSS", "Netify",
         "Python", "Java", "Vite", "TailwindCSS", "MongoDB", "PostgreSQL",
-        "Firebase", "AWS", "Git", "GitHub", "Linux" , "Sql", "ML", "AI" ,"Vercel" 
+        "Firebase", "AWS", "Git", "GitHub", "Linux", "Sql", "ML", "AI", "Vercel"
     ];
 
 
@@ -490,8 +490,8 @@ const Portfolio = () => {
                         <div className={`flex items-center gap-3 transition-all duration-1000 transform ${isLoading ? 'opacity-0 -translate-y-10' : 'opacity-100 translate-y-0'}`}>
                             <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-black dark:border-white overflow-hidden relative group">
                                 <img
-                                    src="images/profile.jpg"
-                                    alt="Profile"
+                                    src="images/profile.png"
+                                    alt="Waquar Shaikh - Full Stack Developer"
                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 />
                             </div>
