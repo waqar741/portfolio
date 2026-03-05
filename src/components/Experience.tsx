@@ -9,7 +9,7 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
         {
             company: "HealthFirstPriority",
             role: "AI Engineer Intern",
-            date: "Sept 2025 – Present",
+            date: "Sept 2025 – Dec 2025",
             details: "Researching distributed LLM architectures for inference optimization. Testing model sharding across decentralized systems.",
             tech: ["LLMs", "Distributed Systems", "Python", "AI Research"],
             logo: "./images/hfp.png"
