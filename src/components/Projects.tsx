@@ -12,6 +12,16 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
 
     const projects = [
         {
+            title: "AI Adaptive Honeypot",
+            year: "2025",
+            desc: "Proactive defense using AI to detect and deceive attackers. Features real-time threat analysis and adaptive response.",
+            stack: ["Python", "ML", "Security", "AI"],
+            github: "https://github.com/waqar741/AI-Based-Honeypot",
+            live: "#",
+            status: "In Progress",
+            category: "AI/ML"
+        },
+        {
             title: "HealthFirstPriority",
             year: "2025",
             desc: "AI-powered clinical chat platform with multi-node selection, offline PDF knowledge base, and streaming responses via SSE.",
@@ -29,16 +39,6 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
             github: "https://github.com/waqar741/EchoAI",
             live: "https://avatar.nomineelife.com/",
             status: "Completed",
-            category: "AI/ML"
-        },
-        {
-            title: "AI Adaptive Honeypot",
-            year: "2025",
-            desc: "Proactive defense using AI to detect and deceive attackers. Features real-time threat analysis and adaptive response.",
-            stack: ["Python", "ML", "Security", "AI"],
-            github: "https://github.com/waqar741/AI-Based-Honeypot",
-            live: "#",
-            status: "In Progress",
             category: "AI/ML"
         },
         {
@@ -81,13 +81,23 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
             status: "Completed",
             category: "AI/ML"
         },
+        // {
+        //     title: "Tic-Tac-Toe Game",
+        //     year: "2022",
+        //     desc: "A lightweight, interactive game featuring a 'Win If You Can' challenge and instant replay functionality, deployed via GitHub Pages.",
+        //     stack: ["HTML", "CSS", "JavaScript"],
+        //     github: "https://github.com/waqar741/tictactoe",
+        //     live: "https://waqar741.github.io/tictactoe/",
+        //     status: "Completed",
+        //     category: "Web Dev"
+        // },
         {
-            title: "Tic-Tac-Toe Game",
+            title: "Notes Website",
             year: "2022",
-            desc: "A lightweight, interactive game featuring a 'Win If You Can' challenge and instant replay functionality, deployed via GitHub Pages.",
+            desc: "SmartNote is a minimalist web-based tool for quick and efficient note-taking. It features a clean interface designed to capture ideas and organize tasks effortlessly.",
             stack: ["HTML", "CSS", "JavaScript"],
-            github: "https://github.com/waqar741/tictactoe",
-            live: "https://waqar741.github.io/tictactoe/",
+            github: "https://github.com/waqar741/notess",
+            live: "https://smartnote.vercel.app/",
             status: "Completed",
             category: "Web Dev"
         }

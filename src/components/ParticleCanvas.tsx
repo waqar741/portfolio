@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
 
 interface ParticleCanvasProps {
     darkMode: boolean;
@@ -7,7 +6,6 @@ interface ParticleCanvasProps {
 
 const ParticleCanvas: React.FC<ParticleCanvasProps> = ({ darkMode }) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const [hoveredTech, setHoveredTech] = useState<{ name: string; desc: string; x: number; y: number } | null>(null);
 
     // Tech stack definitions with their core simple shapes (coordinates relative to a center point)
     // We'll define simple iconic shapes using coordinates (scale 0-1)
@@ -160,9 +158,6 @@ const ParticleCanvas: React.FC<ParticleCanvasProps> = ({ darkMode }) => {
         const handleMouseMove = (e: MouseEvent) => {
             mouse.x = e.clientX;
             mouse.y = e.clientY + window.scrollY; // adjust for scroll
-
-            // Only update hover text position if active
-            setHoveredTech(prev => prev ? { ...prev, x: e.clientX, y: e.clientY } : null);
         };
 
         const handleMouseClick = (e: MouseEvent) => {
@@ -171,17 +166,9 @@ const ParticleCanvas: React.FC<ParticleCanvasProps> = ({ darkMode }) => {
             targetPattern = randomTech;
             targetCenter = { x: e.clientX, y: e.clientY + window.scrollY };
 
-            setHoveredTech({
-                name: randomTech.name,
-                desc: randomTech.desc,
-                x: e.clientX,
-                y: e.clientY
-            });
-
             // Dissolve after 3 seconds
             setTimeout(() => {
                 targetPattern = null;
-                setHoveredTech(null);
             }, 3000);
         };
 
@@ -207,30 +194,10 @@ const ParticleCanvas: React.FC<ParticleCanvasProps> = ({ darkMode }) => {
     }, [darkMode]);
 
     return (
-        <>
-            <canvas
-                ref={canvasRef}
-                className="fixed inset-0 pointer-events-none z-0"
-            />
-
-            <AnimatePresence>
-                {hoveredTech && (
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.8, y: 10 }}
-                        className="fixed pointer-events-none z-50 bg-white/90 dark:bg-black/90 backdrop-blur-sm border border-gray-200 dark:border-gray-800 p-4 rounded-xl shadow-xl max-w-xs"
-                        style={{
-                            left: hoveredTech.x + 20,
-                            top: hoveredTech.y + 20
-                        }}
-                    >
-                        <h4 className="font-bold text-sm mb-1">{hoveredTech.name}</h4>
-                        <p className="text-xs text-gray-600 dark:text-gray-400">{hoveredTech.desc}</p>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </>
+        <canvas
+            ref={canvasRef}
+            className="fixed inset-0 pointer-events-none z-0"
+        />
     );
 };
 

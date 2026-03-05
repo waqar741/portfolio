@@ -16,6 +16,15 @@ const Portfolio = () => {
     // State for the Loading/Spotlight effect
     const [isLoading, setIsLoading] = useState(true);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    const [isMobile, setIsMobile] = useState(false);
+
+    // Check for mobile screens to disable some heavy animations/features natively
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile(); // Check on init
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     // UI States
     const [darkMode, setDarkMode] = useState(true);
@@ -359,10 +368,10 @@ const Portfolio = () => {
                                     {skills.map((skill, idx) => (
                                         <motion.div
                                             key={idx}
-                                            drag
+                                            drag={!isMobile}
                                             dragConstraints={{ left: -50, right: 50, top: -50, bottom: 50 }}
                                             whileDrag={{ scale: 1.05, cursor: "grabbing" }}
-                                            className={`flex flex-row items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 cursor-grab z-10 transition-colors ${isLoading ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+                                            className={`flex flex-row items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 ${isMobile ? '' : 'cursor-grab'} z-10 transition-colors ${isLoading ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
                                                 }`}
                                             // Keep animation delay but remove transition-all which fights with framer-motion's transform
                                             style={{ animationDelay: `${idx * 50}ms` }}
@@ -381,10 +390,10 @@ const Portfolio = () => {
 
                             {/* Quick Stats */}
                             <motion.div
-                                drag
+                                drag={!isMobile}
                                 dragConstraints={{ left: -100, right: 100, top: -100, bottom: 100 }}
                                 whileDrag={{ scale: 1.05, rotate: 2, cursor: "grabbing" }}
-                                className="w-full md:w-64 z-20 cursor-grab"
+                                className={`w-full md:w-64 z-20 ${isMobile ? '' : 'cursor-grab'}`}
                             >
                                 <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-gray-800 shadow-sm">
                                     <h3 className="font-bold mb-3 sm:mb-4 flex items-center gap-2 text-sm sm:text-base">
