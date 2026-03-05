@@ -9,3 +9,12 @@
 body {
   @apply bg-white dark:bg-black text-gray-900 dark:text-gray-100 transition-colors duration-500;
 }
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
