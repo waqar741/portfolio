@@ -1,5 +1,5 @@
 import { useState, useEffect, type FormEvent, useRef } from 'react';
-import { Palette, Coffee, Terminal, Code2, Database, BarChart3 } from 'lucide-react';
+import { Palette, Terminal, Code2, Database, BarChart3 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 import Toast from './components/Toast';
