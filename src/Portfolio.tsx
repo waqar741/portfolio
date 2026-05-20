@@ -1,5 +1,5 @@
 import { useState, useEffect, type FormEvent, useRef } from 'react';
-import { Palette, Coffee, Terminal, Code2 } from 'lucide-react';
+import { Palette, Coffee, Terminal, Code2, Database, BarChart3 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 import Toast from './components/Toast';
@@ -249,10 +249,10 @@ const Portfolio = () => {
     };
 
     const skills = [
-        { icon: <Terminal size={20} />, label: "Python & Java", desc: "Backend Logic" },
-        { icon: <Code2 size={20} />, label: "React & JS", desc: "Frontend Magic" },
-        { icon: <Palette size={20} />, label: "HTML & CSS", desc: "UI/UX Design" },
-        { icon: <Coffee size={20} />, label: "Problem Solving", desc: "DSA & Logic" }
+        { icon: <Terminal size={20} />, label: "Python & SQL", desc: "Data & Logic" },
+        { icon: <BarChart3 size={20} />, label: "EDA & Visualization", desc: "Matplotlib & Seaborn" },
+        { icon: <Database size={20} />, label: "MySQL & PostgreSQL", desc: "Databases" },
+        { icon: <Code2 size={20} />, label: "React & JS", desc: "Frontend" }
     ];
 
     return (
@@ -350,17 +350,17 @@ const Portfolio = () => {
                         <div className="flex flex-col md:flex-row gap-6 sm:gap-8 items-start">
                             <div className="flex-1">
                                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
-                                    I build things for the web,
+                                    I build software & decode data,
                                     <span className="block text-gray-600 dark:text-gray-400 font-normal">
-                                        one <span className="">bug</span> at a time.
+                                        one <span className="">commit</span> at a time.
                                     </span>
                                 </h2>
 
                                 <p className="text-base sm:text-lg mb-6 leading-relaxed">
-                                    Computer Engineering student by day,{' '}
-                                    <span className="">full-stack developer</span>{' '}
-                                    by night. I believe the best products come from solving{' '}
-                                    <span className="">real problems</span>.
+                                    Computer Engineering graduate who loves{' '}
+                                    <span className="">building applications</span>{' '}
+                                    and turning raw data into{' '}
+                                    <span className="">actionable insights</span>.
                                 </p>
 
                                 {/* Skills - Grid Cols 2 Fixed for Mobile */}
@@ -402,16 +402,16 @@ const Portfolio = () => {
                                     </h3>
                                     <div className="space-y-2 sm:space-y-3 text-sm">
                                         <div className="flex justify-between">
-                                            <span className="text-gray-600 dark:text-gray-400">Current Role</span>
-                                            <span className="font-mono">AI Intern</span>
+                                            <span className="text-gray-600 dark:text-gray-400">Status</span>
+                                            <span className="font-mono">Open to Work</span>
                                         </div>
                                         <div className="flex justify-between">
                                             <span className="text-gray-600 dark:text-gray-400">Focus</span>
-                                            <span className="font-mono">Distributed LLMs</span>
+                                            <span className="font-mono">Dev & Analytics</span>
                                         </div>
                                         <div className="flex justify-between">
                                             <span className="text-gray-600 dark:text-gray-400">Location</span>
-                                            <span>Mumbai, IN</span>
+                                            <span>Navi Mumbai, IN</span>
                                         </div>
                                     </div>
                                 </div>

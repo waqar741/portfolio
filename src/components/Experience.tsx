@@ -7,40 +7,38 @@ interface ExperienceProps {
 const Experience = ({ experienceRef }: ExperienceProps) => {
     const experience = [
         {
-            company: "HealthFirstPriority",
+            company: "HealthFirstPriority (HFP)",
             role: "AI Engineer Intern",
             date: "Sept 2025 – Dec 2025",
-            details: "Researching distributed LLM architectures for inference optimization. Testing model sharding across decentralized systems.",
-            tech: ["LLMs", "Distributed Systems", "Python", "AI Research"],
-            logo: "./images/hfp.png"
+            details: "Assisted in AI and data-related tasks involving structured datasets, reporting, and workflow analysis. Evaluated AI-based application performance using Python testing scripts. Collaborated with teams to improve data handling pipelines and operational workflows.",
+            tech: ["Python", "Data Analysis", "SQL", "Reporting"],
+            logo: "./images/hfp.png",
+            status: "Completed"
         }
     ];
 
     const education = [
         {
-            institution: "Terna Engineering College",
-            degree: "B.E. Computer Engineering",
+            institution: "Terna Engineering College, Mumbai University",
+            degree: "B.E. in Computer Engineering",
             duration: "2022 - 2026",
             location: "Navi Mumbai",
-            // grade: "CGPA: 7.5+",
             keyCourses: ["DSA", "DBMS", "AI", "CN"],
             logo: "./images/terna.png"
         },
         {
-            institution: "Shiravane Vidyalaya",
-            degree: "HSC (Science)",
-            duration: "2020 - 2022",
+            institution: "Shiravane Vidyalaya & Jr. College",
+            degree: "Higher Secondary Certificate (HSC)",
+            duration: "2022",
             location: "Navi Mumbai",
-            // grade: "76.5%",
             keyCourses: [],
             logo: "./images/svs_logo.png"
         },
         {
             institution: "Shiravane Vidyalaya",
-            degree: "SSC",
-            duration: "2019 - 2020",
+            degree: "Secondary School Certificate (SSC)",
+            duration: "2020",
             location: "Navi Mumbai",
-            // grade: "73%",
             keyCourses: [],
             logo: "./images/svs_logo.png"
         }

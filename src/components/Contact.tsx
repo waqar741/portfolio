@@ -16,7 +16,7 @@ const Contact = ({ contactRef, formData, setFormData, handleSubmit, isSubmitting
                 <div className="flex-1 text-left space-y-4 sm:space-y-6">
                     <h3 className="text-2xl sm:text-3xl font-bold scroll-reveal">Let's make something cool</h3>
                     <p className="text-gray-600 dark:text-gray-400 leading-relaxed scroll-reveal text-sm sm:text-base">
-                        Driven IT engineer skilled in software development. Always aiming to create effective solutions.
+                        Developer and data analyst who builds clean applications and turns raw data into actionable insights. Proficient in full-stack development, EDA, and data visualization.
                         Have a project in mind or just want to say hi? I'm always open to discussing new ideas.
                     </p>
 

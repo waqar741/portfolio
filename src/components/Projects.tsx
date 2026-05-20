@@ -12,20 +12,20 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
 
     const projects = [
         {
-            title: "AI Adaptive Honeypot",
+            title: "AI Honeypot Analytics",
             year: "2025",
-            desc: "Proactive defense using AI to detect and deceive attackers. Features real-time threat analysis and adaptive response.",
-            stack: ["Python", "ML", "Security", "AI"],
+            desc: "Monitoring system to capture, store, and analyze suspicious network activities and attack patterns. Generates analytical reports identifying repeated intrusion attempts and anomalous traffic.",
+            stack: ["Python", "PostgreSQL", "Network Monitoring"],
             github: "https://github.com/waqar741/AI-Based-Honeypot",
             live: "#",
             status: "In Progress",
             category: "AI/ML"
         },
         {
-            title: "HealthFirstPriority",
+            title: "HFP Distributed AI Platform",
             year: "2025",
-            desc: "AI-powered clinical chat platform with multi-node selection, offline PDF knowledge base, and streaming responses via SSE.",
-            stack: ["Next.js", "TypeScript", "Zustand"],
+            desc: "Distributed AI-powered platform focused on handling structured data, reporting workflows, and backend integrations. Assisted in processing application data using Python and PostgreSQL.",
+            stack: ["Python", "SQL", "React JS", "PostgreSQL"],
             github: "https://github.com/waqar741/Frontend-HFP",
             live: "https://dev-ai.nomineelife.com/",
             status: "Completed",
@@ -52,10 +52,10 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
             category: "Web Dev"
         },
         {
-            title: "Railway Concession",
+            title: "Railway Concession System",
             year: "2024",
-            desc: "Automated concession generation system with secure login, digital verification, and centralized database.",
-            stack: ["React", "Node", "Firebase"],
+            desc: "Web-based system to automate railway concession request and admin approval workflows. Features authentication, digital verification, and centralized record management.",
+            stack: ["HTML", "CSS", "JavaScript", "Database"],
             github: "https://github.com/rahul4287452/rcm",
             live: "https://trcp-e37b7.web.app/",
             status: "Completed",

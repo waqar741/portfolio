@@ -10,27 +10,27 @@ const Skills = ({ skillsRef, isLoading }: SkillsProps) => {
     const skillsCategories = [
         {
             title: "Languages",
-            skills: ["JavaScript", "TypeScript", "Python", "Java", "SQL", "HTML/CSS"]
+            skills: ["Python", "SQL", "C", "Java", "JavaScript"]
         },
         {
             title: "Frontend",
-            skills: ["React", "Vite", "TailwindCSS", "Framer Motion", "Lucide React"]
+            skills: ["HTML", "CSS", "React JS", "Vite", "TailwindCSS"]
         },
         {
-            title: "Backend",
-            skills: ["Node.js", "Express.js", "Firebase", "Supabase", "REST API"]
+            title: "Backend & Database",
+            skills: ["Node.js", "Firebase", "Supabase", "MySQL", "PostgreSQL", "MongoDB", "REST API"]
         },
         {
-            title: "Database & Cloud",
-            skills: ["MongoDB", "PostgreSQL", "AWS", "Vercel", "Netlify"]
+            title: "Data & Libraries",
+            skills: ["Pandas", "NumPy", "Matplotlib", "Seaborn"]
         },
         {
-            title: "DevOps & Tools",
-            skills: ["Git", "GitHub", "Docker", "Linux", "Postman"]
+            title: "Tools & DevOps",
+            skills: ["Git", "GitHub", "MS Excel", "Docker", "Postman", "Vercel"]
         },
         {
-            title: "AI / ML",
-            skills: ["Machine Learning", "Artificial Intelligence", "LLMs", "OpenCV"]
+            title: "Core Skills",
+            skills: ["Data Analysis", "EDA", "Data Cleaning", "Report Generation", "Debugging", "Problem Solving"]
         }
     ];
 
