@@ -1,4 +1,4 @@
-import { Code2, Github, ExternalLink } from 'lucide-react';
+import { Code2, Github, ExternalLink, BarChart3 } from 'lucide-react';
 import React, { useState } from 'react';
 
 interface ProjectsProps {
@@ -12,20 +12,10 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
 
     const projects = [
         {
-            title: "AI Honeypot Analytics",
+            title: "HealthFirstPriority Distributed AI Platform",
             year: "2025",
-            desc: "Monitoring system to capture, store, and analyze suspicious network activities and attack patterns. Generates analytical reports identifying repeated intrusion attempts and anomalous traffic.",
-            stack: ["Python", "PostgreSQL", "Network Monitoring"],
-            github: "https://github.com/waqar741/AI-Based-Honeypot",
-            live: "#",
-            status: "In Progress",
-            category: "AI/ML"
-        },
-        {
-            title: "HFP Distributed AI Platform",
-            year: "2025",
-            desc: "Distributed AI-powered platform focused on handling structured data, reporting workflows, and backend integrations. Assisted in processing application data using Python and PostgreSQL.",
-            stack: ["Python", "SQL", "React JS", "PostgreSQL"],
+            desc: "Distributed AI-powered clinical platform with modular Python/FastAPI backend, PostgreSQL data storage, and React frontend. Applied OOP principles, designed database schemas, and built secure REST APIs for structured data workflows.",
+            stack: ["Python", "FastAPI", "PostgreSQL", "React JS"],
             github: "https://github.com/waqar741/Frontend-HFP",
             live: "https://dev-ai.nomineelife.com/",
             status: "Completed",
@@ -34,17 +24,37 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
         {
             title: "EchoAI Avatar",
             year: "2025",
-            desc: "Voice-driven AI chatbot with animated avatar that displays GIF expressions while talking using Web Speech API and Canvas rendering.",
-            stack: ["React", "FastAPI", "TypeScript"],
+            desc: "AI voice chatbot with animated avatar using Web Speech API, Canvas rendering, and LLM API integration. Implemented real-time communication via Server-Sent Events (SSE) with a React + FastAPI + TypeScript stack.",
+            stack: ["React", "FastAPI", "TypeScript", "SSE"],
             github: "https://github.com/waqar741/EchoAI",
             live: "https://avatar.nomineelife.com/",
             status: "Completed",
             category: "AI/ML"
         },
         {
-            title: "Traxos Finance",
+            title: "E-Commerce Sales Analysis",
+            year: "2025",
+            desc: "End-to-end data analysis project using Python and Pandas to process 50,000+ transaction records. Performed EDA, data cleaning, and trend analysis. Visualized KPIs including revenue trends, top-selling categories, and customer segmentation using Matplotlib and Seaborn.",
+            stack: ["Python", "Pandas", "Matplotlib", "Seaborn", "Excel"],
+            github: "https://github.com/waqar741",
+            live: "#",
+            status: "Completed",
+            category: "Data"
+        },
+        {
+            title: "AI Honeypot Analytics",
+            year: "2025",
+            desc: "Network monitoring system capturing and analyzing suspicious traffic patterns. Processed log data using Python and PostgreSQL, applied pattern-matching algorithms, and generated analytical reports identifying repeated intrusion attempts.",
+            stack: ["Python", "PostgreSQL", "Network Monitoring"],
+            github: "https://github.com/waqar741/AI-Based-Honeypot",
+            live: "#",
+            status: "In Progress",
+            category: "AI/ML"
+        },
+        {
+            title: "Traxos Finance Tracker",
             year: "2024",
-            desc: "Full-stack finance app with TypeScript & Supabase. Real-time expense tracking and secure authentication.",
+            desc: "Full-stack personal finance management app with real-time expense tracking, income/expense categorization, and spending analytics dashboard. Built with TypeScript, Supabase, and React with secure authentication and CRUD operations.",
             stack: ["TypeScript", "Supabase", "React"],
             github: "https://github.com/waqar741/traxos",
             live: "https://traxos.vercel.app/",
@@ -52,10 +62,20 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
             category: "Web Dev"
         },
         {
+            title: "Face Recognition Attendance",
+            year: "2022",
+            desc: "Automated attendance management system using Python and OpenCV for facial data processing. Applied DSA concepts for efficient record management and integrated SQL database for attendance storage, retrieval, and report generation.",
+            stack: ["Python", "OpenCV", "SQL"],
+            github: "https://github.com/waqar741/Attendance-Management-System",
+            live: "#",
+            status: "Completed",
+            category: "AI/ML"
+        },
+        {
             title: "Railway Concession System",
             year: "2024",
-            desc: "Web-based system to automate railway concession request and admin approval workflows. Features authentication, digital verification, and centralized record management.",
-            stack: ["HTML", "CSS", "JavaScript", "Database"],
+            desc: "Web-based system automating railway concession workflows with digital verification and centralized record management. Implemented authentication, CRUD operations, and admin approval workflows to reduce manual overhead.",
+            stack: ["HTML", "CSS", "JavaScript", "Firebase"],
             github: "https://github.com/rahul4287452/rcm",
             live: "https://trcp-e37b7.web.app/",
             status: "Completed",
@@ -64,22 +84,12 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
         {
             title: "Tech Rental Platform",
             year: "2023",
-            desc: "FERN stack website for renting tech gadgets. Includes inventory tracking and rental period management.",
+            desc: "FERN stack marketplace for renting tech gadgets with inventory tracking, rental period management, and user authentication. Deployed with Firebase hosting and real-time database sync.",
             stack: ["Firebase", "Express", "React"],
             github: "https://github.com/waqar741",
             live: "https://gadget-rental-4314b.web.app/",
             status: "Completed",
             category: "Web Dev"
-        },
-        {
-            title: "Face Rec. Attendance",
-            year: "2022",
-            desc: "Automated attendance tracking using Python, OpenCV for face recognition and SQL for data storage.",
-            stack: ["Python", "OpenCV", "SQL"],
-            github: "https://github.com/waqar741/Attendance-Management-System",
-            live: "#",
-            status: "Completed",
-            category: "AI/ML"
         },
         // {
         //     title: "Tic-Tac-Toe Game",
@@ -103,6 +113,8 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
         }
     ];
 
+    const filters = ['All', 'Web Dev', 'Data', 'AI/ML'];
+
     const filteredProjects = projects.filter(project => {
         if (filter === 'All') return true;
         return project.category === filter;
@@ -117,16 +129,21 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
                 </h2>
 
                 <div className="flex p-1 bg-gray-100 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 scroll-reveal w-full sm:w-auto">
-                    {['All', 'Web Dev', 'AI/ML'].map((category) => (
+                    {filters.map((category) => (
                         <button
                             key={category}
                             onClick={() => setFilter(category)}
-                            className={`flex-1 sm:flex-none px-4 sm:px-5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 ${filter === category
+                            className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 ${filter === category
                                 ? 'bg-white dark:bg-black text-black dark:text-white shadow-sm ring-1 ring-black/5 dark:ring-white/10'
                                 : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-200'
                                 }`}
                         >
-                            {category}
+                            {category === 'Data' ? (
+                                <span className="flex items-center gap-1">
+                                    <BarChart3 size={12} />
+                                    {category}
+                                </span>
+                            ) : category}
                         </button>
                     ))}
                 </div>
@@ -142,9 +159,19 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
                     >
                         <div>
                             <div className="flex items-start justify-between mb-2">
-                                <h3 className="text-base font-bold group-hover:underline line-clamp-1">{project.title}</h3>
+                                <div className="flex-1 mr-2">
+                                    <h3 className="text-base font-bold group-hover:underline line-clamp-1">{project.title}</h3>
+                                    <span className={`inline-block mt-0.5 text-[9px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wider ${project.category === 'Data'
+                                        ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400'
+                                        : project.category === 'AI/ML'
+                                            ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400'
+                                            : 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400'
+                                        }`}>
+                                        {project.category}
+                                    </span>
+                                </div>
 
-                                <div className="flex gap-2">
+                                <div className="flex gap-2 flex-shrink-0">
                                     <a
                                         href={project.github}
                                         target="_blank"
@@ -168,12 +195,12 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
                                 </div>
                             </div>
 
-                            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-2 leading-relaxed">
+                            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-3 leading-relaxed">
                                 {project.desc}
                             </p>
 
                             <div className="flex flex-wrap gap-1.5 mb-3">
-                                {project.stack.slice(0, 3).map(tech => (
+                                {project.stack.slice(0, 4).map(tech => (
                                     <span
                                         key={tech}
                                         className="px-2 py-0.5 text-[10px] sm:text-xs border border-gray-300 dark:border-gray-700 rounded-full bg-gray-50 dark:bg-gray-900"

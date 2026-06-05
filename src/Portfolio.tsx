@@ -249,10 +249,10 @@ const Portfolio = () => {
     };
 
     const skills = [
-        { icon: <Terminal size={20} />, label: "Python & SQL", desc: "Data & Logic" },
-        { icon: <BarChart3 size={20} />, label: "EDA & Visualization", desc: "Matplotlib & Seaborn" },
-        { icon: <Database size={20} />, label: "MySQL & PostgreSQL", desc: "Databases" },
-        { icon: <Code2 size={20} />, label: "React & JS", desc: "Frontend" }
+        { icon: <Terminal size={20} />, label: "Python & SQL", desc: "Core Languages" },
+        { icon: <BarChart3 size={20} />, label: "EDA & Power BI", desc: "Data Analytics" },
+        { icon: <Database size={20} />, label: "PostgreSQL & MySQL", desc: "Databases" },
+        { icon: <Code2 size={20} />, label: "React & FastAPI", desc: "Full-Stack" }
     ];
 
     return (
@@ -350,17 +350,18 @@ const Portfolio = () => {
                         <div className="flex flex-col md:flex-row gap-6 sm:gap-8 items-start">
                             <div className="flex-1">
                                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
-                                    I build software & decode data,
+                                    Software engineer.
                                     <span className="block text-gray-600 dark:text-gray-400 font-normal">
-                                        one <span className="">commit</span> at a time.
+                                        Data analyst. Problem solver.
                                     </span>
                                 </h2>
 
                                 <p className="text-base sm:text-lg mb-6 leading-relaxed">
-                                    Computer Engineering graduate who loves{' '}
-                                    <span className="">building applications</span>{' '}
-                                    and turning raw data into{' '}
-                                    <span className="">actionable insights</span>.
+                                    Computer Engineering graduate (2026) who builds{' '}
+                                    <span className="font-semibold">full-stack applications</span>{' '}
+                                    and extracts{' '}
+                                    <span className="font-semibold">actionable insights from data</span>.{' '}
+                                    Experienced with Python, SQL, React, FastAPI, and data analytics tools like Pandas, Power BI, and Excel.
                                 </p>
 
                                 {/* Skills - Grid Cols 2 Fixed for Mobile */}
@@ -406,8 +407,12 @@ const Portfolio = () => {
                                             <span className="font-mono">Open to Work</span>
                                         </div>
                                         <div className="flex justify-between">
-                                            <span className="text-gray-600 dark:text-gray-400">Focus</span>
-                                            <span className="font-mono">Dev & Analytics</span>
+                                            <span className="text-gray-600 dark:text-gray-400">Roles</span>
+                                            <span className="font-mono text-right text-[11px]">SWE · Data Analyst</span>
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <span className="text-gray-600 dark:text-gray-400">Projects</span>
+                                            <span className="font-mono">8+ shipped</span>
                                         </div>
                                         <div className="flex justify-between">
                                             <span className="text-gray-600 dark:text-gray-400">Location</span>

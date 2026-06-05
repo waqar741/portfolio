@@ -14,10 +14,11 @@ const Contact = ({ contactRef, formData, setFormData, handleSubmit, isSubmitting
         <section ref={contactRef} id="contact" className="mb-16 sm:mb-24">
             <div className="flex flex-col md:flex-row gap-6 sm:gap-8 max-w-4xl mx-auto">
                 <div className="flex-1 text-left space-y-4 sm:space-y-6">
-                    <h3 className="text-2xl sm:text-3xl font-bold scroll-reveal">Let's make something cool</h3>
+                    <h3 className="text-2xl sm:text-3xl font-bold scroll-reveal">Open to new opportunities</h3>
                     <p className="text-gray-600 dark:text-gray-400 leading-relaxed scroll-reveal text-sm sm:text-base">
-                        Developer and data analyst who builds clean applications and turns raw data into actionable insights. Proficient in full-stack development, EDA, and data visualization.
-                        Have a project in mind or just want to say hi? I'm always open to discussing new ideas.
+                        Software developer and data analyst with experience in full-stack development, AI-powered systems, and data analytics. 
+                        Looking for roles in software engineering or data analysis where I can build impactful solutions. 
+                        Have a project or opportunity in mind? Let's connect.
                     </p>
 
                     <div className="space-y-3 pt-2">

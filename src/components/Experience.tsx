@@ -10,8 +10,8 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
             company: "HealthFirstPriority (HFP)",
             role: "AI Engineer Intern",
             date: "Sept 2025 – Dec 2025",
-            details: "Assisted in AI and data-related tasks involving structured datasets, reporting, and workflow analysis. Evaluated AI-based application performance using Python testing scripts. Collaborated with teams to improve data handling pipelines and operational workflows.",
-            tech: ["Python", "Data Analysis", "SQL", "Reporting"],
+            details: "Developed and tested AI-powered application modules using Python and FastAPI. Processed structured clinical datasets, built data reporting pipelines, and performed backend debugging and performance analysis. Collaborated on React-based frontend integration and worked with PostgreSQL databases for secure data management.",
+            tech: ["Python", "FastAPI", "PostgreSQL", "React", "SQL", "Data Pipelines"],
             logo: "./images/hfp.png",
             status: "Completed"
         }
@@ -49,6 +49,21 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
             title: "React JS: Beginner to Expert",
             year: "2023",
             provider: "Online Course",
+        },
+        {
+            title: "Python for Data Science & Machine Learning",
+            year: "2024",
+            provider: "Udemy",
+        },
+        {
+            title: "SQL for Data Analysis",
+            year: "2024",
+            provider: "Online Course",
+        },
+        {
+            title: "Data Visualization with Power BI",
+            year: "2025",
+            provider: "Microsoft Learn",
         },
     ];
 
