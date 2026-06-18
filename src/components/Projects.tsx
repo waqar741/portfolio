@@ -205,7 +205,7 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
                                 </div>
                             </div>
 
-                            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-3 leading-relaxed">
+                            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-3 group-hover:line-clamp-none leading-relaxed transition-all duration-300">
                                 {project.desc}
                             </p>
 
