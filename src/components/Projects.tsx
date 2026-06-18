@@ -22,7 +22,7 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
             category: "Web Dev"
         },
         {
-            title: "HealthFirstPriority Distributed AI Platform",
+            title: "MeshMind - Distributed AI Platform",
             year: "2025",
             desc: "Distributed AI-powered clinical platform with modular Python/FastAPI backend, PostgreSQL data storage, and React frontend. Applied OOP principles, designed database schemas, and built secure REST APIs for structured data workflows.",
             stack: ["Python", "FastAPI", "PostgreSQL", "React JS"],
