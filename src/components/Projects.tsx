@@ -12,6 +12,16 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
 
     const projects = [
         {
+            title: "ExamGrid",
+            year: "2025",
+            desc: "Comprehensive management system for scheduling, attendance, and administration of examination staff. Features shift scheduling, payments, and reporting. (Test credentials: test@gmail.com / password-password)",
+            stack: ["Next.js", "React", "Tailwind CSS", "Supabase"],
+            github: "https://github.com/waqar741/ExamGrid",
+            live: "https://examgridapp.vercel.app/",
+            status: "Completed",
+            category: "Web Dev"
+        },
+        {
             title: "HealthFirstPriority Distributed AI Platform",
             year: "2025",
             desc: "Distributed AI-powered clinical platform with modular Python/FastAPI backend, PostgreSQL data storage, and React frontend. Applied OOP principles, designed database schemas, and built secure REST APIs for structured data workflows.",
@@ -76,8 +86,8 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
             year: "2024",
             desc: "Web-based system automating railway concession workflows with digital verification and centralized record management. Implemented authentication, CRUD operations, and admin approval workflows to reduce manual overhead.",
             stack: ["HTML", "CSS", "JavaScript", "Firebase"],
-            github: "https://github.com/rahul4287452/rcm",
-            live: "https://trcp-e37b7.web.app/",
+            github: "https://github.com/waqar741/railway-concession-portal",
+            live: "https://railwayconcession.vercel.app/",
             status: "Completed",
             category: "Web Dev"
         },
