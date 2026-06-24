@@ -250,8 +250,8 @@ const Portfolio = () => {
 
     const skills = [
         { icon: <Terminal size={20} />, label: "Python & SQL", desc: "Core Languages" },
-        { icon: <BarChart3 size={20} />, label: "EDA & Power BI", desc: "Data Analytics" },
-        { icon: <Database size={20} />, label: "PostgreSQL & MySQL", desc: "Databases" },
+        { icon: <Code2 size={20} />, label: "React & Tailwind", desc: "Frontend Dev" },
+        { icon: <Database size={20} />, label: "PostgreSQL & Supabase", desc: "Backend Dev" },
         { icon: <Code2 size={20} />, label: "React & FastAPI", desc: "Full-Stack" }
     ];
 
@@ -352,7 +352,7 @@ const Portfolio = () => {
                                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
                                     Software engineer.
                                     <span className="block text-gray-600 dark:text-gray-400 font-normal">
-                                        Data analyst. Problem solver.
+                                        UI/UX Developer. Problem solver.
                                     </span>
                                 </h2>
 
@@ -360,8 +360,8 @@ const Portfolio = () => {
                                     Computer Engineering graduate (2026) who builds{' '}
                                     <span className="font-semibold">full-stack applications</span>{' '}
                                     and extracts{' '}
-                                    <span className="font-semibold">actionable insights from data</span>.{' '}
-                                    Experienced with Python, SQL, React, FastAPI, and data analytics tools like Pandas, Power BI, and Excel.
+                                    <span className="font-semibold">engaging, user-centric interfaces</span>.{' '}
+                                    Experienced with React, Next.js, Tailwind CSS, TypeScript, and modern design tools like Figma.
                                 </p>
 
                                 {/* Skills - Grid Cols 2 Fixed for Mobile */}
@@ -408,7 +408,7 @@ const Portfolio = () => {
                                         </div>
                                         <div className="flex justify-between">
                                             <span className="text-gray-600 dark:text-gray-400">Roles</span>
-                                            <span className="font-mono text-right text-[11px]">SWE · Data Analyst</span>
+                                            <span className="font-mono text-right text-[11px]">SWE · UI/UX</span>
                                         </div>
                                         <div className="flex justify-between">
                                             <span className="text-gray-600 dark:text-gray-400">Projects</span>

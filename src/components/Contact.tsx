@@ -16,8 +16,8 @@ const Contact = ({ contactRef, formData, setFormData, handleSubmit, isSubmitting
                 <div className="flex-1 text-left space-y-4 sm:space-y-6">
                     <h3 className="text-2xl sm:text-3xl font-bold scroll-reveal">Open to new opportunities</h3>
                     <p className="text-gray-600 dark:text-gray-400 leading-relaxed scroll-reveal text-sm sm:text-base">
-                        Software developer and data analyst with experience in full-stack development, AI-powered systems, and data analytics. 
-                        Looking for roles in software engineering or data analysis where I can build impactful solutions. 
+                        Software developer and UI/UX designer with experience in full-stack development, creating intuitive interfaces, and building scalable web applications. 
+                        Looking for roles in software engineering or frontend development where I can build impactful, user-centric solutions. 
                         Have a project or opportunity in mind? Let's connect.
                     </p>
 

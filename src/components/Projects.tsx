@@ -14,116 +14,76 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
         {
             title: "ExamGrid",
             year: "2025",
-            desc: "Comprehensive management system for scheduling, attendance, and administration of examination staff. Features shift scheduling, payments, and reporting. (Test credentials: test@gmail.com / password-password)",
+            desc: "Comprehensive management dashboard with an intuitive UI for scheduling, attendance, and administration of examination staff. Features responsive design, seamless navigation, and a modern aesthetic built with Tailwind CSS. (Test: test@gmail.com / password-password)",
             stack: ["Next.js", "React", "Tailwind CSS", "Supabase"],
             github: "https://github.com/waqar741/ExamGrid",
             live: "https://examgridapp.vercel.app/",
             status: "Completed",
-            category: "Web Dev"
+            category: "Full Stack"
         },
         {
-            title: "MeshMind - Distributed AI Platform",
+            title: "MeshMind - AI Platform",
             year: "2025",
-            desc: "Distributed AI-powered clinical platform with modular Python/FastAPI backend, PostgreSQL data storage, and React frontend. Applied OOP principles, designed database schemas, and built secure REST APIs for structured data workflows.",
-            stack: ["Python", "FastAPI", "PostgreSQL", "React JS"],
+            desc: "Modular clinical platform featuring a highly responsive React frontend and a robust FastAPI backend. Designed with user-centric workflows and accessible data visualization to present complex analytical information clearly.",
+            stack: ["React JS", "FastAPI", "Python", "PostgreSQL"],
             github: "https://github.com/waqar741/Frontend-HFP",
             live: "https://dev-ai.nomineelife.com/",
             status: "Completed",
-            category: "AI/ML"
+            category: "Full Stack"
         },
         {
             title: "EchoAI Avatar",
             year: "2025",
-            desc: "AI voice chatbot with animated avatar using Web Speech API, Canvas rendering, and LLM API integration. Implemented real-time communication via Server-Sent Events (SSE) with a React + FastAPI + TypeScript stack.",
-            stack: ["React", "FastAPI", "TypeScript", "SSE"],
+            desc: "Engaging AI voice chatbot featuring a custom-designed animated avatar. Focused heavily on micro-interactions and smooth Canvas rendering to create an immersive, low-latency conversational user experience.",
+            stack: ["React", "TypeScript", "FastAPI", "Web Speech API"],
             github: "https://github.com/waqar741/EchoAI",
             live: "https://avatar.nomineelife.com/",
             status: "Completed",
-            category: "AI/ML"
-        },
-        {
-            title: "E-Commerce Sales Analysis",
-            year: "2025",
-            desc: "End-to-end data analysis project using Python and Pandas to process 50,000+ transaction records. Performed EDA, data cleaning, and trend analysis. Visualized KPIs including revenue trends, top-selling categories, and customer segmentation using Matplotlib and Seaborn.",
-            stack: ["Python", "Pandas", "Matplotlib", "Seaborn", "Excel"],
-            github: "https://github.com/waqar741",
-            live: "#",
-            status: "Completed",
-            category: "Data"
-        },
-        {
-            title: "AI Honeypot Analytics",
-            year: "2025",
-            desc: "Network monitoring system capturing and analyzing suspicious traffic patterns. Processed log data using Python and PostgreSQL, applied pattern-matching algorithms, and generated analytical reports identifying repeated intrusion attempts.",
-            stack: ["Python", "PostgreSQL", "Network Monitoring"],
-            github: "https://github.com/waqar741/AI-Based-Honeypot",
-            live: "#",
-            status: "In Progress",
-            category: "AI/ML"
+            category: "UI/UX"
         },
         {
             title: "Traxos Finance Tracker",
             year: "2024",
-            desc: "Full-stack personal finance management app with real-time expense tracking, income/expense categorization, and spending analytics dashboard. Built with TypeScript, Supabase, and React with secure authentication and CRUD operations.",
-            stack: ["TypeScript", "Supabase", "React"],
+            desc: "Sleek personal finance management app with a beautifully crafted dashboard. Features dark mode support, intuitive expense categorization, and interactive data visualization charts tailored for a seamless mobile experience.",
+            stack: ["TypeScript", "React", "Tailwind CSS", "Supabase"],
             github: "https://github.com/waqar741/traxos",
             live: "https://traxos.vercel.app/",
             status: "Completed",
-            category: "Web Dev"
-        },
-        {
-            title: "Face Recognition Attendance",
-            year: "2022",
-            desc: "Automated attendance management system using Python and OpenCV for facial data processing. Applied DSA concepts for efficient record management and integrated SQL database for attendance storage, retrieval, and report generation.",
-            stack: ["Python", "OpenCV", "SQL"],
-            github: "https://github.com/waqar741/Attendance-Management-System",
-            live: "#",
-            status: "Completed",
-            category: "AI/ML"
+            category: "Frontend"
         },
         {
             title: "Railway Concession System",
             year: "2024",
-            desc: "Web-based system automating railway concession workflows with digital verification and centralized record management. Implemented authentication, CRUD operations, and admin approval workflows to reduce manual overhead.",
+            desc: "Digitized railway concession workflow prioritizing accessibility and ease of use. Implemented a clean, user-friendly interface for digital verification and admin approval processes, minimizing friction for users.",
             stack: ["HTML", "CSS", "JavaScript", "Firebase"],
             github: "https://github.com/waqar741/railway-concession-portal",
             live: "https://railwayconcession.vercel.app/",
             status: "Completed",
-            category: "Web Dev"
+            category: "Full Stack"
         },
         {
             title: "Tech Rental Platform",
             year: "2023",
-            desc: "FERN stack marketplace for renting tech gadgets with inventory tracking, rental period management, and user authentication. Deployed with Firebase hosting and real-time database sync.",
-            stack: ["Firebase", "Express", "React"],
+            desc: "Modern marketplace for renting tech gadgets with a focus on product discovery and clean typography. Built a responsive catalog and streamlined checkout process using React and Firebase.",
+            stack: ["React", "Express", "Firebase"],
             github: "https://github.com/waqar741",
             live: "https://gadget-rental-4314b.web.app/",
             status: "Completed",
-            category: "Web Dev"
+            category: "Full Stack"
         },
-        // {
-        //     title: "Tic-Tac-Toe Game",
-        //     year: "2022",
-        //     desc: "A lightweight, interactive game featuring a 'Win If You Can' challenge and instant replay functionality, deployed via GitHub Pages.",
-        //     stack: ["HTML", "CSS", "JavaScript"],
-        //     github: "https://github.com/waqar741/tictactoe",
-        //     live: "https://waqar741.github.io/tictactoe/",
-        //     status: "Completed",
-        //     category: "Web Dev"
-        // },
         {
-            title: "Notes Website",
+            title: "SmartNote",
             year: "2022",
-            desc: "SmartNote is a minimalist web-based tool for quick and efficient note-taking. It features a clean interface designed to capture ideas and organize tasks effortlessly.",
+            desc: "Minimalist web-based tool for efficient note-taking. Designed with a distraction-free interface and thoughtful typography to capture ideas effortlessly and organize tasks with high visual clarity.",
             stack: ["HTML", "CSS", "JavaScript"],
             github: "https://github.com/waqar741/notess",
             live: "https://smartnote.vercel.app/",
             status: "Completed",
-            category: "Web Dev"
+            category: "Frontend"
         }
     ];
 
-    const filters = ['All', 'Web Dev', 'Data', 'AI/ML'];
+    const filters = ['All', 'Full Stack', 'Frontend', 'UI/UX'];
 
     const filteredProjects = projects.filter(project => {
         if (filter === 'All') return true;
@@ -148,7 +108,7 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
                                 : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-200'
                                 }`}
                         >
-                            {category === 'Data' ? (
+                            {category === 'UI/UX' ? (
                                 <span className="flex items-center gap-1">
                                     <BarChart3 size={12} />
                                     {category}
@@ -171,9 +131,9 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
                             <div className="flex items-start justify-between mb-2">
                                 <div className="flex-1 mr-2">
                                     <h3 className="text-base font-bold group-hover:underline line-clamp-1">{project.title}</h3>
-                                    <span className={`inline-block mt-0.5 text-[9px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wider ${project.category === 'Data'
+                                    <span className={`inline-block mt-0.5 text-[9px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wider ${project.category === 'UI/UX'
                                         ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400'
-                                        : project.category === 'AI/ML'
+                                        : project.category === 'Frontend'
                                             ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400'
                                             : 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400'
                                         }`}>

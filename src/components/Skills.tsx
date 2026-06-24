@@ -9,28 +9,28 @@ interface SkillsProps {
 const Skills = ({ skillsRef, isLoading }: SkillsProps) => {
     const skillsCategories = [
         {
+            title: "Frontend & UI/UX",
+            skills: ["React JS", "Next.js", "TypeScript", "Tailwind CSS", "Figma", "Framer Motion", "HTML/CSS"]
+        },
+        {
+            title: "Backend Dev",
+            skills: ["Node.js", "Express", "Python", "FastAPI", "RESTful APIs", "GraphQL"]
+        },
+        {
             title: "Languages",
-            skills: ["Python", "SQL", "JavaScript", "Java", "C"]
-        },
-        {
-            title: "Data Analytics",
-            skills: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Power BI", "Excel", "EDA", "Data Cleaning"]
-        },
-        {
-            title: "Software Dev",
-            skills: ["React JS", "FastAPI", "Node.js", "REST API", "HTML", "CSS", "TypeScript"]
+            skills: ["JavaScript", "TypeScript", "Python", "Java", "C++"]
         },
         {
             title: "Databases",
-            skills: ["PostgreSQL", "MySQL", "Firebase", "Supabase", "MongoDB"]
+            skills: ["PostgreSQL", "MongoDB", "Supabase", "Firebase", "MySQL"]
         },
         {
             title: "Tools & DevOps",
-            skills: ["Git", "GitHub", "Postman", "Vercel", "VS Code", "Docker"]
+            skills: ["Git", "GitHub", "Vercel", "Docker", "Postman", "Webpack/Vite"]
         },
         {
             title: "Core Concepts",
-            skills: ["OOP", "DSA", "DBMS", "SDLC", "API Integration", "Problem Solving", "Agile"]
+            skills: ["Responsive Design", "Web Accessibility", "OOP", "DSA", "System Design", "Agile"]
         }
     ];
 

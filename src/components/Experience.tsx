@@ -8,10 +8,10 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
     const experience = [
         {
             company: "HealthFirstPriority (HFP)",
-            role: "AI Engineer Intern",
+            role: "Software Engineer Intern",
             date: "Sept 2025 – Dec 2025",
-            details: "Developed and tested AI-powered application modules using Python and FastAPI. Processed structured clinical datasets, built data reporting pipelines, and performed backend debugging and performance analysis. Collaborated on React-based frontend integration and worked with PostgreSQL databases for secure data management.",
-            tech: ["Python", "FastAPI", "PostgreSQL", "React", "SQL", "Data Pipelines"],
+            details: "Developed scalable application modules and robust REST APIs using Python and FastAPI. Collaborated closely with the design team to build a highly responsive, user-friendly React frontend. Ensured seamless integration between backend microservices and UI components to deliver a smooth end-to-end clinical data experience.",
+            tech: ["React", "TypeScript", "FastAPI", "Python", "UI/UX", "PostgreSQL"],
             logo: "./images/hfp.png",
             status: "Completed"
         }
@@ -46,24 +46,24 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
 
     const certifications = [
         {
-            title: "React JS: Beginner to Expert",
-            year: "2023",
+            title: "Advanced React and Next.js",
+            year: "2024",
             provider: "Online Course",
         },
         {
-            title: "Python for Data Science & Machine Learning",
+            title: "UI/UX Design Principles & Figma",
             year: "2024",
             provider: "Udemy",
         },
         {
-            title: "SQL for Data Analysis",
-            year: "2024",
+            title: "Full Stack Web Development",
+            year: "2023",
             provider: "Online Course",
         },
         {
-            title: "Data Visualization with Power BI",
+            title: "Frontend Web UI Frameworks and Tools",
             year: "2025",
-            provider: "Microsoft Learn",
+            provider: "Coursera",
         },
     ];
 
