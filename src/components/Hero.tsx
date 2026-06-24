@@ -31,7 +31,7 @@ const Hero = ({ heroRef, isLoading, coffeeCount, setCoffeeCount }: HeroProps) =>
                         </div>
                     </div>
                     <div>
-                        <h1 className="text-3xl sm:text-4xl font-outfit font-bold tracking-tight">Hi, I'm Waquar</h1>
+                        <h1 className="text-xl sm:text-2xl font-bold tracking-tight">Hi, I'm Waquar</h1>
                         <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 flex items-center gap-1">
                             <MapPin size={10} />
                             Navi Mumbai • Software Engineer & UI/UX Developer
@@ -43,7 +43,7 @@ const Hero = ({ heroRef, isLoading, coffeeCount, setCoffeeCount }: HeroProps) =>
                     <a
                         href="/Waquar-Resume.pdf"
                         download
-                        className="flex items-center gap-1 sm:gap-2 px-4 sm:px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-medium shadow-lg hover:shadow-blue-500/25 transition-all text-sm"
+                        className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-lg font-medium hover:opacity-90 transition-opacity text-sm"
                     >
                         <Download size={14} />
                         <span className="hidden sm:inline">Resume</span>
@@ -51,7 +51,7 @@ const Hero = ({ heroRef, isLoading, coffeeCount, setCoffeeCount }: HeroProps) =>
 
                     <button
                         onClick={() => setCoffeeCount(prev => prev + 1)}
-                        className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2.5 glass-card rounded-xl transition-all group"
+                        className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 bg-gray-100 dark:bg-gray-900 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors group"
                     >
                         <Coffee size={14} className="group-hover:rotate-12 transition-transform" />
                         <span className="text-sm">
@@ -61,7 +61,7 @@ const Hero = ({ heroRef, isLoading, coffeeCount, setCoffeeCount }: HeroProps) =>
 
                     <a
                         href="#contact"
-                        className="p-2.5 glass-card rounded-xl text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 flex items-center justify-center transition-all"
+                        className="p-2 rounded-lg border border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white transition-colors text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white flex items-center justify-center"
                         aria-label="Contact"
                     >
                         <Mail size={18} />

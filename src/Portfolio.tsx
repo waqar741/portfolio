@@ -1,5 +1,5 @@
 import { useState, useEffect, type FormEvent, useRef } from 'react';
-import { Palette, Terminal, Code2, Database, BarChart3 } from 'lucide-react';
+import { Palette, Terminal, Code2, Database } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 import Toast from './components/Toast';
@@ -311,10 +311,7 @@ const Portfolio = () => {
                 </button>
             )}
 
-            <div className={`min-h-screen ${(coffeeCount >= 10 && darkMode) ? 'bg-zinc-950 text-slate-100' : 'bg-slate-50 dark:bg-zinc-950 text-slate-900 dark:text-slate-100'} font-sans transition-colors duration-1000 ease-out relative overflow-hidden`}>
-                {/* Modern subtle ambient glowing orbs */}
-                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-500/10 dark:bg-blue-600/10 blur-[120px] pointer-events-none" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-500/10 dark:bg-purple-600/10 blur-[120px] pointer-events-none" />
+            <div className={`min-h-screen ${(coffeeCount >= 10 && darkMode) ? 'bg-slate-950 text-slate-100' : 'bg-white dark:bg-black text-gray-900 dark:text-gray-100'} font-sans transition-colors duration-1000 ease-out`}>
 
                 {/* Advanced Interactive Particle Background */}
                 <div className={`transition-opacity duration-1000 ${(coffeeCount >= 10 && darkMode) ? 'opacity-0' : 'opacity-100'}`}>
@@ -352,9 +349,9 @@ const Portfolio = () => {
                     <section className="mb-12 sm:mb-16 animate-fade-in-up">
                         <div className="flex flex-col md:flex-row gap-6 sm:gap-8 items-start">
                             <div className="flex-1">
-                                <h2 className="text-3xl sm:text-4xl md:text-5xl font-outfit font-bold mb-4 leading-tight tracking-tight">
+                                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
                                     Software engineer.
-                                    <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+                                    <span className="block text-gray-600 dark:text-gray-400 font-normal">
                                         UI/UX Developer. Problem solver.
                                     </span>
                                 </h2>
@@ -375,7 +372,7 @@ const Portfolio = () => {
                                             drag={!isMobile}
                                             dragConstraints={{ left: -50, right: 50, top: -50, bottom: 50 }}
                                             whileDrag={{ scale: 1.05, cursor: "grabbing" }}
-                                            className={`flex flex-row items-center gap-3 p-3 glass-card rounded-xl ${isMobile ? '' : 'cursor-grab'} z-10 ${isLoading ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+                                            className={`flex flex-row items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 ${isMobile ? '' : 'cursor-grab'} z-10 transition-colors ${isLoading ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
                                                 }`}
                                             // Keep animation delay but remove transition-all which fights with framer-motion's transform
                                             style={{ animationDelay: `${idx * 50}ms` }}
@@ -399,9 +396,9 @@ const Portfolio = () => {
                                 whileDrag={{ scale: 1.05, rotate: 2, cursor: "grabbing" }}
                                 className={`w-full md:w-64 z-20 ${isMobile ? '' : 'cursor-grab'}`}
                             >
-                                <div className="glass-card rounded-2xl p-5 sm:p-7 shadow-lg">
-                                    <h3 className="font-outfit font-bold mb-4 sm:mb-5 flex items-center gap-2 text-sm sm:text-base tracking-wide">
-                                        <Palette size={16} className="text-blue-500" />
+                                <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-gray-800 shadow-sm">
+                                    <h3 className="font-bold mb-3 sm:mb-4 flex items-center gap-2 text-sm sm:text-base">
+                                        <Palette size={14} />
                                         Quick Stats
                                     </h3>
                                     <div className="space-y-2 sm:space-y-3 text-sm">
