@@ -6,7 +6,12 @@ export default {
     ],
     darkMode: 'class',
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                outfit: ['"Outfit"', 'sans-serif'],
+            },
+        },
     },
     plugins: [],
 }

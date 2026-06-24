@@ -73,8 +73,8 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
 
                 {/* Left Column: Experience */}
                 <div className="space-y-6">
-                    <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 scroll-reveal">
-                        <Briefcase size={20} />
+                    <h2 className="text-2xl sm:text-3xl font-outfit font-bold mb-6 flex items-center gap-2 scroll-reveal tracking-wide">
+                        <Briefcase size={24} className="text-blue-500" />
                         Experience
                     </h2>
 
@@ -93,9 +93,9 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
                                     />
                                 </div>
 
-                                <div className="pt-1">
-                                    <h3 className="font-bold text-base">{job.role}</h3>
-                                    <div className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">{job.company}</div>
+                                <div className="pt-1.5 glass-card p-5 rounded-2xl flex-1 relative -top-1 transition-all hover:shadow-lg hover:shadow-blue-500/5">
+                                    <h3 className="font-outfit font-bold text-lg text-gray-900 dark:text-white">{job.role}</h3>
+                                    <div className="text-sm font-medium text-blue-600 dark:text-blue-400 mb-1">{job.company}</div>
                                     <div className="text-xs text-gray-500 mb-2 uppercase tracking-wide">{job.date}</div>
 
                                     <p className="text-sm text-gray-700 dark:text-gray-300 mb-3 leading-relaxed">
@@ -104,7 +104,7 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
 
                                     <div className="flex flex-wrap gap-1.5">
                                         {job.tech.map(t => (
-                                            <span key={t} className="px-1.5 py-0.5 text-[10px] bg-gray-100 dark:bg-gray-900 rounded border border-gray-200 dark:border-gray-800">
+                                            <span key={t} className="px-2 py-0.5 text-[10px] font-medium border border-gray-200 dark:border-gray-700 rounded-full bg-white/50 dark:bg-black/30 text-gray-700 dark:text-gray-300">
                                                 {t}
                                             </span>
                                         ))}
@@ -118,8 +118,8 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
                 {/* Right Column: Education & Certifications */}
                 <div className="space-y-8">
                     <div>
-                        <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 scroll-reveal">
-                            <GraduationCap size={20} />
+                        <h2 className="text-2xl sm:text-3xl font-outfit font-bold mb-6 flex items-center gap-2 scroll-reveal tracking-wide">
+                            <GraduationCap size={24} className="text-purple-500" />
                             Education
                         </h2>
 
@@ -138,8 +138,8 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
                                         />
                                     </div>
 
-                                    <div className="flex-1 pt-1">
-                                        <h3 className="font-bold text-sm">{edu.institution}</h3>
+                                    <div className="flex-1 pt-1.5 glass-card p-4 rounded-xl relative -top-1 transition-all hover:shadow-lg">
+                                        <h3 className="font-outfit font-bold text-base text-gray-900 dark:text-white">{edu.institution}</h3>
                                         <p className="text-xs text-gray-600 dark:text-gray-400">{edu.degree}</p>
                                         <div className="flex justify-between items-center mt-1">
                                             <span className="text-xs text-gray-500">{edu.duration}</span>
@@ -152,14 +152,14 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
                     </div>
 
                     <div>
-                        <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 scroll-reveal">
-                            <Trophy size={20} />
+                        <h2 className="text-2xl sm:text-3xl font-outfit font-bold mb-6 flex items-center gap-2 scroll-reveal tracking-wide">
+                            <Trophy size={24} className="text-yellow-500" />
                             Certifications
                         </h2>
                         <div className="grid grid-cols-1 gap-3">
                             {certifications.map((cert, idx) => (
-                                <div key={idx} className="scroll-reveal p-3 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-colors bg-gray-50/50 dark:bg-gray-900/50">
-                                    <h3 className="font-bold text-sm">{cert.title}</h3>
+                                <div key={idx} className="scroll-reveal p-4 glass-card rounded-xl transition-all hover:-translate-y-1 hover:shadow-lg">
+                                    <h3 className="font-outfit font-bold text-base text-gray-900 dark:text-white">{cert.title}</h3>
                                     <div className="flex justify-between mt-1 text-xs text-gray-500">
                                         <span>{cert.provider}</span>
                                         <span>{cert.year}</span>

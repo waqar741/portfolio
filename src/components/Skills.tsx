@@ -36,7 +36,7 @@ const Skills = ({ skillsRef, isLoading }: SkillsProps) => {
 
     return (
         <section ref={skillsRef} id="skills" className="mb-12 sm:mb-20">
-            <h2 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 flex items-center gap-2 scroll-reveal">
+            <h2 className="text-2xl sm:text-3xl font-outfit font-bold mb-6 sm:mb-8 flex items-center gap-2 scroll-reveal tracking-wide">
                 <Code2 size={20} />
                 Technical Skills
             </h2>
@@ -46,18 +46,18 @@ const Skills = ({ skillsRef, isLoading }: SkillsProps) => {
                 {skillsCategories.map((category, catIdx) => (
                     <div
                         key={catIdx}
-                        className={`p-3 sm:p-5 rounded-2xl bg-gray-50 dark:bg-gray-900/50 border border-gray-100 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-500 ${isLoading ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}
+                        className={`p-4 sm:p-6 rounded-2xl glass-card transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/10 ${isLoading ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}
                         style={{ transitionDelay: `${catIdx * 100}ms` }}
                     >
-                        <h3 className="text-xs sm:text-sm font-bold mb-2 sm:mb-3 text-gray-900 dark:text-white flex items-center gap-2">
-                            <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-black dark:bg-white"></div>
+                        <h3 className="text-sm sm:text-base font-outfit font-bold mb-3 sm:mb-4 text-gray-900 dark:text-white flex items-center gap-2 tracking-wide">
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-500"></div>
                             {category.title}
                         </h3>
                         <div className="flex flex-wrap gap-1 sm:gap-2">
                             {category.skills.map((skill, skillIdx) => (
                                 <span
                                     key={skillIdx}
-                                    className="px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-xs font-medium bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-md text-gray-700 dark:text-gray-300"
+                                    className="px-2.5 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs font-medium border border-gray-200 dark:border-gray-700/50 rounded-lg bg-white/50 dark:bg-black/30 text-gray-700 dark:text-gray-300 backdrop-blur-sm"
                                 >
                                     {skill}
                                 </span>

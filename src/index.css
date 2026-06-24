@@ -3,11 +3,19 @@
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 body {
-  @apply bg-white dark:bg-black text-gray-900 dark:text-gray-100 transition-colors duration-500;
+  @apply bg-slate-50 dark:bg-zinc-950 text-slate-900 dark:text-slate-100 transition-colors duration-500 font-sans;
+}
+
+.glass {
+  @apply bg-white/70 dark:bg-zinc-900/40 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-xl;
+}
+
+.glass-card {
+  @apply bg-white/50 dark:bg-zinc-900/30 backdrop-blur-sm border border-gray-200/50 dark:border-white/10 hover:border-blue-500/30 dark:hover:border-blue-400/30 transition-all duration-300;
 }
 
 @keyframes twinkle {
