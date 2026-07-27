@@ -11,6 +11,26 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
     const [filter, setFilter] = useState('All');
 
     const projects = [
+        // {
+        //     title: "E-Samarth (Customer App)",
+        //     year: "2026",
+        //     desc: "Modern Progressive Web App (PWA) delivering a native-like web experience with full offline support. Built entirely with Vanilla JavaScript, featuring a custom client-side router and decentralized state management.",
+        //     stack: ["Vanilla JS", "Vite", "PWA", "Workbox"],
+        //     github: "https://github.com/waqar741/e-samarth",
+        //     live: "https://e-samarth.vercel.app/",
+        //     status: "Completed",
+        //     category: "Frontend"
+        // },
+        {
+            title: "ServiceTrack",
+            year: "2026",
+            desc: "Complete Document Center and Task Management solution built with React and Vite. Features PDF receipts and utilizes Google Sheets as a robust backend store with a synchronized caching system for seamless customer data management.",
+            stack: ["React", "Vite", "jsPDF", "Google Sheets"],
+            github: "https://github.com/waqar741/ServiceTrack",
+            live: "https://service-track-seven.vercel.app/",
+            status: "Completed",
+            category: "Frontend"
+        },
         {
             title: "ExamGrid",
             year: "2025",
@@ -39,7 +59,7 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
             github: "https://github.com/waqar741/EchoAI",
             live: "https://avatar.nomineelife.com/",
             status: "Completed",
-            category: "UI/UX"
+            category: "Frontend"
         },
         {
             title: "Traxos Finance Tracker",
@@ -83,7 +103,7 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
         }
     ];
 
-    const filters = ['All', 'Full Stack', 'Frontend', 'UI/UX'];
+    const filters = ['All', 'Full Stack', 'Frontend'];
 
     const filteredProjects = projects.filter(project => {
         if (filter === 'All') return true;
@@ -106,14 +126,8 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
                             className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 ${filter === category
                                 ? 'bg-white dark:bg-black text-black dark:text-white shadow-sm ring-1 ring-black/5 dark:ring-white/10'
                                 : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-200'
-                                }`}
-                        >
-                            {category === 'UI/UX' ? (
-                                <span className="flex items-center gap-1">
-                                    <BarChart3 size={12} />
-                                    {category}
-                                </span>
-                            ) : category}
+                                }`}>
+                            {category}
                         </button>
                     ))}
                 </div>
@@ -131,11 +145,9 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
                             <div className="flex items-start justify-between mb-2">
                                 <div className="flex-1 mr-2">
                                     <h3 className="text-base font-bold group-hover:underline line-clamp-1">{project.title}</h3>
-                                    <span className={`inline-block mt-0.5 text-[9px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wider ${project.category === 'UI/UX'
-                                        ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400'
-                                        : project.category === 'Frontend'
-                                            ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400'
-                                            : 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400'
+                                    <span className={`inline-block mt-0.5 text-[9px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wider ${project.category === 'Frontend'
+                                        ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400'
+                                        : 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400'
                                         }`}>
                                         {project.category}
                                     </span>

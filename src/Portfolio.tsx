@@ -352,7 +352,7 @@ const Portfolio = () => {
                                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
                                     Software engineer.
                                     <span className="block text-gray-600 dark:text-gray-400 font-normal">
-                                        UI/UX Developer. Problem solver.
+                                        Problem solver.
                                     </span>
                                 </h2>
 
@@ -408,7 +408,7 @@ const Portfolio = () => {
                                         </div>
                                         <div className="flex justify-between">
                                             <span className="text-gray-600 dark:text-gray-400">Roles</span>
-                                            <span className="font-mono text-right text-[11px]">SWE · UI/UX</span>
+                                            <span className="font-mono text-right text-[11px]">SWE</span>
                                         </div>
                                         <div className="flex justify-between">
                                             <span className="text-gray-600 dark:text-gray-400">Projects</span>

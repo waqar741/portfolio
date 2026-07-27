@@ -9,28 +9,36 @@ interface SkillsProps {
 const Skills = ({ skillsRef, isLoading }: SkillsProps) => {
     const skillsCategories = [
         {
-            title: "Frontend & UI/UX",
-            skills: ["React JS", "Next.js", "TypeScript", "Tailwind CSS", "Figma", "Framer Motion", "HTML/CSS"]
+            title: "Languages",
+            skills: ["JavaScript", "TypeScript", "Python", "Java", "C++", "SQL", "C"]
+        },
+        {
+            title: "Frontend",
+            skills: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "HTML", "CSS"]
         },
         {
             title: "Backend Dev",
-            skills: ["Node.js", "Express", "Python", "FastAPI", "RESTful APIs", "GraphQL"]
-        },
-        {
-            title: "Languages",
-            skills: ["JavaScript", "TypeScript", "Python", "Java", "C++"]
+            skills: ["Node.js", "Express", "Python", "FastAPI", "RESTful APIs", "GraphQL", "REST API Fundamentals"]
         },
         {
             title: "Databases",
             skills: ["PostgreSQL", "MongoDB", "Supabase", "Firebase", "MySQL"]
         },
         {
-            title: "Tools & DevOps",
-            skills: ["Git", "GitHub", "Vercel", "Docker", "Postman", "Webpack/Vite"]
+            title: "Data Analytics",
+            skills: ["Pandas", "NumPy", "Data Cleaning", "EDA", "Excel"]
         },
         {
-            title: "Core Concepts",
-            skills: ["Responsive Design", "Web Accessibility", "OOP", "DSA", "System Design", "Agile"]
+            title: "Tools",
+            skills: ["Git", "GitHub", "Vercel", "Docker", "Postman", "Webpack/Vite", "VS Code"]
+        },
+        {
+            title: "Concepts",
+            skills: ["OOP", "DSA", "System Design", "Agile", "DBMS", "Linux", "ML", "Problem Solving", "API Integration", "Responsive Design", "Web Accessibility"]
+        },
+        {
+            title: "AI/ML",
+            skills: ["LLMs", "Prompt Engineering", "Agentic Systems", "Distributed Inference", "General ML"]
         }
     ];
 

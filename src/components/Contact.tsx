@@ -16,17 +16,17 @@ const Contact = ({ contactRef, formData, setFormData, handleSubmit, isSubmitting
                 <div className="flex-1 text-left space-y-4 sm:space-y-6">
                     <h3 className="text-2xl sm:text-3xl font-bold scroll-reveal">Open to new opportunities</h3>
                     <p className="text-gray-600 dark:text-gray-400 leading-relaxed scroll-reveal text-sm sm:text-base">
-                        Software developer and UI/UX designer with experience in full-stack development, creating intuitive interfaces, and building scalable web applications. 
-                        Looking for roles in software engineering or frontend development where I can build impactful, user-centric solutions. 
+                        Software developer with experience in full-stack development and building scalable web applications. 
+                        Looking for roles in software engineering or frontend development where I can build impactful solutions. 
                         Have a project or opportunity in mind? Let's connect.
                     </p>
 
                     <div className="space-y-3 pt-2">
-                        <a href="mailto:ahmu741@gmail.com" className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors group scroll-reveal">
+                        <a href="mailto:shaikhwaquar.dev@gmail.com" className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors group scroll-reveal">
                             <div className="p-2 sm:p-3 bg-gray-100 dark:bg-gray-900 rounded-xl group-hover:scale-110 transition-transform">
                                 <Mail size={16} />
                             </div>
-                            <span className="font-medium text-sm sm:text-base">ahmu741@gmail.com</span>
+                            <span className="font-medium text-sm sm:text-base">shaikhwaquar.dev@gmail.com</span>
                         </a>
                         <a href="tel:7021396917" className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors group scroll-reveal">
                             <div className="p-2 sm:p-3 bg-gray-100 dark:bg-gray-900 rounded-xl group-hover:scale-110 transition-transform">

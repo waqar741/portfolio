@@ -11,7 +11,7 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
             role: "Software Engineer Intern",
             date: "Sept 2025 – Dec 2025",
             details: "Developed scalable application modules and robust REST APIs using Python and FastAPI. Collaborated closely with the design team to build a highly responsive, user-friendly React frontend. Ensured seamless integration between backend microservices and UI components to deliver a smooth end-to-end clinical data experience.",
-            tech: ["React", "TypeScript", "FastAPI", "Python", "UI/UX", "PostgreSQL"],
+            tech: ["React", "TypeScript", "FastAPI", "Python", "PostgreSQL"],
             logo: "./images/hfp.png",
             status: "Completed"
         }
@@ -50,11 +50,13 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
             year: "2024",
             provider: "Online Course",
         },
+        /*
         {
             title: "UI/UX Design Principles & Figma",
             year: "2024",
             provider: "Udemy",
         },
+        */
         {
             title: "Full Stack Web Development",
             year: "2023",
