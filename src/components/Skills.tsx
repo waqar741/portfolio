@@ -50,22 +50,22 @@ const Skills = ({ skillsRef, isLoading }: SkillsProps) => {
             </h2>
 
             {/* Desktop View: Categorized Grid */}
-            <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 scroll-reveal">
+            <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 scroll-reveal">
                 {skillsCategories.map((category, catIdx) => (
                     <div
                         key={catIdx}
-                        className={`p-3 sm:p-5 rounded-2xl bg-gray-50 dark:bg-gray-900/50 border border-gray-100 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-500 ${isLoading ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}
+                        className={`p-3 sm:p-4 rounded-xl bg-gray-50 dark:bg-gray-900/50 border border-gray-100 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-500 ${isLoading ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}
                         style={{ transitionDelay: `${catIdx * 100}ms` }}
                     >
-                        <h3 className="text-xs sm:text-sm font-bold mb-2 sm:mb-3 text-gray-900 dark:text-white flex items-center gap-2">
+                        <h3 className="text-xs sm:text-sm font-bold mb-2 text-gray-900 dark:text-white flex items-center gap-2">
                             <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-black dark:bg-white"></div>
                             {category.title}
                         </h3>
-                        <div className="flex flex-wrap gap-1 sm:gap-2">
+                        <div className="flex flex-wrap gap-1 sm:gap-1.5">
                             {category.skills.map((skill, skillIdx) => (
                                 <span
                                     key={skillIdx}
-                                    className="px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-xs font-medium bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-md text-gray-700 dark:text-gray-300"
+                                    className="px-2 py-0.5 sm:px-2 sm:py-0.5 text-[10px] sm:text-[11px] font-medium bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-md text-gray-700 dark:text-gray-300"
                                 >
                                     {skill}
                                 </span>
