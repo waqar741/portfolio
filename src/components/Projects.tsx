@@ -1,4 +1,4 @@
-import { Code2, Github, ExternalLink, BarChart3 } from 'lucide-react';
+import { Code2, Github, ExternalLink } from 'lucide-react';
 import React, { useState } from 'react';
 
 interface ProjectsProps {
