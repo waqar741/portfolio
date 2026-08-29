@@ -1,66 +1,102 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Shield, Loader2, CheckCircle2, XCircle, Code, Copy, Check } from 'lucide-react';
+import { ArrowLeft, Shield, Loader2, CheckCircle2, XCircle, ExternalLink } from 'lucide-react';
 import ParticleCanvas from '../components/ParticleCanvas';
+
+interface VerificationData {
+  schema: string;
+  developer: string;
+  developer_id: string;
+  project: string;
+  website: string;
+  year: number;
+  madeby?: string;
+}
 
 const MadeBy = () => {
     const [url, setUrl] = useState('');
-    const [status, setStatus] = useState<'idle' | 'loading' | 'verified' | 'unverified' | 'error'>('idle');
-    const [copied1, setCopied1] = useState(false);
-    const [copied2, setCopied2] = useState(false);
+    const [status, setStatus] = useState<'idle' | 'loading' | 'verified' | 'not-found' | 'invalid' | 'error'>('idle');
+    const [verificationData, setVerificationData] = useState<VerificationData | null>(null);
 
     useEffect(() => {
         document.documentElement.classList.add('dark');
         window.scrollTo(0, 0);
     }, []);
 
+    const normalizeUrl = (input: string) => {
+        let normalized = input.trim();
+        if (!normalized.startsWith('http://') && !normalized.startsWith('https://')) {
+            normalized = 'https://' + normalized;
+        }
+        try {
+            const parsed = new URL(normalized);
+            return parsed.origin;
+        } catch (e) {
+            return null;
+        }
+    };
+
     const handleVerify = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!url) return;
-
-        let targetUrl = url.trim();
-        if (!targetUrl.startsWith('http://') && !targetUrl.startsWith('https://')) {
-            targetUrl = 'https://' + targetUrl;
+        
+        const targetOrigin = normalizeUrl(url);
+        if (!targetOrigin) {
+            setStatus('error');
+            return;
         }
-
+        
         setStatus('loading');
-
+        setVerificationData(null);
+        
         try {
-            const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`;
-            const response = await fetch(proxyUrl);
-
-            if (!response.ok) throw new Error('Network error');
-
-            const data = await response.json();
-            const html = data.contents;
-
-            if (!html) throw new Error('No content');
-
-            const metaAuthorRegex = /<meta\s+name=["']author["']\s+content=["'][^"']*Waquar[^"']*["']\s*\/?>/i;
-            const customKeyRegex = /waquar-signature-741/i;
-
-            if (metaAuthorRegex.test(html) || customKeyRegex.test(html)) {
-                setStatus('verified');
-            } else {
-                setStatus('unverified');
+            const response = await fetch(`${targetOrigin}/.well-known/waquar-verification.json`);
+            
+            if (response.status === 404) {
+                setStatus('not-found');
+                return;
             }
+            
+            if (!response.ok) {
+                setStatus('error');
+                return;
+            }
+            
+            const data = await response.json();
+            
+            // Validation
+            if (
+                data.schema !== 'waquar-developer-verification/v1' ||
+                data.developer_id !== 'waquar741' ||
+                data.developer !== 'Waquar Shaikh' ||
+                !data.project ||
+                !data.website ||
+                !data.year
+            ) {
+                setStatus('invalid');
+                return;
+            }
+
+            // Domain validation
+            try {
+                const dataOrigin = new URL(data.website).origin;
+                if (dataOrigin !== targetOrigin) {
+                    setStatus('invalid');
+                    return;
+                }
+            } catch (e) {
+                setStatus('invalid');
+                return;
+            }
+            
+            setVerificationData(data);
+            setStatus('verified');
+            
         } catch (error) {
+            // This captures network errors, CORS errors, or JSON parsing errors
             setStatus('error');
         }
     };
-
-    const copyCode = async (code: string, setter: React.Dispatch<React.SetStateAction<boolean>>) => {
-        try {
-            await navigator.clipboard.writeText(code);
-            setter(true);
-            setTimeout(() => setter(false), 2000);
-        } catch (err) {
-            console.error("Failed to copy", err);
-        }
-    };
-
-    const code1 = `<meta name="author" content="Waquar Ahmed Shaikh" />`;
-    const code2 = `<!-- waquar-signature-741 -->`;
 
     return (
         <div className="min-h-screen bg-[#0a0a0a] text-gray-200 font-sans relative flex flex-col items-center justify-center p-6">
@@ -86,7 +122,7 @@ const MadeBy = () => {
                     </div>
 
                     <p className="text-sm text-gray-400 mb-5 leading-relaxed">
-                        Enter a website URL below. The engine will scan the source code for my encrypted cryptographic signature.
+                        Enter a website URL to check whether it contains a valid developer attribution issued for Waquar Shaikh.
                     </p>
 
                     <form onSubmit={handleVerify} className="space-y-3">
@@ -110,80 +146,86 @@ const MadeBy = () => {
                             {status === 'loading' ? (
                                 <>
                                     <Loader2 size={14} className="animate-spin" />
-                                    Scanning Source...
+                                    Verifying Website...
                                 </>
                             ) : (
-                                'Scan & Verify'
+                                'Verify'
                             )}
                         </button>
                     </form>
 
-                    {status === 'verified' && (
-                        <div className="mt-5 p-3.5 bg-green-500/10 border border-green-500/20 rounded-lg flex items-start gap-3">
-                            <CheckCircle2 size={16} className="text-green-400 mt-0.5 shrink-0" />
+                    {/* Results Area */}
+                    {status === 'verified' && verificationData && (
+                        <div className="mt-5 p-4 bg-green-500/10 border border-green-500/20 rounded-lg animate-fade-in-up">
+                            <div className="flex items-start gap-3 mb-4">
+                                <CheckCircle2 size={16} className="text-green-400 mt-0.5 shrink-0" />
+                                <div>
+                                    <h3 className="text-sm font-medium text-green-400 mb-0.5">✓ Developer Attribution Found</h3>
+                                    <p className="text-xs text-gray-400 leading-relaxed">This website contains a valid developer attribution for Waquar Shaikh.</p>
+                                </div>
+                            </div>
+                            
+                            <div className="bg-black/40 rounded border border-white/5 p-3 mb-4 space-y-2">
+                                <div className="flex justify-between items-center">
+                                    <span className="text-[10px] text-gray-500 uppercase tracking-wider">Project</span>
+                                    <span className="text-xs text-gray-200 font-medium truncate max-w-[60%] text-right">{verificationData.project}</span>
+                                </div>
+                                <div className="flex justify-between items-center">
+                                    <span className="text-[10px] text-gray-500 uppercase tracking-wider">Website</span>
+                                    <span className="text-xs text-gray-200 font-medium truncate max-w-[60%] text-right">{new URL(verificationData.website).hostname}</span>
+                                </div>
+                                <div className="flex justify-between items-center">
+                                    <span className="text-[10px] text-gray-500 uppercase tracking-wider">Year</span>
+                                    <span className="text-xs text-gray-200 font-medium">{verificationData.year}</span>
+                                </div>
+                                <div className="flex justify-between items-center">
+                                    <span className="text-[10px] text-gray-500 uppercase tracking-wider">ID</span>
+                                    <span className="text-xs text-blue-400 font-mono">{verificationData.developer_id}</span>
+                                </div>
+                            </div>
+
+                            {verificationData.madeby && (
+                                <a 
+                                    href={`${new URL(verificationData.website).origin}${verificationData.madeby}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center gap-1.5 w-full py-2.5 bg-white/5 hover:bg-white/10 rounded-lg border border-white/10 text-xs text-gray-300 hover:text-white transition-colors"
+                                >
+                                    View Developer Attribution <ExternalLink size={12} />
+                                </a>
+                            )}
+                        </div>
+                    )}
+
+                    {status === 'not-found' && (
+                        <div className="mt-5 p-3.5 bg-red-500/10 border border-red-500/20 rounded-lg flex items-start gap-3 animate-fade-in-up">
+                            <XCircle size={16} className="text-red-400 mt-0.5 shrink-0" />
                             <div>
-                                <h3 className="text-sm font-medium text-green-400 mb-0.5">Signature Verified</h3>
-                                <p className="text-xs text-gray-400">Authentic project engineered by Waquar Ahmed Shaikh.</p>
+                                <h3 className="text-sm font-medium text-red-400 mb-0.5">No Developer Attribution Found</h3>
+                                <p className="text-xs text-gray-400 leading-relaxed">We couldn't find a valid Waquar Shaikh developer verification file on this website.</p>
                             </div>
                         </div>
                     )}
 
-                    {status === 'unverified' && (
-                        <div className="mt-5 p-3.5 bg-red-500/10 border border-red-500/20 rounded-lg flex items-start gap-3">
-                            <XCircle size={16} className="text-red-400 mt-0.5 shrink-0" />
+                    {status === 'invalid' && (
+                        <div className="mt-5 p-3.5 bg-yellow-500/10 border border-yellow-500/20 rounded-lg flex items-start gap-3 animate-fade-in-up">
+                            <XCircle size={16} className="text-yellow-400 mt-0.5 shrink-0" />
                             <div>
-                                <h3 className="text-sm font-medium text-red-400 mb-0.5">Signature Not Found</h3>
-                                <p className="text-xs text-gray-400">This website does not contain a valid creator signature.</p>
+                                <h3 className="text-sm font-medium text-yellow-400 mb-0.5">Verification Failed</h3>
+                                <p className="text-xs text-gray-400 leading-relaxed">The website contains a developer verification file, but the information could not be validated.</p>
                             </div>
                         </div>
                     )}
 
                     {status === 'error' && (
-                        <div className="mt-5 p-3.5 bg-yellow-500/10 border border-yellow-500/20 rounded-lg flex items-start gap-3">
+                        <div className="mt-5 p-3.5 bg-yellow-500/10 border border-yellow-500/20 rounded-lg flex items-start gap-3 animate-fade-in-up">
                             <XCircle size={16} className="text-yellow-400 mt-0.5 shrink-0" />
                             <div>
-                                <h3 className="text-sm font-medium text-yellow-400 mb-0.5">Connection Error</h3>
-                                <p className="text-xs text-gray-400">Could not connect to the URL. Ensure it is publicly accessible.</p>
+                                <h3 className="text-sm font-medium text-yellow-400 mb-0.5">Unable to Verify</h3>
+                                <p className="text-xs text-gray-400 leading-relaxed">We couldn't reach the website verification endpoint. Please check the URL and try again.</p>
                             </div>
                         </div>
                     )}
-                </div>
-
-                <div className="bg-[#111] rounded-xl border border-white/5 p-4">
-                    <h4 className="text-xs font-semibold text-gray-300 flex items-center gap-2 mb-2.5">
-                        <Code size={13} className="text-blue-400" /> For Developers (How to implement)
-                    </h4>
-                    <p className="text-xs text-gray-500 mb-3">
-                        To make a client's website verifiable, add either of these to their HTML <code className="text-gray-400 bg-white/5 px-1 rounded">&lt;head&gt;</code>:
-                    </p>
-
-                    <div className="space-y-2">
-                        <div className="flex items-center justify-between bg-black/50 border border-white/5 rounded-lg p-2.5">
-                            <code className="text-[10px] md:text-xs font-mono text-blue-300 overflow-hidden whitespace-nowrap text-ellipsis mr-2">
-                                {code1}
-                            </code>
-                            <button
-                                onClick={() => copyCode(code1, setCopied1)}
-                                className="shrink-0 flex items-center justify-center w-6 h-6 rounded-md bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-all"
-                                title="Copy signature"
-                            >
-                                {copied1 ? <Check size={11} className="text-green-400" /> : <Copy size={11} />}
-                            </button>
-                        </div>
-
-                        <div className="flex items-center justify-between bg-black/50 border border-white/5 rounded-lg p-2.5">
-                            <code className="text-[10px] md:text-xs font-mono text-emerald-400/80 overflow-hidden whitespace-nowrap text-ellipsis mr-2">
-                                {code2}
-                            </code>
-                            <button
-                                onClick={() => copyCode(code2, setCopied2)}
-                                className="shrink-0 flex items-center justify-center w-6 h-6 rounded-md bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-all"
-                                title="Copy signature"
-                            >
-                                {copied2 ? <Check size={11} className="text-green-400" /> : <Copy size={11} />}
-                            </button>
-                        </div>
-                    </div>
                 </div>
 
                 <div className="mt-6 text-center">
