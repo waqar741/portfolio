@@ -1,5 +1,7 @@
-import { Code2, Github, ExternalLink } from 'lucide-react';
+import { Code2, Github, ExternalLink, ArrowRight } from 'lucide-react';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { projects } from '../data/projects';
 
 interface ProjectsProps {
     projectsRef: React.RefObject<HTMLDivElement | null>;
@@ -10,112 +12,21 @@ interface ProjectsProps {
 const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsProps) => {
     const [filter, setFilter] = useState('All');
 
-    const projects = [
-        // {
-        //     title: "E-Samarth (Customer App)",
-        //     year: "2026",
-        //     desc: "Modern Progressive Web App (PWA) delivering a native-like web experience with full offline support. Built entirely with Vanilla JavaScript, featuring a custom client-side router and decentralized state management.",
-        //     stack: ["Vanilla JS", "Vite", "PWA", "Workbox"],
-        //     github: "https://github.com/waqar741/e-samarth",
-        //     live: "https://e-samarth.vercel.app/",
-        //     status: "Completed",
-        //     category: "Frontend"
-        // },
-        {
-            title: "ServiceTrack",
-            year: "2026",
-            desc: "Complete Document Center and Task Management solution built with React and Vite. Features PDF receipts and utilizes Google Sheets as a robust backend store with a synchronized caching system for seamless customer data management.",
-            stack: ["React", "Vite", "jsPDF", "Google Sheets"],
-            github: "https://github.com/waqar741/ServiceTrack",
-            live: "https://service-track-seven.vercel.app/",
-            status: "Completed",
-            category: "Frontend"
-        },
-        {
-            title: "ExamGrid",
-            year: "2025",
-            desc: "Comprehensive management dashboard with an intuitive UI for scheduling, attendance, and administration of examination staff. Features responsive design, seamless navigation, and a modern aesthetic built with Tailwind CSS. (Test: test@gmail.com / password-password)",
-            stack: ["Next.js", "React", "Tailwind CSS", "Supabase"],
-            github: "https://github.com/waqar741/ExamGrid",
-            live: "https://examgridapp.vercel.app/",
-            status: "Completed",
-            category: "Full Stack"
-        },
-        {
-            title: "MeshMind - AI Platform",
-            year: "2025",
-            desc: "Modular clinical platform featuring a highly responsive React frontend and a robust FastAPI backend. Designed with user-centric workflows and accessible data visualization to present complex analytical information clearly.",
-            stack: ["React JS", "FastAPI", "Python", "PostgreSQL"],
-            github: "https://github.com/waqar741/Frontend-HFP",
-            live: "https://dev-ai.nomineelife.com/",
-            status: "Completed",
-            category: "Full Stack"
-        },
-        {
-            title: "EchoAI Avatar",
-            year: "2025",
-            desc: "Engaging AI voice chatbot featuring a custom-designed animated avatar. Focused heavily on micro-interactions and smooth Canvas rendering to create an immersive, low-latency conversational user experience.",
-            stack: ["React", "TypeScript", "FastAPI", "Web Speech API"],
-            github: "https://github.com/waqar741/EchoAI",
-            live: "https://avatar.nomineelife.com/",
-            status: "Completed",
-            category: "Frontend"
-        },
-        {
-            title: "Traxos Finance Tracker",
-            year: "2024",
-            desc: "Sleek personal finance management app with a beautifully crafted dashboard. Features dark mode support, intuitive expense categorization, and interactive data visualization charts tailored for a seamless mobile experience.",
-            stack: ["TypeScript", "React", "Tailwind CSS", "Supabase"],
-            github: "https://github.com/waqar741/traxos",
-            live: "https://traxos.vercel.app/",
-            status: "Completed",
-            category: "Frontend"
-        },
-        {
-            title: "Railway Concession System",
-            year: "2024",
-            desc: "Digitized railway concession workflow prioritizing accessibility and ease of use. Implemented a clean, user-friendly interface for digital verification and admin approval processes, minimizing friction for users.",
-            stack: ["HTML", "CSS", "JavaScript", "Firebase"],
-            github: "https://github.com/waqar741/railway-concession-portal",
-            live: "https://railwayconcession.vercel.app/",
-            status: "Completed",
-            category: "Full Stack"
-        },
-        {
-            title: "Tech Rental Platform",
-            year: "2023",
-            desc: "Modern marketplace for renting tech gadgets with a focus on product discovery and clean typography. Built a responsive catalog and streamlined checkout process using React and Firebase.",
-            stack: ["React", "Express", "Firebase"],
-            github: "https://github.com/waqar741",
-            live: "https://gadget-rental-4314b.web.app/",
-            status: "Completed",
-            category: "Full Stack"
-        },
-        {
-            title: "SmartNote",
-            year: "2022",
-            desc: "Minimalist web-based tool for efficient note-taking. Designed with a distraction-free interface and thoughtful typography to capture ideas effortlessly and organize tasks with high visual clarity.",
-            stack: ["HTML", "CSS", "JavaScript"],
-            github: "https://github.com/waqar741/notess",
-            live: "https://smartnote.vercel.app/",
-            status: "Completed",
-            category: "Frontend"
-        }
-    ];
+    // Projects data is now imported from ../data/projects
 
     const filters = ['All', 'Full Stack', 'Frontend'];
 
     const filteredProjects = projects.filter(project => {
         if (filter === 'All') return true;
         return project.category === filter;
-    });
+    }).slice(0, 4); // Only show top 4 on home page
 
     return (
         <section ref={projectsRef} id="projects" className="mb-12 sm:mb-16">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 sm:mb-8 gap-4">
                 <h2 className="text-xl sm:text-2xl font-bold flex items-center gap-2 scroll-reveal">
                     <Code2 size={20} />
-                    Things I've Built
+                    Featured Projects
                 </h2>
 
                 <div className="flex p-1 bg-gray-100 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 scroll-reveal w-full sm:w-auto">
@@ -202,6 +113,16 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
                         </div>
                     </div>
                 ))}
+            </div>
+
+            <div className="mt-8 flex justify-center scroll-reveal">
+                <Link
+                    to="/projects"
+                    className="group flex items-center gap-2 px-6 py-3 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-lg font-medium hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-800"
+                >
+                    <span>View All Projects</span>
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
             </div>
         </section>
     );

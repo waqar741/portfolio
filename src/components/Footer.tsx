@@ -1,4 +1,5 @@
 import { Coffee, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface FooterProps {
     coffeeCount: number;
@@ -14,6 +15,10 @@ const Footer = ({ coffeeCount }: FooterProps) => {
                         Made with {coffeeCount > 0 ? `${coffeeCount} cups of coffee` : 'care'} and code
                     </span>
                     <Heart size={12} className="text-red-500" />
+                </div>
+
+                <div className="text-xs sm:text-sm text-gray-500 hover:text-gray-900 dark:hover:text-gray-200 transition-colors">
+                    <Link to="/madeby">Built by Waquar Shaikh</Link>
                 </div>
 
                 <p className="text-xs sm:text-sm text-gray-500 mb-5">
