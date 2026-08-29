@@ -16,8 +16,9 @@ const Hero = ({ heroRef, isLoading, coffeeCount, setCoffeeCount }: HeroProps) =>
                 <div className={`flex items-center gap-3 transition-all duration-1000 transform ${isLoading ? 'opacity-0 -translate-y-10' : 'opacity-100 translate-y-0'}`}>
                     <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-black dark:border-white overflow-hidden relative group">
                         <img
-                            src="images/profile.png"
-                            alt="Waquar Shaikh - Full Stack Developer"
+                            src="images/waquar-ahmed-shaikh-profile.png"
+                            alt="Waquar Ahmed Shaikh - Software Developer & Data Analyst"
+                            title="Waquar Ahmed Shaikh"
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         {/* Sunglasses Easter Egg */}
