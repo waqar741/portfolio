@@ -1,13 +1,36 @@
 export const projects = [
     {
+        title: "Navi Tech",
+        year: "2026",
+        desc: "A modern, highly performant digital platform built with Next.js to provide seamless user experiences, server-side rendering, and robust functionality.",
+        stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+        github: "#",
+        live: "#",
+        status: "Completed",
+        category: "Frontend",
+        image: "/images/NaviTech.png"
+    },
+    {
+        title: "Personal Portfolio",
+        year: "2026",
+        desc: "An interactive, highly polished personal portfolio showcasing my professional work, featuring custom layouts, smooth animations, and optimized performance.",
+        stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
+        github: "https://github.com/waqar741/portfolio",
+        live: "#",
+        status: "Completed",
+        category: "Frontend",
+        image: "/images/WaquarPortfolio.png"
+    },
+    {
         title: "Colors And Waves Media",
         year: "2026",
         desc: "A modern, immersive web application for a Mumbai-based film and video production house. Built with Next.js App Router and features interactive 3D graphics using Three.js and React Three Fiber.",
         stack: ["Next.js", "React", "Three.js", "Tailwind CSS"],
         github: "#",
-        live: "https://colours-media.vercel.app/",
+        live: "https://colours-waves.vercel.app/",
         status: "Completed",
-        category: "Frontend"
+        category: "Frontend",
+        image: "/images/ColourAndWaves.png"
     },
     {
         title: "Samarth Digital E Seva Kendra",
@@ -17,7 +40,8 @@ export const projects = [
         github: "#",
         live: "https://samarthdigitalseva.vercel.app",
         status: "Completed",
-        category: "Frontend"
+        category: "Frontend",
+        image: "/images/SamarthDigital.png"
     },
     {
         title: "ServiceTrack",
@@ -27,7 +51,8 @@ export const projects = [
         github: "https://github.com/waqar741/ServiceTrack",
         live: "https://service-track-seven.vercel.app/",
         status: "Completed",
-        category: "Frontend"
+        category: "Frontend",
+        image: "/images/ServiceTrack.png"
     },
     {
         title: "TextBook",

@@ -48,12 +48,22 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
                 {filteredProjects.map((project, idx) => (
                     <div
                         key={idx}
-                        className="group relative p-4 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white bg-white dark:bg-black transition-all duration-300 hover:shadow-lg flex flex-col justify-between animate-fade-in-up"
+                        className="group relative flex flex-col justify-between rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white bg-white dark:bg-black transition-all duration-300 hover:shadow-lg animate-fade-in-up overflow-hidden"
                         onMouseMove={handleMouseMove}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <div>
-                            <div className="flex items-start justify-between mb-2">
+                        <div className="flex flex-col">
+                            {project.image && (
+                                <div className="h-40 w-full overflow-hidden relative border-b border-gray-100 dark:border-gray-800">
+                                    <img 
+                                        src={project.image} 
+                                        alt={project.title}
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                </div>
+                            )}
+                            <div className="p-4">
+                                <div className="flex items-start justify-between mb-2">
                                 <div className="flex-1 mr-2">
                                     <h3 className="text-base font-bold group-hover:underline line-clamp-1">{project.title}</h3>
                                     <span className={`inline-block mt-0.5 text-[9px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wider ${project.category === 'Frontend'
@@ -103,8 +113,9 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
                                 ))}
                             </div>
                         </div>
+                        </div>
 
-                        <div className="flex items-center justify-between mt-auto pt-3 border-t border-gray-100 dark:border-gray-800 text-[10px] sm:text-xs text-gray-500">
+                        <div className="mx-4 mb-4 flex items-center justify-between mt-auto pt-3 border-t border-gray-100 dark:border-gray-800 text-[10px] sm:text-xs text-gray-500">
                             <span>{project.year}</span>
                             <span className={`px-2 py-0.5 rounded-full ${project.status === 'Completed' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400'
                                 }`}>
@@ -118,7 +129,7 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
             <div className="mt-8 flex justify-center scroll-reveal">
                 <Link
                     to="/projects"
-                    className="group flex items-center gap-2 px-6 py-3 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-lg font-medium hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-800"
+                    className="group flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-lg font-medium hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-800"
                 >
                     <span>View All Projects</span>
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

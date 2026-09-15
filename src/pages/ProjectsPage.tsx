@@ -1,13 +1,23 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowLeft, Code2, Github, ExternalLink } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { ArrowLeft, Code2, Github, ExternalLink, Sun, Moon } from 'lucide-react';
 import { projects } from '../data/projects';
 import ParticleCanvas from '../components/ParticleCanvas';
 import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 
 const ProjectsPage = () => {
+    const navigate = useNavigate();
     const [filter, setFilter] = useState('All');
     const [darkMode, setDarkMode] = useState(true);
+
+    const scrollToSection = (id: string) => {
+        if (id === 'projects') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            navigate(`/?section=${id}`);
+        }
+    };
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -36,7 +46,7 @@ const ProjectsPage = () => {
             </div>
 
             {/* Header / Nav */}
-            <header className="relative z-50 p-4 sm:p-6 md:p-8 flex items-center justify-between">
+            <header className="relative z-50 p-4 flex items-center justify-between">
                 <Link 
                     to="/" 
                     className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-800"
@@ -48,41 +58,43 @@ const ProjectsPage = () => {
                 {/* Theme Toggle Button */}
                 <button
                     onClick={() => setDarkMode(!darkMode)}
-                    className="p-2 rounded-lg bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-800"
+                    className="p-1.5 sm:p-2 rounded-full bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-800 flex items-center justify-center"
                     aria-label="Toggle Theme"
                 >
-                    {darkMode ? '☀️' : '🌙'}
+                    {darkMode ? <Sun size={16} /> : <Moon size={16} />}
                 </button>
             </header>
 
-            <main className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-8 md:py-12">
-                <div className="mb-12 text-center sm:text-left">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4 flex items-center justify-center sm:justify-start gap-3">
-                        <Code2 className="w-10 h-10 md:w-12 md:h-12 text-blue-500" />
-                        All Projects
-                    </h1>
-                    <p className="text-gray-600 dark:text-gray-400 max-w-2xl text-base md:text-lg">
-                        A comprehensive list of my work, side projects, and experiments. 
-                        Filter by category to explore different technologies and domains.
-                    </p>
-                </div>
+            <main className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 pt-2 pb-8">
+                <div className="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                    <div className="text-center sm:text-left">
+                        <h1 className="text-3xl md:text-4xl font-bold mb-2 flex items-center justify-center sm:justify-start gap-2">
+                            <Code2 className="w-8 h-8 md:w-10 md:h-10 text-blue-500" />
+                            All Projects
+                        </h1>
+                        <p className="text-gray-600 dark:text-gray-400 max-w-xl text-sm">
+                            A comprehensive list of my work, side projects, and experiments. 
+                            Filter by category to explore different technologies.
+                        </p>
+                    </div>
 
-                {/* Filters */}
-                <div className="flex justify-center sm:justify-start mb-10">
-                    <div className="flex p-1 bg-gray-100 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800">
-                        {filters.map((category) => (
-                            <button
-                                key={category}
-                                onClick={() => setFilter(category)}
-                                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                                    filter === category
-                                        ? 'bg-white dark:bg-black text-black dark:text-white shadow-sm ring-1 ring-black/5 dark:ring-white/10'
-                                        : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-200'
-                                }`}
-                            >
-                                {category}
-                            </button>
-                        ))}
+                    {/* Filters */}
+                    <div className="flex justify-center sm:justify-start">
+                        <div className="flex p-1 bg-gray-100 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800">
+                            {filters.map((category) => (
+                                <button
+                                    key={category}
+                                    onClick={() => setFilter(category)}
+                                    className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-300 ${
+                                        filter === category
+                                            ? 'bg-white dark:bg-black text-black dark:text-white shadow-sm ring-1 ring-black/5 dark:ring-white/10'
+                                            : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-200'
+                                    }`}
+                                >
+                                    {category}
+                                </button>
+                            ))}
+                        </div>
                     </div>
                 </div>
 
@@ -91,10 +103,20 @@ const ProjectsPage = () => {
                     {filteredProjects.map((project, idx) => (
                         <div
                             key={idx}
-                            className="group relative p-5 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white bg-white/80 dark:bg-black/80 backdrop-blur-sm transition-all duration-300 hover:shadow-xl flex flex-col justify-between"
+                            className="group relative flex flex-col justify-between rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white bg-white/80 dark:bg-black/80 backdrop-blur-sm transition-all duration-300 hover:shadow-xl overflow-hidden"
                         >
-                            <div>
-                                <div className="flex items-start justify-between mb-3">
+                            <div className="flex flex-col">
+                                {project.image && (
+                                    <div className="h-48 w-full overflow-hidden relative border-b border-gray-100 dark:border-gray-800">
+                                        <img 
+                                            src={project.image} 
+                                            alt={project.title}
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                        />
+                                    </div>
+                                )}
+                                <div className="p-5">
+                                    <div className="flex items-start justify-between mb-3">
                                     <div className="flex-1 pr-2">
                                         <h3 className="text-lg font-bold group-hover:text-blue-500 transition-colors line-clamp-1">{project.title}</h3>
                                         <span className={`inline-block mt-1 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider ${
@@ -145,10 +167,11 @@ const ProjectsPage = () => {
                                     ))}
                                 </div>
                             </div>
+                            </div>
 
-                            <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 text-xs font-medium text-gray-500">
+                            <div className="mx-5 mb-5 flex items-center justify-between mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 text-xs font-medium text-gray-500">
                                 <span className="flex items-center gap-1">
-                                    📅 {project.year}
+                                    {project.year}
                                 </span>
                                 <span className={`px-2.5 py-1 rounded-full flex items-center gap-1 ${
                                     project.status === 'Completed' 
@@ -165,6 +188,13 @@ const ProjectsPage = () => {
             </main>
             
             <Footer coffeeCount={0} />
+            <Navbar 
+                activeSection="projects" 
+                scrollToSection={scrollToSection} 
+                darkMode={darkMode} 
+                setDarkMode={setDarkMode} 
+                isLoading={false} 
+            />
         </div>
     );
 };

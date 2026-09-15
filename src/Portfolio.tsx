@@ -13,9 +13,6 @@ import Footer from './components/Footer';
 import ParticleCanvas from './components/ParticleCanvas';
 
 const Portfolio = () => {
-    // State for the Loading/Spotlight effect
-    const [isLoading, setIsLoading] = useState(true);
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [isMobile, setIsMobile] = useState(false);
 
     // Check for mobile screens to disable some heavy animations/features natively
@@ -115,31 +112,6 @@ const Portfolio = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // -------------------------------------------
-    //  MOUSE & TOUCH TRACKING (Spotlight Logic)
-    // -------------------------------------------
-    useEffect(() => {
-        const updatePos = (clientX: number, clientY: number) => {
-            setMousePos({ x: clientX, y: clientY });
-        };
-
-        const handleMouseMove = (e: MouseEvent) => updatePos(e.clientX, e.clientY);
-        const handleTouchMove = (e: TouchEvent) => {
-            const touch = e.touches[0];
-            updatePos(touch.clientX, touch.clientY);
-        };
-
-        if (isLoading) {
-            window.addEventListener('mousemove', handleMouseMove);
-            window.addEventListener('touchmove', handleTouchMove);
-        }
-
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
-            window.removeEventListener('touchmove', handleTouchMove);
-        };
-    }, [isLoading]);
-
     // Theme Toggle
     useEffect(() => {
         if (darkMode) {
@@ -149,14 +121,7 @@ const Portfolio = () => {
         }
     }, [darkMode]);
 
-    // Prevent scrolling while spotlight is active
-    useEffect(() => {
-        if (isLoading) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
-    }, [isLoading]);
+
 
     // Bug movement logic (appears after 15 coffees)
     useEffect(() => {
@@ -257,24 +222,6 @@ const Portfolio = () => {
 
     return (
         <>
-            {/* Spotlight Overlay */}
-            {isLoading && (
-                <div
-                    className="fixed inset-0 z-[100] cursor-none flex items-end justify-center pb-20 touch-none"
-                    onClick={() => setIsLoading(false)}
-                    style={{
-                        background: `radial-gradient(circle 250px at ${mousePos.x}px ${mousePos.y}px, transparent 0%, rgba(0, 0, 0, 0.98) 100%)`
-                    }}
-                >
-                    <div className="text-white/50 font-mono animate-pulse pointer-events-none mb-10 text-center px-4">
-                        Tap or Click anywhere to enter
-                    </div>
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none mix-blend-difference text-white opacity-20 text-4xl font-bold uppercase tracking-widest text-center px-4">
-                        Check out my<br />best work
-                    </div>
-                </div>
-            )}
-
             {toast && (
                 <Toast
                     message={toast.message}
@@ -340,7 +287,7 @@ const Portfolio = () => {
 
                     <Hero
                         heroRef={heroRef}
-                        isLoading={isLoading}
+                        isLoading={false}
                         coffeeCount={coffeeCount}
                         setCoffeeCount={setCoffeeCount}
                     />
@@ -372,8 +319,7 @@ const Portfolio = () => {
                                             drag={!isMobile}
                                             dragConstraints={{ left: -50, right: 50, top: -50, bottom: 50 }}
                                             whileDrag={{ scale: 1.05, cursor: "grabbing" }}
-                                            className={`flex flex-row items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 ${isMobile ? '' : 'cursor-grab'} z-10 transition-colors ${isLoading ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
-                                                }`}
+                                            className={`flex flex-row items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 ${isMobile ? '' : 'cursor-grab'} z-10 transition-colors opacity-100 translate-y-0`}
                                             // Keep animation delay but remove transition-all which fights with framer-motion's transform
                                             style={{ animationDelay: `${idx * 50}ms` }}
                                         >
@@ -424,7 +370,7 @@ const Portfolio = () => {
                         </div>
                     </section>
 
-                    <Skills skillsRef={skillsRef} isLoading={isLoading} />
+                    <Skills skillsRef={skillsRef} isLoading={false} />
 
                     <Projects
                         projectsRef={projectsRef}
@@ -451,7 +397,7 @@ const Portfolio = () => {
                 scrollToSection={scrollToSection}
                 darkMode={darkMode}
                 setDarkMode={setDarkMode}
-                isLoading={isLoading}
+                isLoading={false}
             />
 
             <style>{`

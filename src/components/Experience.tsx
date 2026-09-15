@@ -9,7 +9,7 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
         {
             company: "HealthFirstPriority (HFP)",
             role: "Software Engineer Intern",
-            date: "Sept 2025 – Dec 2025",
+            date: "Sept 2025 – June 2026",
             details: "Developed scalable application modules and robust REST APIs using Python and FastAPI. Collaborated closely with the design team to build a highly responsive, user-friendly React frontend. Ensured seamless integration between backend microservices and UI components to deliver a smooth end-to-end clinical data experience.",
             tech: ["React", "TypeScript", "FastAPI", "Python", "PostgreSQL"],
             logo: "./images/hfp.png",
