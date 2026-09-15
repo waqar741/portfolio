@@ -2,10 +2,10 @@ export const projects = [
     {
         title: "Navi Tech",
         year: "2026",
-        desc: "A modern, highly performant digital platform built with Next.js to provide seamless user experiences, server-side rendering, and robust functionality.",
+        desc: "A comprehensive digital agency platform designed for local businesses, offering custom software development, SEO strategies, chatbots, and web solutions.",
         stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
         github: "#",
-        live: "#",
+        live: "https://navitechsystem.vercel.app/",
         status: "Completed",
         category: "Frontend",
         image: "/images/NaviTech.png"
@@ -13,10 +13,10 @@ export const projects = [
     {
         title: "Personal Portfolio",
         year: "2026",
-        desc: "An interactive, highly polished personal portfolio showcasing my professional work, featuring custom layouts, smooth animations, and optimized performance.",
+        desc: "Interactive personal portfolio featuring engaging UI animations, dynamic dark mode, and a responsive layout to comprehensively showcase my software engineering projects.",
         stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
         github: "https://github.com/waqar741/portfolio",
-        live: "#",
+        live: "https://www.waquarshaikh.me/",
         status: "Completed",
         category: "Frontend",
         image: "/images/WaquarPortfolio.png"
