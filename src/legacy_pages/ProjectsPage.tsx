@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { ArrowLeft, Code2, ExternalLink, Sun, Moon } from 'lucide-react';
 import { FaGithub as Github } from 'react-icons/fa';
@@ -115,10 +116,12 @@ const ProjectsPage = () => {
                             <div className="flex flex-col relative z-10 pointer-events-none">
                                 {project.image && (
                                     <div className="h-48 w-full overflow-hidden relative border-b border-gray-100 dark:border-gray-800">
-                                        <img 
+                                        <Image 
                                             src={project.image} 
                                             alt={project.title}
-                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                            className="object-cover transition-transform duration-700 group-hover:scale-105"
                                         />
                                     </div>
                                 )}
@@ -145,6 +148,7 @@ const ProjectsPage = () => {
                                                 rel="noopener noreferrer"
                                                 className="p-2 bg-gray-50 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-colors border border-transparent hover:border-gray-300 dark:hover:border-gray-700 relative z-20"
                                                 title="GitHub"
+                                                aria-label={`GitHub repository for ${project.title}`}
                                             >
                                                 <Github size={16} />
                                             </a>
@@ -156,6 +160,7 @@ const ProjectsPage = () => {
                                                 rel="noopener noreferrer"
                                                 className="p-2 bg-gray-50 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-colors border border-transparent hover:border-gray-300 dark:hover:border-gray-700 relative z-20"
                                                 title="Live Site"
+                                                aria-label={`Live site for ${project.title}`}
                                             >
                                                 <ExternalLink size={16} />
                                             </a>

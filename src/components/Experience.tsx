@@ -1,5 +1,5 @@
 import { Briefcase, GraduationCap, Trophy } from 'lucide-react';
-
+import Image from 'next/image';
 interface ExperienceProps {
     experienceRef: React.RefObject<HTMLDivElement | null>;
 }
@@ -12,7 +12,7 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
             date: "Sept 2025 – June 2026",
             details: "Developed scalable application modules and robust REST APIs using Python and FastAPI. Collaborated closely with the design team to build a highly responsive, user-friendly React frontend. Ensured seamless integration between backend microservices and UI components to deliver a smooth end-to-end clinical data experience.",
             tech: ["React", "TypeScript", "FastAPI", "Python", "PostgreSQL"],
-            logo: "./images/hfp.png",
+            logo: "/images/hfp.png",
             status: "Completed"
         }
     ];
@@ -24,7 +24,7 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
             duration: "2022 - 2026",
             location: "Navi Mumbai",
             keyCourses: ["DSA", "DBMS", "AI", "CN"],
-            logo: "./images/terna.png"
+            logo: "/images/terna.png"
         },
         {
             institution: "Shiravane Vidyalaya & Jr. College",
@@ -32,7 +32,7 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
             duration: "2022",
             location: "Navi Mumbai",
             keyCourses: [],
-            logo: "./images/svs_logo.png"
+            logo: "/images/svs_logo.png"
         },
         {
             institution: "Shiravane Vidyalaya",
@@ -40,7 +40,7 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
             duration: "2020",
             location: "Navi Mumbai",
             keyCourses: [],
-            logo: "./images/svs_logo.png"
+            logo: "/images/svs_logo.png"
         }
     ];
 
@@ -87,11 +87,12 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
                         {experience.map((job, idx) => (
                             <div key={idx} className="scroll-reveal flex gap-4 items-start relative z-10">
                                 <div className="w-14 h-14 flex-shrink-0 rounded-full border-4 border-white dark:border-black bg-white overflow-hidden shadow-sm">
-                                    <img
-                                        src={job.logo}
+                                    <Image
+                                        src={job.logo.replace('./', '/')}
                                         alt={job.company}
+                                        width={48}
+                                        height={48}
                                         className="w-full h-full object-contain"
-                                        loading="lazy"
                                     />
                                 </div>
 
@@ -132,11 +133,12 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
                             {education.map((edu, idx) => (
                                 <div key={idx} className="scroll-reveal flex gap-4 items-start relative z-10">
                                     <div className="w-14 h-14 flex-shrink-0 rounded-full border-4 border-white dark:border-black bg-white overflow-hidden shadow-sm">
-                                        <img
-                                            src={edu.logo}
+                                        <Image
+                                            src={edu.logo.replace('./', '/')}
                                             alt={edu.institution}
+                                            width={48}
+                                            height={48}
                                             className="w-full h-full object-contain"
-                                            loading="lazy"
                                         />
                                     </div>
 

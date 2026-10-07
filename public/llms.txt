@@ -10,9 +10,9 @@
 - **Status:** Actively open to software engineering and frontend roles.
 
 ## Architecture
-- `https://www.waquarshaikh.me/` (Homepage / Profile / Skills / Experience / Contact Form)
-- `https://www.waquarshaikh.me/projects` (Hub for 14 shipped technical projects)
-- `https://www.waquarshaikh.me/faq` (Frequently Asked Questions)
+- [Homepage](https://www.waquarshaikh.me/) (Profile / Skills / Experience / Contact Form)
+- [Projects Hub](https://www.waquarshaikh.me/projects) (Hub for 14 shipped technical projects)
+- [FAQ](https://www.waquarshaikh.me/faq) (Frequently Asked Questions)
 
 ## Notable Projects
 - **ServiceTrack CMMS:** Enterprise maintenance management software.
@@ -20,6 +20,6 @@
 - **MeshMind:** Clinical AI platform built during my Software Engineering Internship at HealthFirstPriority.
 
 ## Contact & Links
-- **Email:** shaikhwaquar.dev@gmail.com
-- **LinkedIn:** https://www.linkedin.com/in/shaikh-waquar
-- **GitHub:** https://github.com/waqar741
+- **Email:** [shaikhwaquar.dev@gmail.com](mailto:shaikhwaquar.dev@gmail.com)
+- **LinkedIn:** [shaikh-waquar](https://www.linkedin.com/in/shaikh-waquar)
+- **GitHub:** [waqar741](https://github.com/waqar741)

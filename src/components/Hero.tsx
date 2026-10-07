@@ -57,6 +57,7 @@ const Hero = ({ heroRef, isLoading, coffeeCount, setCoffeeCount }: HeroProps) =>
                     <button
                         onClick={() => setCoffeeCount(prev => prev + 1)}
                         className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 bg-gray-100 dark:bg-gray-900 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors group"
+                        aria-label="Buy me a coffee"
                     >
                         <Coffee size={14} className="group-hover:rotate-12 transition-transform" />
                         <span className="text-sm">

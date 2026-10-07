@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { projects } from '../../../data/projects';
 import JsonLd from '../../../components/JsonLd';
 import { ExternalLink, ArrowLeft } from 'lucide-react';
@@ -76,11 +77,12 @@ export default async function ProjectCaseStudy({ params }: { params: { slug: str
         </header>
 
         {project.image && (
-          <div className="mb-12 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800">
-            <img 
+          <div className="mb-12 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 relative w-full h-[400px]">
+            <Image 
               src={project.image} 
               alt={`Screenshot of ${project.title}`}
-              className="w-full h-auto"
+              fill
+              className="object-contain"
             />
           </div>
         )}

@@ -17,6 +17,7 @@ const Navbar = ({ activeSection, scrollToSection, darkMode, setDarkMode, isLoadi
                 <button
                     onClick={() => scrollToSection('hero')}
                     className={`p-1.5 sm:p-2 rounded-full transition-colors ${activeSection === 'hero' ? 'bg-black dark:bg-white text-white dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-gray-800'}`}
+                    aria-label="Home"
                 >
                     <Home size={16} />
                 </button>
@@ -24,6 +25,7 @@ const Navbar = ({ activeSection, scrollToSection, darkMode, setDarkMode, isLoadi
                 <button
                     onClick={() => scrollToSection('skills')}
                     className={`p-1.5 sm:p-2 rounded-full transition-colors ${activeSection === 'skills' ? 'bg-black dark:bg-white text-white dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-gray-800'}`}
+                    aria-label="Skills"
                 >
                     <Code2 size={16} />
                 </button>
@@ -31,6 +33,7 @@ const Navbar = ({ activeSection, scrollToSection, darkMode, setDarkMode, isLoadi
                 <button
                     onClick={() => scrollToSection('projects')}
                     className={`p-1.5 sm:p-2 rounded-full transition-colors ${activeSection === 'projects' ? 'bg-black dark:bg-white text-white dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-gray-800'}`}
+                    aria-label="Projects"
                 >
                     <Briefcase size={16} />
                 </button>
@@ -38,6 +41,7 @@ const Navbar = ({ activeSection, scrollToSection, darkMode, setDarkMode, isLoadi
                 <button
                     onClick={() => scrollToSection('experience')}
                     className={`p-1.5 sm:p-2 rounded-full transition-colors ${activeSection === 'experience' ? 'bg-black dark:bg-white text-white dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-gray-800'}`}
+                    aria-label="Experience"
                 >
                     <GraduationCap size={16} />
                 </button>
@@ -49,6 +53,7 @@ const Navbar = ({ activeSection, scrollToSection, darkMode, setDarkMode, isLoadi
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1.5 sm:p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    aria-label="GitHub Profile"
                 >
                     <Github size={16} />
                 </a>
@@ -58,6 +63,7 @@ const Navbar = ({ activeSection, scrollToSection, darkMode, setDarkMode, isLoadi
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1.5 sm:p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    aria-label="LinkedIn Profile"
                 >
                     <Linkedin size={16} />
                 </a>
@@ -67,6 +73,7 @@ const Navbar = ({ activeSection, scrollToSection, darkMode, setDarkMode, isLoadi
                 <button
                     onClick={() => setDarkMode(!darkMode)}
                     className="p-1.5 sm:p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    aria-label="Toggle Theme"
                 >
                     {darkMode ? <Sun size={16} /> : <Moon size={16} />}
                 </button>
