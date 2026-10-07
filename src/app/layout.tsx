@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.waquarshaikh.me"),
   title: {
-    default: "Waquar Shaikh | Freelance Web Developer in Navi Mumbai",
+    default: "Waquar Shaikh | Web Developer in Navi Mumbai",
     template: "%s | Waquar Shaikh",
   },
   description: "Computer Engineer and full-stack developer in Navi Mumbai. Specializing in Next.js, React, and Python to build high-performance web applications.",

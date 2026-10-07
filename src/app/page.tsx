@@ -8,7 +8,7 @@ export default function Home() {
         "@type": "ProfilePage",
         "@id": "https://www.waquarshaikh.me/#webpage",
         "url": "https://www.waquarshaikh.me/",
-        "name": "Waquar Shaikh - Freelance Web Developer Navi Mumbai",
+        "name": "Waquar Shaikh - Web Developer Navi Mumbai",
         "mainEntity": {
           "@id": "https://www.waquarshaikh.me/#person"
         }
@@ -18,7 +18,7 @@ export default function Home() {
         "@id": "https://www.waquarshaikh.me/#person",
         "name": "Waquar Shaikh",
         "url": "https://www.waquarshaikh.me/",
-        "jobTitle": "Freelance Web Developer & Software Engineer",
+        "jobTitle": "Web Developer & Software Engineer",
         "description": "Computer Engineering graduate and full-stack web developer specializing in Next.js, React, and Python, based in Navi Mumbai.",
         "sameAs": [
           "https://github.com/waqar741",

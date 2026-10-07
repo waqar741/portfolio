@@ -298,7 +298,7 @@ const Portfolio = () => {
                         <div className="flex flex-col md:flex-row gap-6 sm:gap-8 items-start">
                             <div className="flex-1">
                                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
-                                    Freelance Web Developer & Software Engineer in Navi Mumbai
+                                    Web Developer & Software Engineer in Navi Mumbai
                                 </h1>
 
                                 <p className="text-base sm:text-lg mb-6 leading-relaxed">
@@ -310,7 +310,7 @@ const Portfolio = () => {
                                         View Project Case Studies
                                     </button>
                                     <button onClick={() => { const el = document.getElementById('contact'); if(el) el.scrollIntoView({ behavior: 'smooth' }); }} className="px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                                        Contact for Freelance Opportunities
+                                        Contact for Opportunities
                                     </button>
                                 </div>
 
