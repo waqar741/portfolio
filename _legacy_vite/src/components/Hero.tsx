@@ -16,7 +16,7 @@ const Hero = ({ heroRef, isLoading, coffeeCount, setCoffeeCount }: HeroProps) =>
                 <div className={`flex items-center gap-3 transition-all duration-1000 transform ${isLoading ? 'opacity-0 -translate-y-10' : 'opacity-100 translate-y-0'}`}>
                     <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-black dark:border-white overflow-hidden relative group">
                         <img
-                            src="/images/waquar-ahmed-shaikh-profile.png"
+                            src="images/waquar-ahmed-shaikh-profile.png"
                             alt="Waquar Ahmed Shaikh - Software Developer & Data Analyst"
                             title="Waquar Ahmed Shaikh"
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -32,7 +32,7 @@ const Hero = ({ heroRef, isLoading, coffeeCount, setCoffeeCount }: HeroProps) =>
                         </div>
                     </div>
                     <div>
-                        <p className="text-xl sm:text-2xl font-bold tracking-tight">Hi, I'm Waquar</p>
+                        <h1 className="text-xl sm:text-2xl font-bold tracking-tight">Hi, I'm Waquar</h1>
                         <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 flex items-center gap-1">
                             <MapPin size={10} />
                             Navi Mumbai • Software Engineer

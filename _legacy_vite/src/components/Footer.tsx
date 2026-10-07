@@ -1,5 +1,5 @@
 import { Coffee, Heart } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
 interface FooterProps {
     coffeeCount: number;
@@ -18,11 +18,11 @@ const Footer = ({ coffeeCount }: FooterProps) => {
                 </div>
 
                 <div className="text-xs sm:text-sm text-gray-500 hover:text-gray-900 dark:hover:text-gray-200 transition-colors">
-                    <Link href="/madeby">Built by Waquar Shaikh</Link>
+                    <Link to="/madeby">Built by Waquar Shaikh</Link>
                 </div>
 
                 <p className="text-xs sm:text-sm text-gray-500 mb-5">
-                    © 2026 Waquar Shaikh
+                    © {new Date().getFullYear()} Waquar Shaikh
                 </p>
             </div>
         </footer>

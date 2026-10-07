@@ -1,5 +1,4 @@
-import { Mail, Send } from 'lucide-react';
-import { FaGithub as Github, FaLinkedin as Linkedin } from 'react-icons/fa';
+import { Mail, Github, Linkedin, Send } from 'lucide-react';
 import React from 'react';
 
 interface ContactProps {
