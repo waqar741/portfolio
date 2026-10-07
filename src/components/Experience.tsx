@@ -12,7 +12,7 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
             date: "Sept 2025 – June 2026",
             details: "Developed scalable application modules and robust REST APIs using Python and FastAPI. Collaborated closely with the design team to build a highly responsive, user-friendly React frontend. Ensured seamless integration between backend microservices and UI components to deliver a smooth end-to-end clinical data experience.",
             tech: ["React", "TypeScript", "FastAPI", "Python", "PostgreSQL"],
-            logo: "/images/hfp.png",
+            logo: "/images/hfp.webp",
             status: "Completed"
         }
     ];
@@ -24,7 +24,7 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
             duration: "2022 - 2026",
             location: "Navi Mumbai",
             keyCourses: ["DSA", "DBMS", "AI", "CN"],
-            logo: "/images/terna.png"
+            logo: "/images/terna.webp"
         },
         {
             institution: "Shiravane Vidyalaya & Jr. College",
@@ -32,7 +32,7 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
             duration: "2022",
             location: "Navi Mumbai",
             keyCourses: [],
-            logo: "/images/svs_logo.png"
+            logo: "/images/svs_logo.webp"
         },
         {
             institution: "Shiravane Vidyalaya",
@@ -40,7 +40,7 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
             duration: "2020",
             location: "Navi Mumbai",
             keyCourses: [],
-            logo: "/images/svs_logo.png"
+            logo: "/images/svs_logo.webp"
         }
     ];
 

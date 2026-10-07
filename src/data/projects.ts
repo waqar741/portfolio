@@ -8,7 +8,7 @@ export const projects = [
         live: "https://navitechsystem.vercel.app/",
         status: "Completed",
         category: "Frontend",
-        image: "/images/NaviTech.png"
+        image: "/images/NaviTech.webp"
     },
     {
         title: "Personal Portfolio",
@@ -19,7 +19,7 @@ export const projects = [
         live: "https://www.waquarshaikh.me/",
         status: "Completed",
         category: "Frontend",
-        image: "/images/WaquarPortfolio.png"
+        image: "/images/WaquarPortfolio.webp"
     },
     {
         title: "Colors And Waves Media",
@@ -30,7 +30,7 @@ export const projects = [
         live: "https://colours-waves.vercel.app/",
         status: "Completed",
         category: "Frontend",
-        image: "/images/ColourAndWaves.png"
+        image: "/images/ColourAndWaves.webp"
     },
     {
         title: "Samarth Digital E Seva Kendra",
@@ -41,7 +41,7 @@ export const projects = [
         live: "https://samarthdigitalseva.vercel.app",
         status: "Completed",
         category: "Frontend",
-        image: "/images/SamarthDigital.png"
+        image: "/images/SamarthDigital.webp"
     },
     {
         title: "ServiceTrack",
@@ -52,7 +52,7 @@ export const projects = [
         live: "https://service-track-seven.vercel.app/",
         status: "Completed",
         category: "Frontend",
-        image: "/images/ServiceTrack.png"
+        image: "/images/ServiceTrack.webp"
     },
     {
         title: "TextBook",

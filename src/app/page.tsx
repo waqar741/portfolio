@@ -32,7 +32,7 @@ export default function Home() {
         "name": "Waquar Shaikh",
         "alternateName": "Waquar Ahmed Shaikh",
         "url": "https://www.waquarshaikh.me/",
-        "image": "https://www.waquarshaikh.me/images/waquar-ahmed-shaikh-profile.png",
+        "image": "https://www.waquarshaikh.me/images/waquar-ahmed-shaikh-profile.webp",
         "jobTitle": "Software Engineer",
         "description": "Computer Engineering graduate specializing in high-performance web architecture using React.js, Next.js, TypeScript, and Python.",
         "email": "mailto:shaikhwaquar.dev@gmail.com",
