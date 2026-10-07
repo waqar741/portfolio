@@ -103,13 +103,16 @@ const ProjectsPage = () => {
 
                 {/* Projects Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-                    {filteredProjects.map((project, idx) => (
+                    {filteredProjects.map((project, idx) => {
+                        const slug = project.title.toLowerCase().replace(/[\s-]/g, '-').replace(/[^a-z0-9-]/g, '');
+                        return (
                         <div
                             key={idx}
                             style={{ animationDelay: `${idx * 100}ms` }}
                             className="group relative flex flex-col justify-between rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white bg-white/80 dark:bg-black/80 backdrop-blur-sm transition-all duration-300 hover:shadow-xl overflow-hidden animate-fade-in-up"
                         >
-                            <div className="flex flex-col">
+                            <Link href={`/projects/${slug}`} className="absolute inset-0 z-0" aria-label={`View the ${project.title} case study`}></Link>
+                            <div className="flex flex-col relative z-10 pointer-events-none">
                                 {project.image && (
                                     <div className="h-48 w-full overflow-hidden relative border-b border-gray-100 dark:border-gray-800">
                                         <img 
@@ -122,7 +125,9 @@ const ProjectsPage = () => {
                                 <div className="p-5">
                                     <div className="flex items-start justify-between mb-3">
                                     <div className="flex-1 pr-2">
-                                        <h3 className="text-lg font-bold group-hover:text-blue-500 transition-colors line-clamp-1">{project.title}</h3>
+                                        <h3 className="text-lg font-bold group-hover:text-blue-500 transition-colors line-clamp-1 pointer-events-auto">
+                                            <Link href={`/projects/${slug}`}>{project.title}</Link>
+                                        </h3>
                                         <span className={`inline-block mt-1 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider ${
                                             project.category === 'Frontend'
                                                 ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400'
@@ -132,22 +137,24 @@ const ProjectsPage = () => {
                                         </span>
                                     </div>
 
-                                    <div className="flex gap-1 flex-shrink-0">
-                                        <a
-                                            href={project.github}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="p-2 bg-gray-50 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-colors border border-transparent hover:border-gray-300 dark:hover:border-gray-700"
-                                            title="GitHub"
-                                        >
-                                            <Github size={16} />
-                                        </a>
-                                        {project.live !== '#' && (
+                                    <div className="flex gap-1 flex-shrink-0 pointer-events-auto">
+                                        {project.github && project.github !== "#" && (
+                                            <a
+                                                href={project.github}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="p-2 bg-gray-50 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-colors border border-transparent hover:border-gray-300 dark:hover:border-gray-700 relative z-20"
+                                                title="GitHub"
+                                            >
+                                                <Github size={16} />
+                                            </a>
+                                        )}
+                                        {project.live && project.live !== '#' && (
                                             <a
                                                 href={project.live}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="p-2 bg-gray-50 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-colors border border-transparent hover:border-gray-300 dark:hover:border-gray-700"
+                                                className="p-2 bg-gray-50 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-colors border border-transparent hover:border-gray-300 dark:hover:border-gray-700 relative z-20"
                                                 title="Live Site"
                                             >
                                                 <ExternalLink size={16} />
@@ -160,7 +167,7 @@ const ProjectsPage = () => {
                                     {project.desc}
                                 </p>
 
-                                <div className="flex flex-wrap gap-2 mb-4">
+                                <div className="flex flex-wrap gap-2 mb-4 pointer-events-auto">
                                     {project.stack.map(tech => (
                                         <span
                                             key={tech}
@@ -173,7 +180,7 @@ const ProjectsPage = () => {
                             </div>
                             </div>
 
-                            <div className="mx-5 mb-5 flex items-center justify-between mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 text-xs font-medium text-gray-500">
+                            <div className="mx-5 mb-5 flex items-center justify-between mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 text-xs font-medium text-gray-500 relative z-10 pointer-events-none">
                                 <span className="flex items-center gap-1">
                                     {project.year}
                                 </span>
@@ -187,7 +194,7 @@ const ProjectsPage = () => {
                                 </span>
                             </div>
                         </div>
-                    ))}
+                    )})}
                 </div>
             </main>
             

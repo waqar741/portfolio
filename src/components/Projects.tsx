@@ -46,14 +46,17 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {filteredProjects.map((project, idx) => (
+                {filteredProjects.map((project, idx) => {
+                    const slug = project.title.toLowerCase().replace(/[\s-]/g, '-').replace(/[^a-z0-9-]/g, '');
+                    return (
                     <div
                         key={idx}
                         className="group relative flex flex-col justify-between rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white bg-white dark:bg-black transition-all duration-300 hover:shadow-lg animate-fade-in-up overflow-hidden"
                         onMouseMove={handleMouseMove}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <div className="flex flex-col">
+                        <Link href={`/projects/${slug}`} className="absolute inset-0 z-0" aria-label={`View the ${project.title} case study`}></Link>
+                        <div className="flex flex-col relative z-10 pointer-events-none">
                             {project.image && (
                                 <div className="h-40 w-full overflow-hidden relative border-b border-gray-100 dark:border-gray-800">
                                     <img 
@@ -66,7 +69,9 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
                             <div className="p-4">
                                 <div className="flex items-start justify-between mb-2">
                                 <div className="flex-1 mr-2">
-                                    <h3 className="text-base font-bold group-hover:underline line-clamp-1">{project.title}</h3>
+                                    <h3 className="text-base font-bold group-hover:underline line-clamp-1 pointer-events-auto">
+                                        <Link href={`/projects/${slug}`}>{project.title}</Link>
+                                    </h3>
                                     <span className={`inline-block mt-0.5 text-[9px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wider ${project.category === 'Frontend'
                                         ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400'
                                         : 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400'
@@ -75,22 +80,24 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
                                     </span>
                                 </div>
 
-                                <div className="flex gap-2 flex-shrink-0">
-                                    <a
-                                        href={project.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="p-1.5 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
-                                        title="GitHub"
-                                    >
-                                        <Github size={16} />
-                                    </a>
-                                    {project.live !== '#' && (
+                                <div className="flex gap-2 flex-shrink-0 pointer-events-auto">
+                                    {project.github && project.github !== "#" && (
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="p-1.5 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors relative z-20"
+                                            title="GitHub"
+                                        >
+                                            <Github size={16} />
+                                        </a>
+                                    )}
+                                    {project.live && project.live !== '#' && (
                                         <a
                                             href={project.live}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="p-1.5 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
+                                            className="p-1.5 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors relative z-20"
                                             title="Live Site"
                                         >
                                             <ExternalLink size={16} />
@@ -103,7 +110,7 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
                                 {project.desc}
                             </p>
 
-                            <div className="flex flex-wrap gap-1.5 mb-3">
+                            <div className="flex flex-wrap gap-1.5 mb-3 pointer-events-auto">
                                 {project.stack.slice(0, 4).map(tech => (
                                     <span
                                         key={tech}
@@ -116,7 +123,7 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
                         </div>
                         </div>
 
-                        <div className="mx-4 mb-4 flex items-center justify-between mt-auto pt-3 border-t border-gray-100 dark:border-gray-800 text-[10px] sm:text-xs text-gray-500">
+                        <div className="mx-4 mb-4 flex items-center justify-between mt-auto pt-3 border-t border-gray-100 dark:border-gray-800 text-[10px] sm:text-xs text-gray-500 relative z-10 pointer-events-none">
                             <span>{project.year}</span>
                             <span className={`px-2 py-0.5 rounded-full ${project.status === 'Completed' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400'
                                 }`}>
@@ -124,7 +131,7 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
                             </span>
                         </div>
                     </div>
-                ))}
+                )})}
             </div>
 
             <div className="mt-8 flex justify-center scroll-reveal">

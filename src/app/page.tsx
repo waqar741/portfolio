@@ -1,60 +1,74 @@
 import Portfolio from "../Portfolio";
+import JsonLd from "../components/JsonLd";
 
 export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        "@id": "https://www.waquarshaikh.me/#website",
+        "url": "https://www.waquarshaikh.me/",
+        "name": "Waquar Shaikh",
+        "inLanguage": "en-IN",
+        "publisher": {
+          "@id": "https://www.waquarshaikh.me/#person"
+        }
+      },
+      {
         "@type": "ProfilePage",
         "@id": "https://www.waquarshaikh.me/#webpage",
         "url": "https://www.waquarshaikh.me/",
-        "name": "Waquar Shaikh - Web Developer Navi Mumbai",
+        "name": "Waquar Shaikh | Web Developer in Navi Mumbai",
         "mainEntity": {
           "@id": "https://www.waquarshaikh.me/#person"
-        }
+        },
+        "dateCreated": "2026-01-01T00:00:00Z",
+        "dateModified": "2026-10-07T00:00:00Z"
       },
       {
         "@type": "Person",
         "@id": "https://www.waquarshaikh.me/#person",
         "name": "Waquar Shaikh",
+        "alternateName": "Waquar Ahmed Shaikh",
         "url": "https://www.waquarshaikh.me/",
-        "jobTitle": "Web Developer & Software Engineer",
-        "description": "Computer Engineering graduate and full-stack web developer specializing in Next.js, React, and Python, based in Navi Mumbai.",
+        "image": "https://www.waquarshaikh.me/images/waquar-ahmed-shaikh-profile.png",
+        "jobTitle": "Software Engineer",
+        "description": "Computer Engineering graduate specializing in high-performance web architecture using React.js, Next.js, TypeScript, and Python.",
+        "email": "mailto:shaikhwaquar.dev@gmail.com",
         "sameAs": [
           "https://github.com/waqar741",
-          "https://www.linkedin.com/in/waquar-shaikh"
+          "https://www.linkedin.com/in/shaikh-waquar"
         ],
         "knowsAbout": [
           "React.js",
           "Next.js",
           "TypeScript",
-          "Node.js",
-          "Python",
-          "PostgreSQL",
+          "JavaScript",
           "Tailwind CSS",
-          "FastAPI",
+          "Framer Motion",
+          "Node.js",
+          "Express",
+          "Python",
           "Django",
-          "Generative AI Integrations"
+          "FastAPI",
+          "PostgreSQL",
+          "SQLite",
+          "Supabase",
+          "Vercel",
+          "DigitalOcean",
+          "AI/LLM API integrations",
+          "Git/GitHub"
         ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Web Development Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Custom React & Next.js Development"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Full-Stack Web Application Development"
-              }
-            }
-          ]
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Terna Engineering College"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Navi Mumbai",
+          "addressRegion": "Maharashtra",
+          "addressCountry": "IN"
         },
         "areaServed": [
           {
@@ -67,6 +81,24 @@ export default function Home() {
             "name": "Mumbai",
             "sameAs": "https://en.wikipedia.org/wiki/Mumbai"
           }
+        ],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Frontend Web UI Frameworks and Tools",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "Coursera"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Advanced React and Next.js"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Full Stack Web Development"
+          }
         ]
       }
     ]
@@ -74,10 +106,7 @@ export default function Home() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
-      />
+      <JsonLd data={jsonLd} />
       <Portfolio />
     </>
   );

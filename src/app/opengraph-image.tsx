@@ -1,0 +1,37 @@
+import { ImageResponse } from 'next/og';
+
+export const alt = 'Waquar Shaikh Portfolio';
+export const size = {
+  width: 1200,
+  height: 630,
+};
+
+export const contentType = 'image/png';
+
+export default async function Image() {
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          fontSize: 64,
+          background: 'black',
+          color: 'white',
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <div style={{ fontWeight: 'bold' }}>Waquar Shaikh</div>
+        <div style={{ fontSize: 32, color: '#aaa', marginTop: 20 }}>
+          Web Developer & Software Engineer in Navi Mumbai
+        </div>
+      </div>
+    ),
+    {
+      ...size,
+    }
+  );
+}

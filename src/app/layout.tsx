@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    siteName: "Waquar Shaikh Portfolio",
+    siteName: "Waquar Shaikh",
   },
   twitter: {
     card: "summary_large_image",
@@ -38,10 +38,9 @@ export const metadata: Metadata = {
   },
   authors: [{ name: "Waquar Shaikh" }],
   creator: "Waquar Shaikh",
-  verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "TODO(waquar): Add your Google verification code",
-    // yandex, yahoo, other verifications...
-  }
+  verification: process.env.NEXT_PUBLIC_GSC_VERIFICATION ? {
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
+  } : undefined,
 };
 
 export default function RootLayout({

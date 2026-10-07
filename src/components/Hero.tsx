@@ -1,5 +1,6 @@
 import { MapPin, Download, Coffee, Mail } from 'lucide-react';
 import React from 'react';
+import Image from 'next/image';
 
 interface HeroProps {
     heroRef: React.RefObject<HTMLDivElement | null>; // More robust React ref type
@@ -15,10 +16,13 @@ const Hero = ({ heroRef, isLoading, coffeeCount, setCoffeeCount }: HeroProps) =>
             <header ref={heroRef} id="hero" className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 sm:mb-12 gap-4">
                 <div className={`flex items-center gap-3 transition-all duration-1000 transform ${isLoading ? 'opacity-0 -translate-y-10' : 'opacity-100 translate-y-0'}`}>
                     <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-black dark:border-white overflow-hidden relative group">
-                        <img
+                        <Image
                             src="/images/waquar-ahmed-shaikh-profile.png"
                             alt="Waquar Ahmed Shaikh - Software Developer & Data Analyst"
                             title="Waquar Ahmed Shaikh"
+                            width={64}
+                            height={64}
+                            priority
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         {/* Sunglasses Easter Egg */}
