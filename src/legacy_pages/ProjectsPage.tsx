@@ -54,7 +54,7 @@ const ProjectsPage = () => {
             </div>
 
             {/* Header / Nav */}
-            <header className="relative z-50 p-4 flex items-center justify-between">
+            <header className="relative z-50 p-2 sm:p-4 flex items-center justify-between">
                 <Link 
                     href="/" 
                     className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-800"
@@ -62,18 +62,9 @@ const ProjectsPage = () => {
                     <ArrowLeft size={16} />
                     <span className="text-sm font-medium">Back to Home</span>
                 </Link>
-                
-                {/* Theme Toggle Button */}
-                <button
-                    onClick={() => setDarkMode(!darkMode)}
-                    className="p-1.5 sm:p-2 rounded-full bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-800 flex items-center justify-center"
-                    aria-label="Toggle Theme"
-                >
-                    {darkMode ? <Sun size={16} /> : <Moon size={16} />}
-                </button>
             </header>
 
-            <main className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 pt-2 pb-8">
+            <main className="relative z-10 max-w-5xl mx-auto px-2 sm:px-4 pt-2 pb-24">
                 <div className="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
                     <div className="text-center sm:text-left">
                         <h1 className="text-3xl md:text-4xl font-bold mb-2 flex items-center justify-center sm:justify-start gap-2">
