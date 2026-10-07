@@ -32,7 +32,7 @@ const Hero = ({ heroRef, isLoading, coffeeCount, setCoffeeCount }: HeroProps) =>
                         </div>
                     </div>
                     <div>
-                        <p className="text-xl sm:text-2xl font-bold tracking-tight">Hi, I'm Waquar</p>
+                        <h1 className="text-xl sm:text-2xl font-bold tracking-tight">Hi, I'm Waquar</h1>
                         <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 flex items-center gap-1">
                             <MapPin size={10} />
                             Navi Mumbai • Software Engineer

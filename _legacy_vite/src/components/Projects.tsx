@@ -1,7 +1,6 @@
-import { Code2, ExternalLink, ArrowRight } from 'lucide-react';
-import { FaGithub as Github } from 'react-icons/fa';
+import { Code2, Github, ExternalLink, ArrowRight } from 'lucide-react';
 import React, { useState } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 
 interface ProjectsProps {
@@ -129,7 +128,7 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
 
             <div className="mt-8 flex justify-center scroll-reveal">
                 <Link
-                    href="/projects"
+                    to="/projects"
                     className="group flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-lg font-medium hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-800"
                 >
                     <span>View All Projects</span>

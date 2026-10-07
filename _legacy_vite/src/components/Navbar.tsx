@@ -1,5 +1,5 @@
-import { Home, Code2, Briefcase, GraduationCap, Sun, Moon } from 'lucide-react';
-import { FaGithub as Github, FaLinkedin as Linkedin } from 'react-icons/fa';
+import { Home, Code2, Briefcase, GraduationCap, Github, Linkedin, Sun, Moon } from 'lucide-react';
+
 interface NavbarProps {
     activeSection: string;
     scrollToSection: (id: string) => void;

@@ -1,4 +1,3 @@
-"use client";
 import { useState, useEffect, type FormEvent, useRef } from 'react';
 import { Palette, Terminal, Code2, Database } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -168,7 +167,7 @@ const Portfolio = () => {
                     Accept: "application/json",
                 },
                 body: JSON.stringify({
-                    access_key: process.env.NEXT_PUBLIC_ACCESS_KEY,
+                    access_key: import.meta.env.VITE_ACCESS_KEY,
                     name: formData.name,
                     email: formData.email,
                     message: formData.message,
@@ -297,22 +296,20 @@ const Portfolio = () => {
                     <section className="mb-12 sm:mb-16 animate-fade-in-up">
                         <div className="flex flex-col md:flex-row gap-6 sm:gap-8 items-start">
                             <div className="flex-1">
-                                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
-                                    Freelance Web Developer & Software Engineer in Navi Mumbai
-                                </h1>
+                                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
+                                    Software engineer.
+                                    <span className="block text-gray-600 dark:text-gray-400 font-normal">
+                                        Problem solver.
+                                    </span>
+                                </h2>
 
                                 <p className="text-base sm:text-lg mb-6 leading-relaxed">
-                                    Computer Engineering graduate specializing in high-performance web architecture using React.js, Next.js, TypeScript, and Python.
+                                    Computer Engineering graduate (2026) who builds{' '}
+                                    <span className="font-semibold">full-stack applications</span>{' '}
+                                    and extracts{' '}
+                                    <span className="font-semibold">engaging, user-centric interfaces</span>.{' '}
+                                    Experienced with React, Next.js, Tailwind CSS, TypeScript, and modern design tools like Figma.
                                 </p>
-
-                                <div className="flex flex-wrap gap-4 mb-8">
-                                    <button onClick={() => { const el = document.getElementById('projects'); if(el) el.scrollIntoView({ behavior: 'smooth' }); }} className="px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-lg font-medium hover:opacity-90 transition-opacity">
-                                        View Project Case Studies
-                                    </button>
-                                    <button onClick={() => { const el = document.getElementById('contact'); if(el) el.scrollIntoView({ behavior: 'smooth' }); }} className="px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                                        Contact for Freelance Opportunities
-                                    </button>
-                                </div>
 
                                 {/* Skills - Grid Cols 2 Fixed for Mobile */}
                                 <div className="grid grid-cols-2 gap-3 mb-6">
