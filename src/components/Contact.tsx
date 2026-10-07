@@ -15,7 +15,8 @@ const Contact = ({ contactRef, formData, setFormData, handleSubmit, isSubmitting
         <section ref={contactRef} id="contact" className="mb-16 sm:mb-24">
             <div className="flex flex-col md:flex-row gap-6 sm:gap-8 max-w-4xl mx-auto">
                 <div className="flex-1 text-left space-y-4 sm:space-y-6">
-                    <h3 className="text-2xl sm:text-3xl font-bold scroll-reveal">Open to new opportunities</h3>
+                    <h2 className="text-3xl font-bold scroll-reveal">Contact</h2>
+                    <h3 className="text-xl sm:text-2xl font-semibold scroll-reveal text-gray-800 dark:text-gray-200">Open to new opportunities</h3>
                     <p className="text-gray-600 dark:text-gray-400 leading-relaxed scroll-reveal text-sm sm:text-base">
                         Software developer with experience in full-stack development and building scalable web applications. 
                         Looking for roles in software engineering or frontend development where I can build impactful solutions. 

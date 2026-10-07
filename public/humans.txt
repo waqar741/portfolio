@@ -1,0 +1,13 @@
+/* TEAM */
+Developer: Waquar Shaikh
+Role: Software Engineer
+Location: Navi Mumbai, Maharashtra, India
+Email: shaikhwaquar.dev@gmail.com
+GitHub: https://github.com/waqar741
+LinkedIn: https://www.linkedin.com/in/shaikh-waquar
+
+/* SITE */
+Last update: 2026-10-07
+Language: en-IN
+Doctype: HTML5
+Frameworks: React.js, Next.js, Tailwind CSS

@@ -85,6 +85,7 @@ const Skills = ({ skillsRef, isLoading }: SkillsProps) => {
                     hidden: {}
                 }}
                 className="flex sm:hidden flex-wrap gap-2 pt-1"
+                aria-hidden="true"
             >
                 {skillsCategories.flatMap(c => c.skills).map((skill, idx) => (
                     <motion.span

@@ -1,0 +1,25 @@
+# Waquar Shaikh - AI Discoverability
+
+> Computer Engineering graduate specializing in high-performance web architecture using React.js, Next.js, TypeScript, and Python.
+
+## Key Facts
+- **Name:** Waquar Shaikh
+- **Location:** Navi Mumbai, Maharashtra, India
+- **Role:** Software Engineer & Web Developer
+- **Tech Stack:** React.js, Next.js, TypeScript, Python, FastAPI, PostgreSQL, Supabase.
+- **Status:** Actively open to software engineering and frontend roles.
+
+## Architecture
+- `https://www.waquarshaikh.me/` (Homepage / Profile / Skills / Experience / Contact Form)
+- `https://www.waquarshaikh.me/projects` (Hub for 14 shipped technical projects)
+- `https://www.waquarshaikh.me/faq` (Frequently Asked Questions)
+
+## Notable Projects
+- **ServiceTrack CMMS:** Enterprise maintenance management software.
+- **FoodSetu:** Full-stack food ordering platform.
+- **MeshMind:** Clinical AI platform built during my Software Engineering Internship at HealthFirstPriority.
+
+## Contact & Links
+- **Email:** shaikhwaquar.dev@gmail.com
+- **LinkedIn:** https://www.linkedin.com/in/shaikh-waquar
+- **GitHub:** https://github.com/waqar741

@@ -1,55 +1,29 @@
 import { MetadataRoute } from 'next';
+import { projects } from '../data/projects';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.waquarshaikh.me';
-  const currentDate = new Date(); // In a real app, use build or modify date
+  const siteLastModified = new Date('2026-10-07'); 
 
-  // Hardcoded projects for now (can be dynamic if using CMS)
-  const projects = [
-    'foodsetu',
-    'servicetrack',
-    'samarth-digital',
-    'traxos-finance',
-    'ai-adaptive-honeypot'
-  ];
-
-  const projectUrls = projects.map(slug => ({
-    url: `${baseUrl}/projects/${slug}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
+  const projectUrls = projects.map(project => ({
+    url: `${baseUrl}/projects/${project.title.toLowerCase().replace(/[\s-]/g, '-').replace(/[^a-z0-9-]/g, '')}`,
+    lastModified: new Date(`${project.year}-01-01`),
+    changeFrequency: 'yearly' as const,
     priority: 0.8,
   }));
 
   return [
     {
       url: baseUrl,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
+      lastModified: siteLastModified,
+      changeFrequency: 'monthly',
       priority: 1,
     },
     {
-      url: `${baseUrl}/about`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/projects`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
+      lastModified: siteLastModified,
+      changeFrequency: 'weekly',
       priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/services`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.7,
     },
     ...projectUrls
   ];

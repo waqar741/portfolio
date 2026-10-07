@@ -302,14 +302,14 @@ const Portfolio = () => {
                                 </h1>
 
                                 <p className="text-base sm:text-lg mb-6 leading-relaxed">
-                                    Computer Engineering graduate specializing in high-performance web architecture using React.js, Next.js, TypeScript, and Python.
+                                    Waquar Shaikh is a Computer Engineering graduate and software engineer in Navi Mumbai who builds full-stack web applications with React, Next.js, TypeScript, Python, FastAPI, and PostgreSQL. He completed a Software Engineer internship at HealthFirstPriority (Sept 2025 to June 2026) and is open to software engineering and frontend roles.
                                 </p>
 
                                 <div className="flex flex-wrap gap-4 mb-8">
-                                    <button onClick={() => { const el = document.getElementById('projects'); if(el) el.scrollIntoView({ behavior: 'smooth' }); }} className="px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-lg font-medium hover:opacity-90 transition-opacity">
+                                    <button onClick={() => { const el = document.getElementById('projects'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }} className="px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-lg font-medium hover:opacity-90 transition-opacity">
                                         View Project Case Studies
                                     </button>
-                                    <button onClick={() => { const el = document.getElementById('contact'); if(el) el.scrollIntoView({ behavior: 'smooth' }); }} className="px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                                    <button onClick={() => { const el = document.getElementById('contact'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }} className="px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                                         Contact for Opportunities
                                     </button>
                                 </div>
@@ -323,7 +323,6 @@ const Portfolio = () => {
                                             dragConstraints={{ left: -50, right: 50, top: -50, bottom: 50 }}
                                             whileDrag={{ scale: 1.05, cursor: "grabbing" }}
                                             className={`flex flex-row items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 ${isMobile ? '' : 'cursor-grab'} z-10 transition-colors opacity-100 translate-y-0`}
-                                            // Keep animation delay but remove transition-all which fights with framer-motion's transform
                                             style={{ animationDelay: `${idx * 50}ms` }}
                                         >
                                             <div className="text-black dark:text-white flex-shrink-0 pointer-events-none">
@@ -350,24 +349,24 @@ const Portfolio = () => {
                                         <Palette size={14} />
                                         Quick Stats
                                     </h3>
-                                    <div className="space-y-2 sm:space-y-3 text-sm">
+                                    <dl className="space-y-2 sm:space-y-3 text-sm">
                                         <div className="flex justify-between">
-                                            <span className="text-gray-600 dark:text-gray-400">Status</span>
-                                            <span className="font-mono">Open to Work</span>
+                                            <dt className="text-gray-600 dark:text-gray-400">Status</dt>
+                                            <dd className="font-mono text-right">Open to Work</dd>
                                         </div>
                                         <div className="flex justify-between">
-                                            <span className="text-gray-600 dark:text-gray-400">Roles</span>
-                                            <span className="font-mono text-right text-[11px]">SWE</span>
+                                            <dt className="text-gray-600 dark:text-gray-400">Role</dt>
+                                            <dd className="font-mono text-right">Software Engineer</dd>
                                         </div>
                                         <div className="flex justify-between">
-                                            <span className="text-gray-600 dark:text-gray-400">Projects</span>
-                                            <span className="font-mono">8+ shipped</span>
+                                            <dt className="text-gray-600 dark:text-gray-400">Projects</dt>
+                                            <dd className="font-mono text-right">14+ shipped</dd>
                                         </div>
                                         <div className="flex justify-between">
-                                            <span className="text-gray-600 dark:text-gray-400">Location</span>
-                                            <span>Navi Mumbai, IN</span>
+                                            <dt className="text-gray-600 dark:text-gray-400">Location</dt>
+                                            <dd className="text-right">Navi Mumbai, IN</dd>
                                         </div>
-                                    </div>
+                                    </dl>
                                 </div>
                             </motion.div>
                         </div>

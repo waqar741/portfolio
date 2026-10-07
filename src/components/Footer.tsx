@@ -17,8 +17,10 @@ const Footer = ({ coffeeCount }: FooterProps) => {
                     <Heart size={12} className="text-red-500" />
                 </div>
 
-                <div className="text-xs sm:text-sm text-gray-500 hover:text-gray-900 dark:hover:text-gray-200 transition-colors">
-                    <Link href="/madeby">Built by Waquar Shaikh</Link>
+                <div className="flex flex-wrap justify-center gap-4 text-xs sm:text-sm text-gray-500">
+                    <Link href="/madeby" className="hover:text-gray-900 dark:hover:text-gray-200 transition-colors">Built by Waquar Shaikh</Link>
+                    <span>|</span>
+                    <Link href="/faq" className="hover:text-gray-900 dark:hover:text-gray-200 transition-colors">FAQ</Link>
                 </div>
 
                 <p className="text-xs sm:text-sm text-gray-500 mb-5">
