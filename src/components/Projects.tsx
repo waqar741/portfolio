@@ -38,7 +38,7 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
                             onClick={() => setFilter(category)}
                             className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 ${filter === category
                                 ? 'bg-white dark:bg-black text-black dark:text-white shadow-sm ring-1 ring-black/5 dark:ring-white/10'
-                                : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-200'
+                                : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200'
                                 }`}>
                             {category}
                         </button>
@@ -128,7 +128,7 @@ const Projects = ({ projectsRef, handleMouseMove, handleMouseLeave }: ProjectsPr
                         </div>
                         </div>
 
-                        <div className="mx-4 mb-4 flex items-center justify-between mt-auto pt-3 border-t border-gray-100 dark:border-gray-800 text-[10px] sm:text-xs text-gray-500 relative z-10 pointer-events-none">
+                        <div className="mx-4 mb-4 flex items-center justify-between mt-auto pt-3 border-t border-gray-100 dark:border-gray-800 text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 relative z-10 pointer-events-none">
                             <span>{project.year}</span>
                             <span className={`px-2 py-0.5 rounded-full ${project.status === 'Completed' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400'
                                 }`}>

@@ -99,7 +99,7 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
                                 <div className="pt-1">
                                     <h3 className="font-bold text-base">{job.role}</h3>
                                     <div className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">{job.company}</div>
-                                    <div className="text-xs text-gray-500 mb-2 uppercase tracking-wide">{job.date}</div>
+                                    <div className="text-xs text-gray-600 dark:text-gray-400 mb-2 uppercase tracking-wide">{job.date}</div>
 
                                     <p className="text-sm text-gray-700 dark:text-gray-300 mb-3 leading-relaxed">
                                         {job.details}
@@ -146,7 +146,7 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
                                         <h3 className="font-bold text-sm">{edu.institution}</h3>
                                         <p className="text-xs text-gray-600 dark:text-gray-400">{edu.degree}</p>
                                         <div className="flex justify-between items-center mt-1">
-                                            <span className="text-xs text-gray-500">{edu.duration}</span>
+                                            <span className="text-xs text-gray-600 dark:text-gray-400">{edu.duration}</span>
                                             {/* <span className="text-xs font-medium text-green-600 dark:text-green-400">{edu.grade}</span> */}
                                         </div>
                                     </div>
@@ -164,7 +164,7 @@ const Experience = ({ experienceRef }: ExperienceProps) => {
                             {certifications.map((cert, idx) => (
                                 <div key={idx} className="scroll-reveal p-3 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-colors bg-gray-50/50 dark:bg-gray-900/50">
                                     <h3 className="font-bold text-sm">{cert.title}</h3>
-                                    <div className="flex justify-between mt-1 text-xs text-gray-500">
+                                    <div className="flex justify-between mt-1 text-xs text-gray-600 dark:text-gray-400">
                                         <span>{cert.provider}</span>
                                         <span>{cert.year}</span>
                                     </div>

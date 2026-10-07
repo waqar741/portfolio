@@ -11,7 +11,11 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import ParticleCanvas from './components/ParticleCanvas';
+import dynamic from 'next/dynamic';
+
+const ParticleCanvas = dynamic(() => import('./components/ParticleCanvas'), {
+    ssr: false,
+});
 
 const Portfolio = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -294,7 +298,7 @@ const Portfolio = () => {
                     />
 
 
-                    <section className="mb-12 sm:mb-16 animate-fade-in-up">
+                    <section className="mb-12 sm:mb-16">
                         <div className="flex flex-col md:flex-row gap-6 sm:gap-8 items-start">
                             <div className="flex-1">
                                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
@@ -330,7 +334,7 @@ const Portfolio = () => {
                                             </div>
                                             <div className="text-left pointer-events-none">
                                                 <div className="text-sm font-medium leading-tight">{skill.label}</div>
-                                                <div className="text-[10px] sm:text-xs text-gray-500">{skill.desc}</div>
+                                                <div className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400">{skill.desc}</div>
                                             </div>
                                         </motion.div>
                                     ))}
@@ -345,10 +349,10 @@ const Portfolio = () => {
                                 className={`w-full md:w-64 z-20 ${isMobile ? '' : 'cursor-grab'}`}
                             >
                                 <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-4 sm:p-6 border border-gray-200 dark:border-gray-800 shadow-sm">
-                                    <h3 className="font-bold mb-3 sm:mb-4 flex items-center gap-2 text-sm sm:text-base">
+                                    <h2 className="font-bold mb-3 sm:mb-4 flex items-center gap-2 text-sm sm:text-base">
                                         <Palette size={14} />
                                         Quick Stats
-                                    </h3>
+                                    </h2>
                                     <dl className="space-y-2 sm:space-y-3 text-sm">
                                         <div className="flex justify-between">
                                             <dt className="text-gray-600 dark:text-gray-400">Status</dt>

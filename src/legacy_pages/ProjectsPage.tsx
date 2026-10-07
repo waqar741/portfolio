@@ -6,7 +6,11 @@ import { useRouter } from 'next/navigation';
 import { ArrowLeft, Code2, ExternalLink, Sun, Moon } from 'lucide-react';
 import { FaGithub as Github } from 'react-icons/fa';
 import { projects } from '../data/projects';
-import ParticleCanvas from '../components/ParticleCanvas';
+import dynamic from 'next/dynamic';
+
+const ParticleCanvas = dynamic(() => import('../components/ParticleCanvas'), {
+    ssr: false,
+});
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 
@@ -92,7 +96,7 @@ const ProjectsPage = () => {
                                     className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-300 ${
                                         filter === category
                                             ? 'bg-white dark:bg-black text-black dark:text-white shadow-sm ring-1 ring-black/5 dark:ring-white/10'
-                                            : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-200'
+                                            : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200'
                                     }`}
                                 >
                                     {category}
@@ -185,7 +189,7 @@ const ProjectsPage = () => {
                             </div>
                             </div>
 
-                            <div className="mx-5 mb-5 flex items-center justify-between mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 text-xs font-medium text-gray-500 relative z-10 pointer-events-none">
+                            <div className="mx-5 mb-5 flex items-center justify-between mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 text-xs font-medium text-gray-600 dark:text-gray-400 relative z-10 pointer-events-none">
                                 <span className="flex items-center gap-1">
                                     {project.year}
                                 </span>
