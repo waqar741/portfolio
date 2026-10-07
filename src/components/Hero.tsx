@@ -49,6 +49,7 @@ const Hero = ({ heroRef, isLoading, coffeeCount, setCoffeeCount }: HeroProps) =>
                         href="/Waquar-Resume.pdf"
                         download
                         className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-lg font-medium hover:opacity-90 transition-opacity text-sm"
+                        aria-label="Download Resume"
                     >
                         <Download size={14} />
                         <span className="hidden sm:inline">Resume</span>

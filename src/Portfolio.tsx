@@ -334,7 +334,7 @@ const Portfolio = () => {
                                             </div>
                                             <div className="text-left pointer-events-none">
                                                 <div className="text-sm font-medium leading-tight">{skill.label}</div>
-                                                <div className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400">{skill.desc}</div>
+                                                <div className="text-[10px] sm:text-xs text-gray-700 dark:text-gray-300">{skill.desc}</div>
                                             </div>
                                         </motion.div>
                                     ))}

@@ -17,13 +17,13 @@ const Footer = ({ coffeeCount }: FooterProps) => {
                     <Heart size={12} className="text-red-500" />
                 </div>
 
-                <div className="flex flex-wrap justify-center gap-4 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+                <div className="flex flex-wrap justify-center gap-4 text-xs sm:text-sm text-gray-700 dark:text-gray-300">
                     <Link href="/madeby" className="hover:text-gray-900 dark:hover:text-gray-200 transition-colors">Built by Waquar Shaikh</Link>
                     <span>|</span>
                     <Link href="/faq" className="hover:text-gray-900 dark:hover:text-gray-200 transition-colors">FAQ</Link>
                 </div>
 
-                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-5">
+                <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 mb-5">
                     © 2026 Waquar Shaikh
                 </p>
             </div>

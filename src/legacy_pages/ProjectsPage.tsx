@@ -189,7 +189,7 @@ const ProjectsPage = () => {
                             </div>
                             </div>
 
-                            <div className="mx-5 mb-5 flex items-center justify-between mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 text-xs font-medium text-gray-600 dark:text-gray-400 relative z-10 pointer-events-none">
+                            <div className="mx-5 mb-5 flex items-center justify-between mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 text-xs font-medium text-gray-700 dark:text-gray-300 relative z-10 pointer-events-none">
                                 <span className="flex items-center gap-1">
                                     {project.year}
                                 </span>
