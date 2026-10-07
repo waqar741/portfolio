@@ -231,7 +231,7 @@ const MadeBy = () => {
 
                 <div className="mt-6 text-center">
                     <p className="text-[10px] text-gray-600 font-mono">
-                        Waquar Ahmed Shaikh &copy; {new Date().getFullYear()}
+                        Waquar Ahmed Shaikh &copy; 2026
                     </p>
                 </div>
             </main>

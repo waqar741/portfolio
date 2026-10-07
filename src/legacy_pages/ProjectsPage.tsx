@@ -106,7 +106,8 @@ const ProjectsPage = () => {
                     {filteredProjects.map((project, idx) => (
                         <div
                             key={idx}
-                            className="group relative flex flex-col justify-between rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white bg-white/80 dark:bg-black/80 backdrop-blur-sm transition-all duration-300 hover:shadow-xl overflow-hidden"
+                            style={{ animationDelay: `${idx * 100}ms` }}
+                            className="group relative flex flex-col justify-between rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white bg-white/80 dark:bg-black/80 backdrop-blur-sm transition-all duration-300 hover:shadow-xl overflow-hidden animate-fade-in-up"
                         >
                             <div className="flex flex-col">
                                 {project.image && (
