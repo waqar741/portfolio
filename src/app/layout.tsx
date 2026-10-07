@@ -43,6 +43,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { ThemeProvider } from "../components/ThemeProvider";
+
 export default function RootLayout({
   children,
 }: {
@@ -52,8 +54,13 @@ export default function RootLayout({
     <html
       lang="en-IN"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-white dark:bg-black text-gray-900 dark:text-gray-100 transition-colors duration-500">{children}</body>
+      <body className="min-h-full flex flex-col bg-white dark:bg-black text-gray-900 dark:text-gray-100 transition-colors duration-500">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

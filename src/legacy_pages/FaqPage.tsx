@@ -10,10 +10,14 @@ const ParticleCanvas = dynamic(() => import('../components/ParticleCanvas'), {
 });
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import { useTheme } from 'next-themes';
 
 const FaqPage = () => {
     const router = useRouter();
-    const [darkMode, setDarkMode] = useState(true);
+    const { theme, resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => setMounted(true), []);
+    const isDark = mounted && (theme === 'dark' || resolvedTheme === 'dark');
 
     const scrollToSection = (id: string) => {
         if (id === 'faq') {
@@ -27,19 +31,11 @@ const FaqPage = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    useEffect(() => {
-        if (darkMode) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-    }, [darkMode]);
-
     return (
-        <div className={`min-h-screen ${darkMode ? 'bg-black text-white' : 'bg-white text-gray-900'} font-sans transition-colors duration-500`}>
+        <div className={`min-h-screen ${isDark ? 'bg-black text-white' : 'bg-white text-gray-900'} font-sans transition-colors duration-500`}>
             {/* Background */}
             <div className="fixed inset-0 pointer-events-none opacity-50 z-0">
-                <ParticleCanvas darkMode={darkMode} />
+                <ParticleCanvas darkMode={isDark} />
             </div>
 
             {/* Header / Nav */}
@@ -88,8 +84,6 @@ const FaqPage = () => {
             <Navbar 
                 activeSection="faq" 
                 scrollToSection={scrollToSection} 
-                darkMode={darkMode} 
-                setDarkMode={setDarkMode} 
                 isLoading={false} 
             />
         </div>

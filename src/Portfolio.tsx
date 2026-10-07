@@ -12,6 +12,7 @@ import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import dynamic from 'next/dynamic';
+import { useTheme } from 'next-themes';
 
 const ParticleCanvas = dynamic(() => import('./components/ParticleCanvas'), {
     ssr: false,
@@ -29,7 +30,10 @@ const Portfolio = () => {
     }, []);
 
     // UI States
-    const [darkMode, setDarkMode] = useState(true);
+    const { theme, resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => setMounted(true), []);
+    const isDark = mounted && (theme === 'dark' || resolvedTheme === 'dark');
     const [coffeeCount, setCoffeeCount] = useState(0);
 
     // Form States
@@ -118,13 +122,7 @@ const Portfolio = () => {
     }, []);
 
     // Theme Toggle
-    useEffect(() => {
-        if (darkMode) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-    }, [darkMode]);
+    // Removed effect because ThemeProvider handles document class
 
 
 
@@ -263,16 +261,16 @@ const Portfolio = () => {
                 </button>
             )}
 
-            <div className={`min-h-screen ${(coffeeCount >= 10 && darkMode) ? 'bg-slate-950 text-slate-100' : 'bg-white dark:bg-black text-gray-900 dark:text-gray-100'} font-sans transition-colors duration-1000 ease-out`}>
+            <div className={`min-h-screen ${(coffeeCount >= 10 && isDark) ? 'bg-slate-950 text-slate-100' : 'bg-white dark:bg-black text-gray-900 dark:text-gray-100'} font-sans transition-colors duration-1000 ease-out`}>
 
                 {/* Advanced Interactive Particle Background */}
-                <div className={`transition-opacity duration-1000 ${(coffeeCount >= 10 && darkMode) ? 'opacity-0' : 'opacity-100'}`}>
-                    <ParticleCanvas darkMode={darkMode} />
+                <div className={`transition-opacity duration-1000 ${(coffeeCount >= 10 && isDark) ? 'opacity-0' : 'opacity-100'}`}>
+                    <ParticleCanvas darkMode={isDark} />
                 </div>
 
                 {/* Starry night background (Easter Egg) */}
                 <div
-                    className={`fixed inset-0 pointer-events-none transition-opacity duration-1000 ${(coffeeCount >= 10 && darkMode) ? 'opacity-100' : 'opacity-0'}`}
+                    className={`fixed inset-0 pointer-events-none transition-opacity duration-1000 ${(coffeeCount >= 10 && isDark) ? 'opacity-100' : 'opacity-0'}`}
                 >
                     {/* Simplified CSS stars */}
                     <div className="absolute inset-0 z-0 opacity-50" style={{
@@ -401,8 +399,6 @@ const Portfolio = () => {
             <Navbar
                 activeSection={activeSection}
                 scrollToSection={scrollToSection}
-                darkMode={darkMode}
-                setDarkMode={setDarkMode}
                 isLoading={false}
             />
 

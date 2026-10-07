@@ -13,11 +13,15 @@ const ParticleCanvas = dynamic(() => import('../components/ParticleCanvas'), {
 });
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import { useTheme } from 'next-themes';
 
 const ProjectsPage = () => {
     const router = useRouter();
     const [filter, setFilter] = useState('All');
-    const [darkMode, setDarkMode] = useState(true);
+    const { theme, resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => setMounted(true), []);
+    const isDark = mounted && (theme === 'dark' || resolvedTheme === 'dark');
 
     const scrollToSection = (id: string) => {
         if (id === 'projects') {
@@ -31,14 +35,6 @@ const ProjectsPage = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    useEffect(() => {
-        if (darkMode) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-    }, [darkMode]);
-
     const filters = ['All', 'Full Stack', 'Frontend'];
 
     const filteredProjects = projects.filter(project => {
@@ -47,10 +43,10 @@ const ProjectsPage = () => {
     });
 
     return (
-        <div className={`min-h-screen ${darkMode ? 'bg-black text-white' : 'bg-white text-gray-900'} font-sans transition-colors duration-500`}>
+        <div className={`min-h-screen ${isDark ? 'bg-black text-white' : 'bg-white text-gray-900'} font-sans transition-colors duration-500`}>
             {/* Background */}
             <div className="fixed inset-0 pointer-events-none opacity-50 z-0">
-                <ParticleCanvas darkMode={darkMode} />
+                <ParticleCanvas darkMode={isDark} />
             </div>
 
             {/* Header / Nav */}
@@ -202,8 +198,6 @@ const ProjectsPage = () => {
             <Navbar 
                 activeSection="projects" 
                 scrollToSection={scrollToSection} 
-                darkMode={darkMode} 
-                setDarkMode={setDarkMode} 
                 isLoading={false} 
             />
         </div>

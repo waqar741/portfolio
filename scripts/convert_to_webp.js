@@ -18,7 +18,7 @@ fs.readdir(dir, (err, files) => {
             const webpPath = path.join(dir, path.basename(file, ext) + '.webp');
 
             sharp(filePath)
-                .webp({ quality: 80 })
+                .webp({ quality: 100, lossless: true })
                 .toFile(webpPath, (err, info) => {
                     if (err) {
                         console.error('Error converting file', file, err);

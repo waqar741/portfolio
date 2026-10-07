@@ -1,15 +1,23 @@
 import { Home, Code2, Briefcase, GraduationCap, Sun, Moon } from 'lucide-react';
 import { FaGithub as Github, FaLinkedin as Linkedin } from 'react-icons/fa';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
+
 interface NavbarProps {
     activeSection: string;
     scrollToSection: (id: string) => void;
-    darkMode: boolean;
-    setDarkMode: (value: boolean) => void;
     isLoading: boolean;
 }
 
-const Navbar = ({ activeSection, scrollToSection, darkMode, setDarkMode, isLoading }: NavbarProps) => {
+const Navbar = ({ activeSection, scrollToSection, isLoading }: NavbarProps) => {
+    const { theme, setTheme, resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => setMounted(true), []);
+
     if (isLoading) return null;
+
+    const isDark = mounted && (theme === 'dark' || resolvedTheme === 'dark');
 
     return (
         <div className="fixed bottom-4 sm:bottom-2 left-1/2 -translate-x-1/2 z-50 w-full px-4 sm:w-auto">
@@ -71,11 +79,11 @@ const Navbar = ({ activeSection, scrollToSection, darkMode, setDarkMode, isLoadi
                 <div className="w-px h-4 bg-gray-200 dark:bg-gray-800 mx-1"></div>
 
                 <button
-                    onClick={() => setDarkMode(!darkMode)}
+                    onClick={() => setTheme(isDark ? 'light' : 'dark')}
                     className="p-1.5 sm:p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                     aria-label="Toggle Theme"
                 >
-                    {darkMode ? <Sun size={16} /> : <Moon size={16} />}
+                    {isDark ? <Sun size={16} /> : <Moon size={16} />}
                 </button>
             </div>
         </div>
