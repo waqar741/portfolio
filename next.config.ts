@@ -43,6 +43,9 @@ const nextConfig: NextConfig = {
     ];
   },
   /* config options here */
+  images: {
+    unoptimized: true,
+  },
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {

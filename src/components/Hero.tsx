@@ -20,9 +20,10 @@ const Hero = ({ heroRef, isLoading, coffeeCount, setCoffeeCount }: HeroProps) =>
                             src="/images/waquar-ahmed-shaikh-profile.webp"
                             alt="Waquar Ahmed Shaikh - Software Developer & Data Analyst"
                             title="Waquar Ahmed Shaikh"
-                            width={64}
-                            height={64}
+                            width={256}
+                            height={256}
                             priority
+                            unoptimized
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         {/* Sunglasses Easter Egg */}
