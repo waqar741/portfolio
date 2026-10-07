@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   },
   authors: [{ name: "Waquar Shaikh" }],
   creator: "Waquar Shaikh",
-  verification: process.env.NEXT_PUBLIC_GSC_VERIFICATION ? {
-    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
-  } : undefined,
+  verification: {
+    google: "RjVS6Kf2iddFNVVV3CK8sSTnGYSsNRECzwqJgw2DX7c",
+  },
 };
 
 export default function RootLayout({
