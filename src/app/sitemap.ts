@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const siteLastModified = new Date('2026-10-07'); 
 
   const projectUrls = projects.map(project => ({
-    url: `${baseUrl}/projects/${project.title.toLowerCase().replace(/[\s-]/g, '-').replace(/[^a-z0-9-]/g, '')}`,
+    url: `${baseUrl}/projects/${project.slug}`,
     lastModified: new Date(`${project.year}-01-01`),
     changeFrequency: 'yearly' as const,
     priority: 0.8,

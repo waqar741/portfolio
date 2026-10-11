@@ -1,133 +1,92 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
-import Link from 'next/link';
-import Image from 'next/image';
-import { projects } from '../../../data/projects';
+import { projects, findProjectBySlug } from '../../../data/projects';
 import JsonLd from '../../../components/JsonLd';
-import { ExternalLink, ArrowLeft } from 'lucide-react';
-import { FaGithub as Github } from 'react-icons/fa';
+import ProjectDetailView from '../../../components/ProjectDetailView';
 
 export function generateStaticParams() {
   return projects.map((project) => ({
-    slug: project.title.toLowerCase().replace(/[\s-]/g, '-').replace(/[^a-z0-9-]/g, ''),
+    slug: project.slug,
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: Promise<{ slug: string }> 
+}): Promise<Metadata> {
   const { slug } = await params;
-  const project = projects.find(
-    (p) => p.title.toLowerCase().replace(/[\s-]/g, '-').replace(/[^a-z0-9-]/g, '') === slug
-  );
+  const project = findProjectBySlug(slug);
 
   if (!project) return { title: 'Project Not Found' };
 
+  const canonicalUrl = `https://www.waquarshaikh.me/projects/${project.slug}`;
+
   return {
-    title: `${project.title} Case Study | ${project.stack[0]}`,
+    title: `${project.title} Case Study | ${project.stack.slice(0, 2).join(' & ')}`,
     description: project.desc,
     alternates: {
-      canonical: `https://www.waquarshaikh.me/projects/${slug}`,
+      canonical: canonicalUrl,
     },
     openGraph: {
-      title: `${project.title} Case Study`,
+      title: `${project.title}: Technical Case Study`,
       description: project.desc,
-      url: `https://www.waquarshaikh.me/projects/${slug}`,
+      url: canonicalUrl,
       type: 'article',
       images: project.image ? [{ url: `https://www.waquarshaikh.me${project.image}` }] : undefined,
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${project.title} Case Study`,
+      description: project.desc,
+      images: project.image ? [`https://www.waquarshaikh.me${project.image}`] : undefined,
+    }
   };
 }
 
-export default async function ProjectCaseStudy({ params }: { params: { slug: string } }) {
+export default async function ProjectCaseStudy({ 
+  params 
+}: { 
+  params: Promise<{ slug: string }> 
+}) {
   const { slug } = await params;
-  const project = projects.find(
-    (p) => p.title.toLowerCase().replace(/[\s-]/g, '-').replace(/[^a-z0-9-]/g, '') === slug
-  );
+  const project = findProjectBySlug(slug);
 
-  if (!project) notFound();
+  if (!project) {
+    notFound();
+  }
+
+  const currentIndex = projects.findIndex((p) => p.slug === project.slug);
+  const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : undefined;
+  const nextProject = currentIndex < projects.length - 1 ? projects[currentIndex + 1] : undefined;
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": project.title,
     "description": project.desc,
-    "url": `https://www.waquarshaikh.me/projects/${slug}`,
+    "url": `https://www.waquarshaikh.me/projects/${project.slug}`,
     "applicationCategory": "WebApplication",
-    "author": { "@id": "https://www.waquarshaikh.me/#person" },
+    "operatingSystem": "All",
+    "author": { 
+      "@type": "Person",
+      "@id": "https://www.waquarshaikh.me/#person",
+      "name": "Waquar Shaikh" 
+    },
     "datePublished": project.year,
-    "image": project.image ? `https://www.waquarshaikh.me${project.image}` : undefined,
-    ...(project.github && project.github !== "#" ? { "codeRepository": project.github } : {})
+    ...(project.image ? { "image": `https://www.waquarshaikh.me${project.image}` } : {}),
+    ...(project.github && project.github !== "#" ? { "codeRepository": project.github } : {}),
+    ...(project.live && project.live !== "#" ? { "installUrl": project.live } : {})
   };
 
   return (
-    <main className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <>
       <JsonLd data={jsonLd} />
-      
-      <Link href="/projects" className="inline-flex items-center text-gray-500 hover:text-black dark:hover:text-white mb-8 transition-colors">
-        <ArrowLeft className="w-4 h-4 mr-2" /> Back to all projects
-      </Link>
-
-      <article>
-        <header className="mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">{project.title}: Case Study</h1>
-          <div className="flex flex-wrap items-center gap-4 text-gray-600 dark:text-gray-400">
-            <span>{project.year}</span>
-            <span>•</span>
-            <span>{project.category}</span>
-          </div>
-        </header>
-
-        {project.image && (
-          <div className="mb-12 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 relative w-full h-[400px]">
-            <Image 
-              src={project.image} 
-              alt={`Screenshot of ${project.title}`}
-              fill
-              className="object-contain"
-            />
-          </div>
-        )}
-
-        <div className="space-y-12 text-lg text-gray-700 dark:text-gray-300">
-          <section>
-            <h2 className="text-2xl font-semibold text-black dark:text-white mb-4">Project Overview</h2>
-            <p className="leading-relaxed">{project.desc}</p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-black dark:text-white mb-4">The Architecture & Technology Stack</h2>
-            <div className="flex flex-wrap gap-2">
-              {project.stack.map((tech) => (
-                <span key={tech} className="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-medium">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-black dark:text-white mb-4">Links</h2>
-            <div className="flex gap-4">
-              <a href={project.live} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-lg font-medium hover:opacity-90 transition-opacity">
-                Live Demo <ExternalLink className="w-4 h-4 ml-2" />
-              </a>
-              {project.github && project.github !== "#" && (
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-gray-300 dark:border-gray-700 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors text-black dark:text-white">
-                  Source Code <Github className="w-4 h-4 ml-2" />
-                </a>
-              )}
-            </div>
-          </section>
-
-          <hr className="border-gray-200 dark:border-gray-800" />
-
-          <section className="text-center py-8">
-            <h2 className="text-2xl font-semibold text-black dark:text-white mb-6">Looking for a Software Engineer?</h2>
-            <Link href="/#contact" className="inline-block px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-lg font-medium hover:opacity-90 transition-opacity">
-              Discuss a freelance project
-            </Link>
-          </section>
-        </div>
-      </article>
-    </main>
+      <ProjectDetailView 
+        project={project} 
+        prevProject={prevProject} 
+        nextProject={nextProject} 
+      />
+    </>
   );
 }

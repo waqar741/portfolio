@@ -1,9 +1,9 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { ArrowLeft, Code2, ExternalLink, Sun, Moon } from 'lucide-react';
+import { ArrowLeft, Code2, ExternalLink } from 'lucide-react';
 import { FaGithub as Github } from 'react-icons/fa';
 import { projects } from '../data/projects';
 import dynamic from 'next/dynamic';
@@ -15,12 +15,13 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import { useTheme } from 'next-themes';
 
+const emptySubscribe = () => () => {};
+
 const ProjectsPage = () => {
     const router = useRouter();
     const [filter, setFilter] = useState('All');
     const { theme, resolvedTheme } = useTheme();
-    const [mounted, setMounted] = useState(false);
-    useEffect(() => setMounted(true), []);
+    const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
     const isDark = mounted && (theme === 'dark' || resolvedTheme === 'dark');
 
     const scrollToSection = (id: string) => {
@@ -35,7 +36,7 @@ const ProjectsPage = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const filters = ['All', 'Full Stack', 'Frontend'];
+    const filters = ['All', 'Full Stack', 'Frontend', 'AI & Systems'];
 
     const filteredProjects = projects.filter(project => {
         if (filter === 'All') return true;
@@ -96,7 +97,7 @@ const ProjectsPage = () => {
                 {/* Projects Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
                     {filteredProjects.map((project, idx) => {
-                        const slug = project.title.toLowerCase().replace(/[\s-]/g, '-').replace(/[^a-z0-9-]/g, '');
+                        const slug = project.slug;
                         return (
                         <div
                             key={idx}
@@ -125,7 +126,9 @@ const ProjectsPage = () => {
                                         <span className={`inline-block mt-1 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider ${
                                             project.category === 'Frontend'
                                                 ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400'
-                                                : 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400'
+                                                : project.category === 'Full Stack'
+                                                ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400'
+                                                : 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400'
                                         }`}>
                                             {project.category}
                                         </span>

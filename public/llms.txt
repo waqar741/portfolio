@@ -11,13 +11,12 @@
 
 ## Architecture
 - [Homepage](https://www.waquarshaikh.me/) (Profile / Skills / Experience / Contact Form)
-- [Projects Hub](https://www.waquarshaikh.me/projects) (Hub for 14 shipped technical projects)
+- [Projects Hub](https://www.waquarshaikh.me/projects) (Hub for 15 technical engineering projects & case studies)
 - [FAQ](https://www.waquarshaikh.me/faq) (Frequently Asked Questions)
-
-## Notable Projects
-- **ServiceTrack CMMS:** Enterprise maintenance management software.
-- **FoodSetu:** Full-stack food ordering platform.
-- **MeshMind:** Clinical AI platform built during my Software Engineering Internship at HealthFirstPriority.
+- [Navi Tech](https://www.waquarshaikh.me/projects/navi-tech) (Digital agency platform & AI-assisted development case study)
+- [FoodSetu](https://www.waquarshaikh.me/projects/foodsetu) (Mobile-first PWA food commerce platform)
+- [ServiceTrack](https://www.waquarshaikh.me/projects/servicetrack) (Document center & task management CMMS with Google Sheets live sync)
+- [MeshMind](https://www.waquarshaikh.me/projects/meshmind-ai-platform) (Distributed clinical AI platform built at HealthFirstPriority)
 
 ## Contact & Links
 - **Email:** [shaikhwaquar.dev@gmail.com](mailto:shaikhwaquar.dev@gmail.com)

@@ -43,7 +43,8 @@ export default function Page() {
         "itemListElement": projects.map((project, index) => ({
           "@type": "ListItem",
           "position": index + 1,
-          "url": `https://www.waquarshaikh.me/projects/${project.title.toLowerCase().replace(/[\s-]/g, '-').replace(/[^a-z0-9-]/g, '')}`
+          "name": project.title,
+          "url": `https://www.waquarshaikh.me/projects/${project.slug}`
         }))
       }
     ]
