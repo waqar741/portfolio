@@ -34,73 +34,6 @@ export interface Project {
 
 export const projects: Project[] = [
     {
-        title: "Navi Tech",
-        slug: "navi-tech",
-        year: "2026",
-        tagline: "Digital agency web platform exploring AI-assisted product engineering and rapid frontend assembly.",
-        desc: "A comprehensive digital agency platform designed for local businesses, offering custom software development, SEO strategies, chatbots, and web solutions.",
-        stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
-        github: "#",
-        live: "https://navitechsystem.vercel.app/",
-        status: "Completed",
-        category: "Frontend",
-        image: "/images/NaviTech.webp",
-        role: "Full Stack Engineer & Solo Creator",
-        overview: "Navi Tech was built end-to-end to explore how quickly modern frontend development and end-to-end product delivery could be accomplished using AI-assisted coding workflows. Initially conceived alongside an exploration into starting a digital agency for local businesses, the engineering project was completed while the business concept was intentionally dropped to focus on core software engineering and scalable backend systems.",
-        problem: "Local businesses in regional markets often struggle with fragmented digital presence, outdated legacy websites, and high agency costs. I wanted to build a production-grade showcase platform while testing how modern AI tooling could accelerate the end-to-end development cycle.",
-        approach: "Leveraged Next.js App Router and TypeScript to structure a modular component library, using AI-assisted prompt workflows to rapidly scaffold boilerplate UI elements, forms, and service cards, followed by rigorous manual engineering for type safety, design tokens, and performance.",
-        features: [
-            {
-                title: "Digital Agency Service Showcase",
-                desc: "Interactive service cards detailing software development, local SEO strategies, AI chatbot integration, and web design.",
-                status: "Implemented"
-            },
-            {
-                title: "Lead Generation & Client Inquiries",
-                desc: "Integrated inquiry forms and structured communication entry points for prospective local business clients.",
-                status: "Implemented"
-            },
-            {
-                title: "Responsive Agency Brand Identity",
-                desc: "Dark and light theme support, cohesive typography, and responsive grid layouts tested across mobile and desktop.",
-                status: "Implemented"
-            },
-            {
-                title: "Optimized Vercel Deployment",
-                desc: "Configured build scripts, automated deployments, and metadata configurations for search engine indexing.",
-                status: "Implemented"
-            }
-        ],
-        architecture: [
-            { layer: "Frontend Framework", details: "Next.js App Router with React Server Components and TypeScript." },
-            { layer: "Styling & UI", details: "Tailwind CSS utility tokens, responsive grid layouts, and custom theme variables." },
-            { layer: "Hosting & CI/CD", details: "Deployed on Vercel edge infrastructure with automated build pipelines." }
-        ],
-        challenges: [
-            {
-                challenge: "Balancing AI-assisted code generation speed with long-term code quality and maintainability.",
-                solution: "Established strict TypeScript interfaces and component boundaries upfront. While AI generated initial markup, all state management, CSS layouts, and component structures were manually refactored to eliminate redundant code bloat."
-            },
-            {
-                challenge: "Structuring clear service messaging without relying on generic marketing filler.",
-                solution: "Designed concrete service specifications covering technical deliverables (SEO audits, custom portals, web apps) rather than ambiguous marketing buzzwords."
-            }
-        ],
-        contributions: [
-            "Architected and developed the complete Next.js codebase end-to-end as a solo developer.",
-            "Designed and implemented all responsive UI components, service layouts, and interaction flows.",
-            "Benchmarked and evaluated AI-assisted programming workflows across component scaffolding and debugging.",
-            "Conducted end-to-end deployment, DNS routing, and production optimization on Vercel."
-        ],
-        learnings: [
-            "AI-assisted workflows dramatically reduce time spent on boilerplate scaffolding, but human architectural judgment is vital for type integrity and component cleanliness.",
-            "Validating product ideas through fast technical prototypes provides quick clarity on whether to pursue a business venture or pivot to deeper engineering interests."
-        ],
-        futureWork: [
-            "Archived as a completed rapid-development case study; codebase retained for architectural reference."
-        ]
-    },
-    {
         title: "FoodSetu",
         slug: "foodsetu",
         year: "2026",
@@ -190,6 +123,127 @@ export const projects: Project[] = [
         ]
     },
     {
+        title: "Colors And Waves Media",
+        slug: "colors-and-waves-media",
+        year: "2026",
+        tagline: "Immersive production house web platform featuring interactive 3D graphics and cinematic showreels.",
+        desc: "A modern, immersive web application for a Mumbai-based film and video production house. Built with Next.js App Router and features interactive 3D graphics using Three.js and React Three Fiber.",
+        stack: ["Next.js", "React", "Three.js", "React Three Fiber", "Tailwind CSS"],
+        github: "#",
+        live: "https://www.colorsandwavesmedia.com/",
+        status: "Completed",
+        category: "Frontend",
+        image: "/images/ColourAndWaves.webp",
+        role: "Frontend Developer",
+        overview: "A modern, immersive web platform designed and built for Colors and Waves Media, a film and video production house based in Mumbai. Leverages Next.js App Router alongside Three.js and React Three Fiber to showcase video showreels, cinematic aesthetics, and creative capabilities.",
+        problem: "Creative production agencies require high-impact visual presentation that showcases their film reels and visual quality without sacrificing mobile loading performance or frame rates.",
+        approach: "Blended modern web design with 3D canvas elements using React Three Fiber, pairing custom shaders with lazy-loaded video showreels and responsive typography.",
+        features: [
+            {
+                title: "Interactive 3D Graphics",
+                desc: "3D visual elements powered by Three.js and React Three Fiber reacting to user scroll and cursor interactions.",
+                status: "Implemented"
+            },
+            {
+                title: "Cinematic Video Showreel Player",
+                desc: "Custom video player modal with responsive controls showcasing studio commercial and film projects.",
+                status: "Implemented"
+            },
+            {
+                title: "Brand Story & Production Services",
+                desc: "Clean sections presenting pre-production, cinematography, editing, and color grading services.",
+                status: "Implemented"
+            }
+        ],
+        architecture: [
+            { layer: "Frontend Framework", details: "Next.js App Router with TypeScript and React Server Components." },
+            { layer: "3D Graphics Engine", details: "Three.js with React Three Fiber and Drei helper utilities." },
+            { layer: "Styling", details: "Tailwind CSS with dark cinematic aesthetic and smooth transitions." }
+        ],
+        challenges: [
+            {
+                challenge: "Preventing mobile performance drops from WebGL 3D rendering alongside high-resolution video embeds.",
+                solution: "Implemented device-aware rendering quality scaling, reducing canvas pixel ratios on mobile devices and pausing WebGL rendering when out of viewport view."
+            }
+        ],
+        contributions: [
+            "Developed the responsive Next.js frontend and Three.js canvas integration.",
+            "Optimized media loading and video asset delivery for mobile devices.",
+            "Implemented sleek dark-mode visual hierarchy aligned with studio branding."
+        ],
+        learnings: [
+            "Integrating 3D elements requires careful lifecycle management to avoid memory leaks on route changes.",
+            "Cinematic typography and generous contrast enhance visual storytelling for creative studios."
+        ]
+    },
+    {
+        title: "Navi Tech",
+        slug: "navi-tech",
+        year: "2026",
+        tagline: "Digital agency web platform exploring AI-assisted product engineering and rapid frontend assembly.",
+        desc: "A comprehensive digital agency platform designed for local businesses, offering custom software development, SEO strategies, chatbots, and web solutions.",
+        stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+        github: "#",
+        live: "https://navitechsystem.vercel.app/",
+        status: "Completed",
+        category: "Frontend",
+        image: "/images/NaviTech.webp",
+        role: "Full Stack Engineer & Solo Creator",
+        overview: "Navi Tech was built end-to-end to explore how quickly modern frontend development and end-to-end product delivery could be accomplished using AI-assisted coding workflows. Initially conceived alongside an exploration into starting a digital agency for local businesses, the engineering project was completed while the business concept was intentionally dropped to focus on core software engineering and scalable backend systems.",
+        problem: "Local businesses in regional markets often struggle with fragmented digital presence, outdated legacy websites, and high agency costs. I wanted to build a production-grade showcase platform while testing how modern AI tooling could accelerate the end-to-end development cycle.",
+        approach: "Leveraged Next.js App Router and TypeScript to structure a modular component library, using AI-assisted prompt workflows to rapidly scaffold boilerplate UI elements, forms, and service cards, followed by rigorous manual engineering for type safety, design tokens, and performance.",
+        features: [
+            {
+                title: "Digital Agency Service Showcase",
+                desc: "Interactive service cards detailing software development, local SEO strategies, AI chatbot integration, and web design.",
+                status: "Implemented"
+            },
+            {
+                title: "Lead Generation & Client Inquiries",
+                desc: "Integrated inquiry forms and structured communication entry points for prospective local business clients.",
+                status: "Implemented"
+            },
+            {
+                title: "Responsive Agency Brand Identity",
+                desc: "Dark and light theme support, cohesive typography, and responsive grid layouts tested across mobile and desktop.",
+                status: "Implemented"
+            },
+            {
+                title: "Optimized Vercel Deployment",
+                desc: "Configured build scripts, automated deployments, and metadata configurations for search engine indexing.",
+                status: "Implemented"
+            }
+        ],
+        architecture: [
+            { layer: "Frontend Framework", details: "Next.js App Router with React Server Components and TypeScript." },
+            { layer: "Styling & UI", details: "Tailwind CSS utility tokens, responsive grid layouts, and custom theme variables." },
+            { layer: "Hosting & CI/CD", details: "Deployed on Vercel edge infrastructure with automated build pipelines." }
+        ],
+        challenges: [
+            {
+                challenge: "Balancing AI-assisted code generation speed with long-term code quality and maintainability.",
+                solution: "Established strict TypeScript interfaces and component boundaries upfront. While AI generated initial markup, all state management, CSS layouts, and component structures were manually refactored to eliminate redundant code bloat."
+            },
+            {
+                challenge: "Structuring clear service messaging without relying on generic marketing filler.",
+                solution: "Designed concrete service specifications covering technical deliverables (SEO audits, custom portals, web apps) rather than ambiguous marketing buzzwords."
+            }
+        ],
+        contributions: [
+            "Architected and developed the complete Next.js codebase end-to-end as a solo developer.",
+            "Designed and implemented all responsive UI components, service layouts, and interaction flows.",
+            "Benchmarked and evaluated AI-assisted programming workflows across component scaffolding and debugging.",
+            "Conducted end-to-end deployment, DNS routing, and production optimization on Vercel."
+        ],
+        learnings: [
+            "AI-assisted workflows dramatically reduce time spent on boilerplate scaffolding, but human architectural judgment is vital for type integrity and component cleanliness.",
+            "Validating product ideas through fast technical prototypes provides quick clarity on whether to pursue a business venture or pivot to deeper engineering interests."
+        ],
+        futureWork: [
+            "Archived as a completed rapid-development case study; codebase retained for architectural reference."
+        ]
+    },
+    {
         title: "ServiceTrack",
         slug: "servicetrack",
         year: "2026",
@@ -254,68 +308,56 @@ export const projects: Project[] = [
         ]
     },
     {
-        title: "MeshMind - AI Platform",
-        slug: "meshmind-ai-platform",
-        year: "2025",
-        tagline: "Distributed clinical assistant platform with 20+ REST APIs, RAG semantic search, and mesh inference.",
-        desc: "Modular clinical platform featuring a highly responsive React frontend and a robust FastAPI backend. Designed with user-centric workflows and accessible data visualization to present complex analytical information clearly.",
-        stack: ["React", "FastAPI", "Python", "PostgreSQL", "Go", "Caddy", "Tailscale"],
-        github: "https://github.com/waqar741/Frontend-HFP",
-        live: "https://dev-ai.nomineelife.com/",
+        title: "Samarth Digital E Seva Kendra",
+        slug: "samarth-digital-e-seva-kendra",
+        year: "2026",
+        tagline: "Local business platform and service catalog digitizing inquiries for a government e-seva center.",
+        desc: "Live business website for a government-services center replacing manual inquiries with an online service listing and direct WhatsApp enquiry flows. Implemented technical SEO to improve local search visibility.",
+        stack: ["React", "Vite", "Tailwind CSS", "Technical SEO"],
+        github: "#",
+        live: "https://samarthdigitalseva.vercel.app",
         status: "Completed",
-        category: "Full Stack",
-        image: "/images/hfp.webp",
-        role: "AI Engineer Intern at HealthFirstPriority (HFP)",
-        overview: "Developed during my Software Engineering Internship at HealthFirstPriority (HFP), MeshMind is a distributed clinical assistant and analytical platform. It features over 20 REST API endpoints, distributed inference using Caddy load balancing and Tailscale VPN mesh networking across multiple AI worker nodes, RAG semantic search, JWT authentication, and real-time streaming summaries.",
-        problem: "Clinicians face high cognitive load when parsing lengthy medical records. They need accurate, low-latency AI summaries without risking data privacy or experiencing slow API response bottlenecks.",
-        approach: "Engineered a distributed microservice architecture pairing a FastAPI backend with Go middleware, a PostgreSQL database, and a React frontend. Configured Tailscale VPN mesh networking and Caddy reverse proxy to distribute inference across worker nodes.",
+        category: "Frontend",
+        image: "/images/SamarthDigital.webp",
+        role: "Frontend & Technical SEO Developer",
+        overview: "A live business web platform built for Samarth Digital E Seva Kendra, an authorized government-services facilitation center in Navi Mumbai. The application replaced time-consuming physical inquiries with an online catalog of 40+ government schemes and direct WhatsApp enquiry flows, supported by local technical SEO.",
+        problem: "Citizens frequently waited in long physical lines simply to ask what documentation was needed for government certificates (caste, income, domicile, voter IDs), resulting in administrative bottlenecks.",
+        approach: "Developed an ultra-fast, mobile-first single page application in React with Vite and Tailwind CSS. Structured each service with required documentation checklists and pre-filled WhatsApp action buttons.",
         features: [
             {
-                title: "Distributed AI Inference Network",
-                desc: "Multi-node inference pipeline balanced by Caddy across a secure Tailscale VPN mesh.",
+                title: "40+ Government Services Catalog",
+                desc: "Detailed documentation requirements for Aadhaar updates, PAN cards, domicile, income, and welfare schemes.",
                 status: "Implemented"
             },
             {
-                title: "Retrieval-Augmented Generation (RAG)",
-                desc: "Semantic search and document chunk retrieval over clinical records for evidence-grounded AI responses.",
+                title: "Pre-Configured WhatsApp Inquiries",
+                desc: "One-tap inquiry triggers that pre-populate the exact service name into WhatsApp messages for instant triage.",
                 status: "Implemented"
             },
             {
-                title: "Real-Time Streaming Responses",
-                desc: "Server-Sent Events (SSE) streaming delivering conversational output token-by-token directly to the UI.",
-                status: "Implemented"
-            },
-            {
-                title: "20+ Validated REST Endpoints",
-                desc: "Comprehensive API suite covering authentication, patient context, document ingestion, and analytics.",
+                title: "Local Search Optimization",
+                desc: "Localized on-page SEO targeting Navi Mumbai search queries, driving organic walk-in inquiries.",
                 status: "Implemented"
             }
         ],
         architecture: [
-            { layer: "Frontend Interface", details: "React, Next.js, and TypeScript with real-time stream consumer hooks." },
-            { layer: "Backend API & Middleware", details: "FastAPI (Python) and Go middleware for fast request routing and authentication." },
-            { layer: "Database", details: "PostgreSQL storing patient records, embeddings, and conversation histories." },
-            { layer: "Networking & Mesh", details: "Caddy load balancer and Tailscale zero-trust private mesh connecting distributed inference workers." }
+            { layer: "Frontend UI", details: "React with Vite and Tailwind CSS for instant initial page loading." },
+            { layer: "Routing & Actions", details: "Client-side category filtering with WhatsApp deep-link URL protocol integration." }
         ],
         challenges: [
             {
-                challenge: "High API response latency during heavy clinical document parsing and inference.",
-                solution: "Profiled bottlenecks across database queries and Python execution; optimized indexing and refactored distributed endpoints, achieving approximately 30% reduction in API response time."
-            },
-            {
-                challenge: "Ensuring secure, zero-trust communication between geographically distributed inference worker nodes.",
-                solution: "Integrated Tailscale VPN mesh to provide end-to-end encrypted node-to-node routing without exposing internal ports to the public internet."
+                challenge: "Designing an interface accessible to elderly citizens and non-technical mobile users.",
+                solution: "Employed high-contrast typography, clear Marathi and English service names, and prominent touch targets with zero registration requirements."
             }
         ],
         contributions: [
-            "Built and tested Python backend code across 15+ core features as part of a 4-developer engineering team.",
-            "Designed and implemented distributed inference routing with Caddy and Tailscale.",
-            "Developed RAG semantic retrieval, JWT authentication, and SSE streaming endpoints.",
-            "Collaborated on responsive clinical interface improvements using React."
+            "Built and deployed the complete website end-to-end.",
+            "Organized documentation checklists for over 40 distinct government and citizen services.",
+            "Implemented WhatsApp deep-link generation and localized SEO metadata."
         ],
         learnings: [
-            "Distributed AI systems require robust network telemetry and zero-trust mesh infrastructure to ensure reliability.",
-            "Server-Sent Events provide significantly better perceived UX for LLM interactions compared to blocking HTTP requests."
+            "Direct messaging integrations often provide higher conversion rates for hyper-local businesses than complex form submission backends.",
+            "Sub-second page speeds significantly improve engagement for users on congested mobile cellular networks."
         ]
     },
     {
@@ -383,110 +425,68 @@ export const projects: Project[] = [
         ]
     },
     {
-        title: "Colors And Waves Media",
-        slug: "colors-and-waves-media",
-        year: "2026",
-        tagline: "Immersive production house web platform featuring interactive 3D graphics and cinematic showreels.",
-        desc: "A modern, immersive web application for a Mumbai-based film and video production house. Built with Next.js App Router and features interactive 3D graphics using Three.js and React Three Fiber.",
-        stack: ["Next.js", "React", "Three.js", "React Three Fiber", "Tailwind CSS"],
-        github: "#",
-        live: "https://www.colorsandwavesmedia.com/",
+        title: "MeshMind - AI Platform",
+        slug: "meshmind-ai-platform",
+        year: "2025",
+        tagline: "Distributed clinical assistant platform with 20+ REST APIs, RAG semantic search, and mesh inference.",
+        desc: "Modular clinical platform featuring a highly responsive React frontend and a robust FastAPI backend. Designed with user-centric workflows and accessible data visualization to present complex analytical information clearly.",
+        stack: ["React", "FastAPI", "Python", "PostgreSQL", "Go", "Caddy", "Tailscale"],
+        github: "https://github.com/waqar741/Frontend-HFP",
+        live: "https://dev-ai.nomineelife.com/",
         status: "Completed",
-        category: "Frontend",
-        image: "/images/ColourAndWaves.webp",
-        role: "Frontend Developer",
-        overview: "A modern, immersive web platform designed and built for Colors and Waves Media, a film and video production house based in Mumbai. Leverages Next.js App Router alongside Three.js and React Three Fiber to showcase video showreels, cinematic aesthetics, and creative capabilities.",
-        problem: "Creative production agencies require high-impact visual presentation that showcases their film reels and visual quality without sacrificing mobile loading performance or frame rates.",
-        approach: "Blended modern web design with 3D canvas elements using React Three Fiber, pairing custom shaders with lazy-loaded video showreels and responsive typography.",
+        category: "Full Stack",
+        image: "/images/hfp.webp",
+        role: "AI Engineer Intern at HealthFirstPriority (HFP)",
+        overview: "Developed during my Software Engineering Internship at HealthFirstPriority (HFP), MeshMind is a distributed clinical assistant and analytical platform. It features over 20 REST API endpoints, distributed inference using Caddy load balancing and Tailscale VPN mesh networking across multiple AI worker nodes, RAG semantic search, JWT authentication, and real-time streaming summaries.",
+        problem: "Clinicians face high cognitive load when parsing lengthy medical records. They need accurate, low-latency AI summaries without risking data privacy or experiencing slow API response bottlenecks.",
+        approach: "Engineered a distributed microservice architecture pairing a FastAPI backend with Go middleware, a PostgreSQL database, and a React frontend. Configured Tailscale VPN mesh networking and Caddy reverse proxy to distribute inference across worker nodes.",
         features: [
             {
-                title: "Interactive 3D Graphics",
-                desc: "3D visual elements powered by Three.js and React Three Fiber reacting to user scroll and cursor interactions.",
+                title: "Distributed AI Inference Network",
+                desc: "Multi-node inference pipeline balanced by Caddy across a secure Tailscale VPN mesh.",
                 status: "Implemented"
             },
             {
-                title: "Cinematic Video Showreel Player",
-                desc: "Custom video player modal with responsive controls showcasing studio commercial and film projects.",
+                title: "Retrieval-Augmented Generation (RAG)",
+                desc: "Semantic search and document chunk retrieval over clinical records for evidence-grounded AI responses.",
                 status: "Implemented"
             },
             {
-                title: "Brand Story & Production Services",
-                desc: "Clean sections presenting pre-production, cinematography, editing, and color grading services.",
+                title: "Real-Time Streaming Responses",
+                desc: "Server-Sent Events (SSE) streaming delivering conversational output token-by-token directly to the UI.",
+                status: "Implemented"
+            },
+            {
+                title: "20+ Validated REST Endpoints",
+                desc: "Comprehensive API suite covering authentication, patient context, document ingestion, and analytics.",
                 status: "Implemented"
             }
         ],
         architecture: [
-            { layer: "Frontend Framework", details: "Next.js App Router with TypeScript and React Server Components." },
-            { layer: "3D Graphics Engine", details: "Three.js with React Three Fiber and Drei helper utilities." },
-            { layer: "Styling", details: "Tailwind CSS with dark cinematic aesthetic and smooth transitions." }
+            { layer: "Frontend Interface", details: "React, Next.js, and TypeScript with real-time stream consumer hooks." },
+            { layer: "Backend API & Middleware", details: "FastAPI (Python) and Go middleware for fast request routing and authentication." },
+            { layer: "Database", details: "PostgreSQL storing patient records, embeddings, and conversation histories." },
+            { layer: "Networking & Mesh", details: "Caddy load balancer and Tailscale zero-trust private mesh connecting distributed inference workers." }
         ],
         challenges: [
             {
-                challenge: "Preventing mobile performance drops from WebGL 3D rendering alongside high-resolution video embeds.",
-                solution: "Implemented device-aware rendering quality scaling, reducing canvas pixel ratios on mobile devices and pausing WebGL rendering when out of viewport view."
+                challenge: "High API response latency during heavy clinical document parsing and inference.",
+                solution: "Profiled bottlenecks across database queries and Python execution; optimized indexing and refactored distributed endpoints, achieving approximately 30% reduction in API response time."
+            },
+            {
+                challenge: "Ensuring secure, zero-trust communication between geographically distributed inference worker nodes.",
+                solution: "Integrated Tailscale VPN mesh to provide end-to-end encrypted node-to-node routing without exposing internal ports to the public internet."
             }
         ],
         contributions: [
-            "Developed the responsive Next.js frontend and Three.js canvas integration.",
-            "Optimized media loading and video asset delivery for mobile devices.",
-            "Implemented sleek dark-mode visual hierarchy aligned with studio branding."
+            "Built and tested Python backend code across 15+ core features as part of a 4-developer engineering team.",
+            "Designed and implemented distributed inference routing with Caddy and Tailscale.",
+            "Developed RAG semantic retrieval, JWT authentication, and SSE streaming endpoints.",
+            "Collaborated on responsive clinical interface improvements using React."
         ],
         learnings: [
-            "Integrating 3D elements requires careful lifecycle management to avoid memory leaks on route changes.",
-            "Cinematic typography and generous contrast enhance visual storytelling for creative studios."
-        ]
-    },
-    {
-        title: "Samarth Digital E Seva Kendra",
-        slug: "samarth-digital-e-seva-kendra",
-        year: "2026",
-        tagline: "Local business platform and service catalog digitizing inquiries for a government e-seva center.",
-        desc: "Live business website for a government-services center replacing manual inquiries with an online service listing and direct WhatsApp enquiry flows. Implemented technical SEO to improve local search visibility.",
-        stack: ["React", "Vite", "Tailwind CSS", "Technical SEO"],
-        github: "#",
-        live: "https://samarthdigitalseva.vercel.app",
-        status: "Completed",
-        category: "Frontend",
-        image: "/images/SamarthDigital.webp",
-        role: "Frontend & Technical SEO Developer",
-        overview: "A live business web platform built for Samarth Digital E Seva Kendra, an authorized government-services facilitation center in Navi Mumbai. The application replaced time-consuming physical inquiries with an online catalog of 40+ government schemes and direct WhatsApp enquiry flows, supported by local technical SEO.",
-        problem: "Citizens frequently waited in long physical lines simply to ask what documentation was needed for government certificates (caste, income, domicile, voter IDs), resulting in administrative bottlenecks.",
-        approach: "Developed an ultra-fast, mobile-first single page application in React with Vite and Tailwind CSS. Structured each service with required documentation checklists and pre-filled WhatsApp action buttons.",
-        features: [
-            {
-                title: "40+ Government Services Catalog",
-                desc: "Detailed documentation requirements for Aadhaar updates, PAN cards, domicile, income, and welfare schemes.",
-                status: "Implemented"
-            },
-            {
-                title: "Pre-Configured WhatsApp Inquiries",
-                desc: "One-tap inquiry triggers that pre-populate the exact service name into WhatsApp messages for instant triage.",
-                status: "Implemented"
-            },
-            {
-                title: "Local Search Optimization",
-                desc: "Localized on-page SEO targeting Navi Mumbai search queries, driving organic walk-in inquiries.",
-                status: "Implemented"
-            }
-        ],
-        architecture: [
-            { layer: "Frontend UI", details: "React with Vite and Tailwind CSS for instant initial page loading." },
-            { layer: "Routing & Actions", details: "Client-side category filtering with WhatsApp deep-link URL protocol integration." }
-        ],
-        challenges: [
-            {
-                challenge: "Designing an interface accessible to elderly citizens and non-technical mobile users.",
-                solution: "Employed high-contrast typography, clear Marathi and English service names, and prominent touch targets with zero registration requirements."
-            }
-        ],
-        contributions: [
-            "Built and deployed the complete website end-to-end.",
-            "Organized documentation checklists for over 40 distinct government and citizen services.",
-            "Implemented WhatsApp deep-link generation and localized SEO metadata."
-        ],
-        learnings: [
-            "Direct messaging integrations often provide higher conversion rates for hyper-local businesses than complex form submission backends.",
-            "Sub-second page speeds significantly improve engagement for users on congested mobile cellular networks."
+            "Distributed AI systems require robust network telemetry and zero-trust mesh infrastructure to ensure reliability.",
+            "Server-Sent Events provide significantly better perceived UX for LLM interactions compared to blocking HTTP requests."
         ]
     },
     {

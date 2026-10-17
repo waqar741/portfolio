@@ -1,25 +1,14 @@
 export const projects = [
     {
-        title: "Navi Tech",
+        title: "FoodSetu",
         year: "2026",
-        desc: "A comprehensive digital agency platform designed for local businesses, offering custom software development, SEO strategies, chatbots, and web solutions.",
-        stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-        github: "#",
-        live: "https://navitechsystem.vercel.app/",
-        status: "Completed",
-        category: "Frontend",
-        image: "/images/NaviTech.png"
-    },
-    {
-        title: "Personal Portfolio",
-        year: "2026",
-        desc: "Interactive personal portfolio featuring engaging UI animations, dynamic dark mode, and a responsive layout to comprehensively showcase my software engineering projects.",
-        stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
-        github: "https://github.com/waqar741/portfolio",
-        live: "https://www.waquarshaikh.me/",
-        status: "Completed",
-        category: "Frontend",
-        image: "/images/WaquarPortfolio.png"
+        desc: "An actively developed food commerce platform intended for restaurants and independent food sellers, featuring a mobile-first PWA storefront, multi-tenant menus, and direct ordering.",
+        stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PWA", "PostgreSQL"],
+        github: "https://github.com/waqar741",
+        live: "https://www.foodsetu.shop/",
+        status: "In Progress",
+        category: "Full Stack",
+        image: "/images/FoodSetu.webp"
     },
     {
         title: "Colors And Waves Media",
@@ -33,15 +22,15 @@ export const projects = [
         image: "/images/ColourAndWaves.png"
     },
     {
-        title: "Samarth Digital E Seva Kendra",
+        title: "Navi Tech",
         year: "2026",
-        desc: "Live business website for a government-services center replacing manual inquiries with an online service listing and direct WhatsApp enquiry flows. Implemented technical SEO to improve local search visibility.",
-        stack: ["React", "Vite", "Tailwind CSS", "SEO"],
+        desc: "A comprehensive digital agency platform designed for local businesses, offering custom software development, SEO strategies, chatbots, and web solutions.",
+        stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
         github: "#",
-        live: "https://samarthdigitalseva.vercel.app",
+        live: "https://navitechsystem.vercel.app/",
         status: "Completed",
         category: "Frontend",
-        image: "/images/SamarthDigital.png"
+        image: "/images/NaviTech.png"
     },
     {
         title: "ServiceTrack",
@@ -53,6 +42,38 @@ export const projects = [
         status: "Completed",
         category: "Frontend",
         image: "/images/ServiceTrack.png"
+    },
+    {
+        title: "Samarth Digital E Seva Kendra",
+        year: "2026",
+        desc: "Live business website for a government-services center replacing manual inquiries with an online service listing and direct WhatsApp enquiry flows. Implemented technical SEO to improve local search visibility.",
+        stack: ["React", "Vite", "Tailwind CSS", "SEO"],
+        github: "#",
+        live: "https://samarthdigitalseva.vercel.app",
+        status: "Completed",
+        category: "Frontend",
+        image: "/images/SamarthDigital.png"
+    },
+    {
+        title: "Personal Portfolio",
+        year: "2026",
+        desc: "Interactive personal portfolio featuring engaging UI animations, dynamic dark mode, and a responsive layout to comprehensively showcase my software engineering projects.",
+        stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
+        github: "https://github.com/waqar741/portfolio",
+        live: "https://www.waquarshaikh.me/",
+        status: "Completed",
+        category: "Frontend",
+        image: "/images/WaquarPortfolio.png"
+    },
+    {
+        title: "MeshMind - AI Platform",
+        year: "2025",
+        desc: "Modular clinical platform featuring a highly responsive React frontend and a robust FastAPI backend. Designed with user-centric workflows and accessible data visualization to present complex analytical information clearly.",
+        stack: ["React JS", "FastAPI", "Python", "PostgreSQL"],
+        github: "https://github.com/waqar741/Frontend-HFP",
+        live: "https://dev-ai.nomineelife.com/",
+        status: "Completed",
+        category: "Full Stack"
     },
     {
         title: "TextBook",
@@ -71,16 +92,6 @@ export const projects = [
         stack: ["Next.js", "React", "Tailwind CSS", "Supabase"],
         github: "https://github.com/waqar741/ExamGrid",
         live: "https://examgridapp.vercel.app/",
-        status: "Completed",
-        category: "Full Stack"
-    },
-    {
-        title: "MeshMind - AI Platform",
-        year: "2025",
-        desc: "Modular clinical platform featuring a highly responsive React frontend and a robust FastAPI backend. Designed with user-centric workflows and accessible data visualization to present complex analytical information clearly.",
-        stack: ["React JS", "FastAPI", "Python", "PostgreSQL"],
-        github: "https://github.com/waqar741/Frontend-HFP",
-        live: "https://dev-ai.nomineelife.com/",
         status: "Completed",
         category: "Full Stack"
     },
