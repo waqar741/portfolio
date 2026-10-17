@@ -27,7 +27,7 @@ export const projects = [
         desc: "A modern, immersive web application for a Mumbai-based film and video production house. Built with Next.js App Router and features interactive 3D graphics using Three.js and React Three Fiber.",
         stack: ["Next.js", "React", "Three.js", "Tailwind CSS"],
         github: "#",
-        live: "https://colours-waves.vercel.app/",
+        live: "https://www.colorsandwavesmedia.com/",
         status: "Completed",
         category: "Frontend",
         image: "/images/ColourAndWaves.png"
